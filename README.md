@@ -149,17 +149,18 @@ f(R) = [(R - R*S) / S] * [C / (R - R*C)] = [C * (1 - S) / S (1 - C)]
 Ratio = [SensorCalibrationValue * (1 - SensorValue)] * RsRoMQAir / [SensorValue * (1 - SensorCalibrationValue)] [Rs / Ro]
 
 ## Calculate Ratio
+
 (1) if ratio = Rs / Ro: Ratio = Ratio
 
 (2) if ratio = Rs / Rs: RsRoMQAir = 1 --> Ratio = Ratio
 
 (3) if ratio = Ro / Rs: a = 1 / a^(1 / b) & b = 1 / b --> Ratio = Ratio
 
-ppm = (ratio / a)^(1/b) 
+(3) if ratio is inverted: ratio --> 1 / ratio
 
-if ratio is inverted: ratio --> 1 / ratio
+(ratio / a)^(1/b) --> (1 / (a * ratio))^(1/b) --> (1 / a)^(1/b) * (1 / ratio)^(1/b) --> [(1 / a)^(1/b)] * [1 / ratio^(1/b)] 
 
-ppm = (1 / (a * ratio))^(1/b) --> (1 / a)^(1/b) * (1 / ratio)^(1/b) --> [(1 / a)^(1/b)] * [1 / ratio^(1/b)] ||| (ratio / a′)^(1/b′) --> ratio^(1/b′) / a′^(1/b′)
+(ratio / a′)^(1/b′) --> ratio^(1/b′) / a′^(1/b′)
 
 if both sides are equal: (1 / a)^(1/b) * 1 / ratio^(1/b) = ratio^(1/b′) / a′^(1/b′) -> 1 / a′ = (1 / a)^(1/b) & b′ = 1 / b
 
