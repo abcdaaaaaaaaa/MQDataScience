@@ -21,8 +21,8 @@ If the sensor you are using is listed but not in the 3D_Surface list, examine th
 -- NOTES --
 Since the correction coefficient of unsupported sensors cannot be calculated, it is included in the "Models" folder instead of the "4D_Slope" folder.
 Since the ppm of unsupported sensors cannot be calculated in advance by the system:
-1) The result data of the program, which aims to predict future data based on past data, was sensor percentage instead of ppm.
-2) simulations of these sensors such as 3D_Surface.py and ModelGraph.py could not be created.
+1) The result data of the program, which aims to predict future data based on past data, was became sensor percentage instead of ppm.
+2) Simulations of these sensors such as 3D_Surface.py and ModelGraph.py could not be created.
 
 -- THANKS FOR YOUR CONTRIBUTIONS --
 If the sensor you are using is a different model gas sensor, please report it to us as "Issues".
