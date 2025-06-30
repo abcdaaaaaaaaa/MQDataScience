@@ -30,9 +30,7 @@ logm = valueb, logb = log10(valuea)
 
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
-1]
-
-[(1,10), (2,4), (3,3)]
+1] [(1,10), (2,4), (3,3)]
 
 loge(b) = ln(b) 
 
@@ -59,9 +57,7 @@ b  ≈ -1.2
 
 a ≈ 9.947
 
-2]
-
-y = mx+ n                                                                                                                                                                       
+2] y = mx+ n                                                                                                                                                                       
 n = b                                                                                                                                                                                                                                                                                                                                 
 log10(y) = m*log10(x) + b
 
