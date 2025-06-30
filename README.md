@@ -99,6 +99,12 @@ b = log10(y) - m*log10(x)
 
 The first formula is determined according to all points (OldCurve.py, OldCurve), while the second formula is determined according to the first and last point. Therefore, in order to collect them all in the same formula and to increase the accuracy rate, we used the method in the second formula and took the logarithm (if R^2 = 1 (%100) always: logm = valueb, logb = log10(valuea)) for slopes greater than 99.95% and collected them all in the first formula, thus we increased the accuracy rate without having to use 2 different formulas (Regression.py, NewCurve).
 
+## y = ax^b  --> ppm = a*ratio^b
+Therefore, we need to make a transition according to the formula:
+In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
+
+ratio = a*ppm^b --> ppm = (ratio / a)^1/b
+
 ## V = I x R
 V = I x R -> VRL = [VC / (RS + RL)] x RL -> VRL = (VC x RL) / (RS + RL)
 
@@ -143,24 +149,24 @@ f(R) = [(R - R*S) / S] * [C / (R - R*C)] = [C * (1 - S) / S (1 - C)]
 Ratio = [SensorCalibrationValue * (1 - SensorValue)] * RsRoMQAir / [SensorValue * (1 - SensorCalibrationValue)] [Rs / Ro]
 
 ## Calculate Ratio
-(1) if ratio = Rs / Ro: 
+(1) if ratio = Rs / Ro: Ratio = Ratio
+
+
+(2) if ratio = Rs / Rs: RsRoMQAir = 1 --> Ratio = Ratio
+
+
+(3) if ratio = Ro / Rs: a = 1 / pow(a, 1 / valueb) & b = 1 / b --> Ratio = Ratio
+
+
 
 ratio = [SensorCalibrationValue * (1 - SensorValue)] * RsRoMQAir / [SensorValue * (1 - SensorCalibrationValue)]
-
-(2) if ratio = Rs / Rs: 
-
-ratio = [SensorCalibrationValue * (1 - SensorValue)] / [SensorValue * (1 - SensorCalibrationValue)] [No RsRoMQAir]
-
-(3) if ratio = Ro / Rs: 
-
-ratio = [SensorCalibrationValue * (1 - SensorValue)] / [SensorValue * (1 - SensorCalibrationValue)] * RsRoMQAir
 
 ## Ratio for Sensors
 STATUS 1: MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135, MQ-136, MQ-137 [Almost All & Standart]
 
-STATUS 2: MQ303A, MQ307A, MQ309A [A models]
+STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A & B models]
 
-STATUS 3: MQ131 [MQ131 only]
+STATUS 3: MQ-131_LOW, MQ131 [MQ131 models]
 
 
 NOTE: [For detailed explanation, You can also check out the github wiki page]
