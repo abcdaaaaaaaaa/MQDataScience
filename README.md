@@ -151,15 +151,17 @@ Ratio = [SensorCalibrationValue * (1 - SensorValue)] * RsRoMQAir / [SensorValue 
 ## Calculate Ratio
 (1) if ratio = Rs / Ro: Ratio = Ratio
 
-
 (2) if ratio = Rs / Rs: RsRoMQAir = 1 --> Ratio = Ratio
 
+(3) if ratio = Ro / Rs: a = 1 / a^(1 / b) & b = 1 / b --> Ratio = Ratio
 
-(3) if ratio = Ro / Rs: a = 1 / pow(a, 1 / valueb) & b = 1 / b --> Ratio = Ratio
+ppm = (ratio / a)^(1/b) 
 
+if ratio is inverted: ratio --> 1 / ratio
 
+ppm = (1 / (a * ratio))^(1/b) --> (1 / a)^(1/b) * (1 / ratio)^(1/b) --> [(1 / a)^(1/b)] * [1 / ratio^(1/b)] ||| (ratio / a′)^(1/b′) --> ratio^(1/b′) / a′^(1/b′)
 
-ratio = [SensorCalibrationValue * (1 - SensorValue)] * RsRoMQAir / [SensorValue * (1 - SensorCalibrationValue)]
+if both sides are equal: (1 / a)^(1/b) * 1 / ratio^(1/b) = ratio^(1/b′) / a′^(1/b′) -> 1 / a′ = (1 / a)^(1/b) & b′ = 1 / b
 
 ## Ratio for Sensors
 STATUS 1: MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135, MQ-136, MQ-137 [Almost All & Standart]
