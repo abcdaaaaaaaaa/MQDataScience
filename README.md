@@ -3,6 +3,8 @@
 ## MQDataScience
 "The first and only Arduino library where Geiger Counter and MQ Sensors combine with Data Science"
 
+## What can be create?
+
 ## 1) Advanced Data Science System for Regression Calculations
 ![MQ-135_gas_curves](https://github.com/user-attachments/assets/e8d6e1bf-6f61-40c8-9cc8-fd0cd7189c22)
 
@@ -18,7 +20,7 @@
 ## 5) Slope Estimation in Time-Dependent 4D Space
 ![4D_Slope_Estimation](https://github.com/user-attachments/assets/34bb358b-8469-4eca-9c63-e2d57971b2ba)
 
-## Formulla 
+## Ppm Formullas
 
 1) ppm = a*ratio^b (a: valuea b: valueb)
 2) ppm = 10^[(log10(ratio)-b)/m] (m: logm b: logb)
@@ -166,12 +168,10 @@ STATUS 3: MQ131 [MQ131 only]
 NOTE: [For detailed explanation, You can also check out the github wiki page]
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 
-## STEL Limit For Gaees 
-
+## STEL Limit For Gases
 ![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
 
 ## SuggestedRL For MQ Sensors
-
 ![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
