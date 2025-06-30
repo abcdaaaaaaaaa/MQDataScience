@@ -314,7 +314,7 @@ def MQ307A():
     Air, MinAirPpm, MaxAirPpm = None, None, None
     SensorRLCalRL = 0.02
     gas_params = [
-        {'name': 'CO', 'ppmvals': (30, 1000), 'ppm': ( 2336.2698, -1.7255)},
+        {'name': 'CO', 'ppmvals': (30, 1000), 'ppm': (2336.2698, -1.7255)},
         {'name': 'H2', 'ppmvals': (1000, 3000), 'ppm': (25051.8177, -0.8318), 'calvalue': 0.999619}
     ]
     group2_subgroup4()
@@ -333,8 +333,6 @@ def MQ309A():
     ]
     group2_subgroup2()
 
-#######################
-
 def MQ_Calculation_Mode(set1, set2, set3, set4, set5, set6, set7, set8):
     global SensorMode, FormulaCoefficient, AirVals, AirValsEqualGasVals, CalMode, CRMode, SensorRLCalRL, CalibrateAir, FormulaMode
     SensorMode = set1
@@ -345,6 +343,8 @@ def MQ_Calculation_Mode(set1, set2, set3, set4, set5, set6, set7, set8):
     SensorRLCalRL = set6
     CalibrateAir = set7
     FormulaMode = set8
+    
+#######################
 
 def group1_subgroup1():
     MQ_Calculation_Mode('Rs/Ro', None, True, True, 1, 1, CleanAir, 'ppm')
@@ -399,11 +399,3 @@ def group3_subgroup2():
     # MQ-131 LOW
 
 #######################
-
-
-
-
-
-
-
-
