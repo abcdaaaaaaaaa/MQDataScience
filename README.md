@@ -1,8 +1,8 @@
 # MQSpaceData
 
-# MQSpaceData v4.0.0 will be released on July 1, 2025!
+## MQDataScience
+"The first and only Arduino library where Geiger Counter and MQ Sensors combine with Data Science"
 
-## What awaits v4.0.0?
 ## 1) Advanced Data Science System for Regression Calculations
 ![MQ-135_gas_curves](https://github.com/user-attachments/assets/e8d6e1bf-6f61-40c8-9cc8-fd0cd7189c22)
 
@@ -12,7 +12,7 @@
 ## 3) Formulated Correction Coefficients depending on Temperature and Humidity
 ![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/8783b3a5-7956-47f1-a61b-ae300041e047)
 
-## 4) Comparison of Theoretical Ratio vs. Practical Sensor Measurements 3D Graph
+## 4) 3D Surface Diagram for MQ-135 Gases
 ![MQ135_CO2_3D)](https://github.com/user-attachments/assets/f95d0886-f08d-44e6-a851-a54e63810e6b)
 
 ## 5) Slope Estimation in Time-Dependent 4D Space
@@ -28,9 +28,9 @@ If R^2 equals 1 :
 a*ratio^b = 10^[(log10(ratio)-b)/m]                                                                                                                                             
 logm = valueb, logb = log10(valuea)
 
-# 1]
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
+1]
 
 [(1,10), (2,4), (3,3)]
 
@@ -55,11 +55,11 @@ ln(a) = − ln ˉ (y) - b ln ˉ (x) ≈ 1.5958−(−1.2)⋅0.5972≈2.31244
 
 a=e^2.31244 ≈ 9.947
 
-# b  ≈ -1.2
+b  ≈ -1.2
 
-# a ≈ 9.947
+a ≈ 9.947
 
-# 2]
+2]
 
 y = mx+ n                                                                                                                                                                       
 n = b                                                                                                                                                                                                                                                                                                                                 
@@ -162,53 +162,8 @@ STATUS 2: MQ303A, MQ307A, MQ309A [A models]
 
 STATUS 3: MQ131 [MQ131 only]
 
-## MQDataScience
-"The first and only Arduino library where Geiger Counter and MQ Sensors combine with Data Science"
-
-## 3D Surface Diagram for MQ-135 Gases
-![MQ135_CO2_3D)](https://github.com/user-attachments/assets/241854b0-1124-4703-86c5-df4e0371a257)
-
-## 4D Slope Estimation
-![4D_Slope_Estimation](https://github.com/user-attachments/assets/a36ccd40-86a3-4f7d-b94f-a4f1f1609eb6)
-
-## MQ-135 NewCurve & MQ-135 OldCurve
-![MQ-135_gas_curves](https://github.com/user-attachments/assets/dbd1d04b-51dc-499c-be32-ff976911b9d8)
-## MQ-2 NewCurve & MQ-2 OldCurve
-![MQ-2_gas_curves](https://github.com/user-attachments/assets/b9de3a96-4efa-4aa6-8d0f-9702a5c8a50d)
-## MQ-3 NewCurve & MQ-3 OldCurve
-![MQ-3_gas_curves](https://github.com/user-attachments/assets/cfaf6c93-3f95-425b-b3c9-57e131c534e0)
-## MQ-4 NewCurve & MQ-4 OldCurve
-![MQ-4_gas_curves](https://github.com/user-attachments/assets/4efb70ae-b686-4efc-ab29-341866704ed7)
-## MQ-5 NewCurve & MQ-5 OldCurve
-![MQ-5_gas_curves](https://github.com/user-attachments/assets/c6384a51-971d-4fd8-a7ba-2cbd937851c4)
-## MQ-6 NewCurve & MQ-6 OldCurve
-![MQ-6_gas_curves](https://github.com/user-attachments/assets/21f6ee26-5595-4649-993a-f67d3755b609)
-## MQ-7 NewCurve & MQ-7 OldCurve
-![MQ-7_gas_curves](https://github.com/user-attachments/assets/7c6ef35c-ea4d-47e5-9631-ef132026fe86)
-## MQ-8 NewCurve & MQ-8 OldCurve
-![MQ-8_gas_curves](https://github.com/user-attachments/assets/213661d3-20b2-4ead-9e76-42496034446b)
-## MQ-9 NewCurve & MQ-9 OldCurve
-![MQ-9_gas_curves](https://github.com/user-attachments/assets/4bb1f6e5-803d-4593-8152-96e587e65b0f)
-## MQ131 NewCurve & MQ131 OldCurve
-![MQ-131_gas_curves](https://github.com/user-attachments/assets/d63e0af9-f9a0-4a79-a89e-54e7660f1c86)
-## MQ-136 NewCurve & MQ-136 OldCurve
-![MQ-136_gas_curves](https://github.com/user-attachments/assets/8fe753d1-f88b-4183-8da6-396fb12f4c54)
-## MQ-137 NewCurve & MQ-137 OldCurve
-![MQ-137_gas_curves](https://github.com/user-attachments/assets/773455b0-cebe-4c3a-bc5e-9ae2b8813378)
-## MQ303A NewCurve & MQ303A OldCurve
-![MQ-303A_gas_curves](https://github.com/user-attachments/assets/2c6f128c-0995-4537-af7b-aedcbb1afd04)
-## MQ307A NewCurve & MQ207A OldCurve
-![MQ-307A_gas_curves](https://github.com/user-attachments/assets/74e1b4c7-7e32-4fa7-9f62-e93b8f17aa74)
-## MQ309A NewCurve & MQ309A OldCurve
-![MQ-309A_gas_curves](https://github.com/user-attachments/assets/d73a5e21-85e7-4671-bb7d-92a15aabd671)
 
 NOTE: [For detailed explanation, You can also check out the github wiki page]
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 
-# MQSpaceData MQ Sensor List
-MQ Sensor List: [MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ131, MQ-135, MQ-136, MQ-137, MQ303A, MQ307A, MQ309A]
-![MQSensorList](https://github.com/abcdaaaaaaaaa/MQSpaceData.h/assets/108553778/bbaf16d0-9646-4751-9307-2ad09320bd4c)
-
-# MQSpaceData Geiger Counter
-![GeigerCounter](https://github.com/abcdaaaaaaaaa/MQSpaceData.h/assets/108553778/27061f03-3224-4ccd-91d6-92396889c9fd)
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
