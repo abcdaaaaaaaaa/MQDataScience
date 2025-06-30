@@ -166,4 +166,12 @@ STATUS 3: MQ131 [MQ131 only]
 NOTE: [For detailed explanation, You can also check out the github wiki page]
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 
+## STEL Limit For Gaees 
+
+![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
+
+## SuggestedRL For MQ Sensors
+
+![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
+
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
