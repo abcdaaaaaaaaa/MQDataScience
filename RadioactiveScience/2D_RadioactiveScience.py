@@ -137,6 +137,5 @@ fig.update_yaxes(title_text="Avg (CPM)", row=1, col=2)
 fig.update_yaxes(title_text="sdCPM", row=2, col=1)
 fig.update_yaxes(title_text="CPM Count", row=2, col=2)
 
-html_file = "2D_RadioactiveScience.html"
 fig.write_html("2D_RadioactiveScience.html")
-print("Graph saved as 2D_RadioactiveScience.html")
+print("Graph saved as '2D_RadioactiveScience.html'.")
