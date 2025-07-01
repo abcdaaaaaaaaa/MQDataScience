@@ -25,7 +25,7 @@
 
 ## Ppm Formullas
 
-1) ppm = a*ratio^b (a: valuea b: valueb)
+<b> 1) ppm = a*ratio^b (a: valuea b: valueb)
 2) ppm = 10^[(log10(ratio)-b)/m] (m: logm b: logb)
 
 If R^2 equals 1 :
@@ -86,6 +86,9 @@ m = log10(y/y0) / log10(x/x0)
 
 b = log10(y) - m*log10(x)
 
+</b>
+
+
         if r_squared >= 0.9995:
             print("R-squared value for {gas name} is above 0.9995, plotting against first and last values.")
             
@@ -101,7 +104,7 @@ b = log10(y) - m*log10(x)
 The first formula is determined according to all points (OldCurve.py, OldCurve), while the second formula is determined according to the first and last point. Therefore, in order to collect them all in the same formula and to increase the accuracy rate, we used the method in the second formula and took the logarithm (if R^2 = 1 (%100) always: logm = valueb, logb = log10(valuea)) for slopes greater than 99.95% and collected them all in the first formula, thus we increased the accuracy rate without having to use 2 different formulas (Regression.py, NewCurve).
 
 ## y = ax^b  --> ppm = a*ratio^b
-Therefore, we need to make a transition according to the formula:
+<b>Therefore, we need to make a transition according to the formula:
 In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
 
 ratio = a*ppm^b --> ppm = (ratio / a)^1/b
@@ -182,11 +185,15 @@ interpolate(RH, 33, 85, a_RH33, a_RH85) --> (RH-33)×(a_RH85-a_RH33)+a_RH33
 
 interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
 
+</b>
 
 <img width="750" alt="ppmformulla" src="https://github.com/user-attachments/assets/e37d3148-be7a-4d9f-9886-e4e48c7663fb" />
 
 
-NOTE: [For detailed explanation, You can also check out the github wiki page]
+## Wiki Page
+
+For detailed explanation, You can also check out the github wiki page
+
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 
 ## STEL Limit For Gases
