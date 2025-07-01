@@ -15,7 +15,7 @@ float scaleTemperature(float temp, int mode) {
     switch(mode) {
 	case 1: return (temp + 25.0f) / 15.0f;
 	default: return (temp + 15.0f) / 5.0f;
-	}
+    }
 }
 
 float calculateCorrection(float temp, float rh, const String& model) {
