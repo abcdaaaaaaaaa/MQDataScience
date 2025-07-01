@@ -9,13 +9,32 @@
 #define ADC_BIT_RESU (12) // for ESP32
 #define pin          (35) // D35 (ADC1)
 
-String selectedModel = "MQ135"; // You can change it with the model you use!
+String selectedModel;
 GasSensor sensor(ADC_BIT_RESU, pin);
-const SensorModel* sensorModel = nullptr;
+SensorModel* sensorModel = nullptr;
+
+float sensorVal, ppm, temp, rh, correction;
+String selectedModel, mode;
+
+String mqList[] = {
+  "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7",
+  "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214"
+};
+
+String mqList2[] = {
+  "MQ303A", "MQ303B", "MQ307A", "MQ309A"
+};
+
+String mqList3[] = {
+  "MQ131", "MQ131_LOW"
+};
 
 void setup() {
     Serial.begin(9600);
     sensor.begin();
+   
+   // NOTE: If you are thinking of creating an adjustable sensor structure with the Plug-UnPlug system, you can also do this in a void loop.
+    selectedModel = "MQ135"; // You can change it with the model you use!
     sensorModel = getSensorModel(selectedModel);
     if (!sensorModel) {
         Serial.println("Sensor model not found.");
@@ -26,8 +45,10 @@ void setup() {
 }
 
 void loop() {
-    float temp = 20.0; // DHT22 is recommended °C (Celsius)
-    float rh = 33.0;   // DHT22 is recommended %  (Relative Humidity)
+    mode = sensorModel->model;
+   
+    temp = 20.0; // DHT22 is recommended °C (Celsius)
+    rh = 33.0;   // DHT22 is recommended %  (Relative Humidity)
     
     /* NOTE: The temperature and humidity of the environment do not have a direct effect on the ppm value of the environment.
     On the other hand, the temperature and humidity of the environment will cause the sensor to detect ppm more or less than normal. 
@@ -41,17 +62,17 @@ void loop() {
     // Correction Coefficient Necessary for all Rs/Ro sensors and MQ131.
     // Correction Coefficient Unnecessary for all Rs/Rs sensors and MQ131_LOW.
      
-    float sensorVal = sensor.read();
-    float correction = sensorModel->useCorrection ? calculateCorrection(temp, rh, selectedModel) : 1.0;
+    sensorVal = sensor.read();
+    correction = sensorModel->useCorrection ? calculateCorrection(temp, rh, selectedModel) : 1.0;
 
     // NOTE: MQ307A has no 'Air' value. If using MQ307A, delete this command. Required for all other sensors.
-    float Air = sensorVal > 0 ? airConcentration(sensorModel->model, sensorVal) * correction : 0;
-    
+    Air = sensorVal > 0 && mode != "MQ307A" ? airConcentration(mode, sensorVal) * correction : 0;
+   
+    if (mode == "MQ3") Air *= 50.0; // mg/L --> ppm
+    if (mode == "MQ131_LOW") Air *= 0.02; // ppb --> ppm
+   
     // Air gives the overall concentration of the sensor.
     // The ppm air value of gases measured at different sensitivities contains important information about Air Quality.
-
-    /* if you use MQ3 use this code: Air *= 50.0; // Necessary use for MQ3.
-     * if you use MQ131_LOW use this code: Air *= 0.02; // Necessary use for MQ131_LOW. */
 
     Serial.print("Air: ");
     Serial.print(Air);
@@ -64,27 +85,27 @@ void loop() {
     for (byte i = 0; i < sensorModel->gasCount; i++) {
         const GasModel& gasType = sensorModel->gasList[i];
 
-        // for Rs/Ro: MQ135, MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ136, MQ137, MQ138, MQ214
-        float RsRocalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
-        float ppm = sensor.calculateRsRoPPM(sensorVal, correction, gasType.a, gasType.b, RsRocalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
+        if (isMQSensor(mode)) {
+          float RsRocalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
+          ppm = sensor.calculateRsRoPPM(sensorVal, correction, gasType.a, gasType.b, RsRocalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
+        } 
 
-        // for Rs/Rs: MQ303A, MQ303B, MQ307A, MQ309A
-        // float RsRscalValue = sensor.calculateCalValue2(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
-
-        /* if you use MQ307A use this code: if (i == 1) float RsRscalValue = 0.999619;
-         * if you use MQ309A use this code: if (i >= 2) float RsRscalValue = 0.83393; */
-
+        else if (isMQSensor2(mode)) {
+          float RsRscalValue = sensor.calculateCalValue2(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
+          if (mode == "MQ307A" && i == 1) RsRscalValue = 0.999619;
+          if (mode == "MQ309A" && i >= 2) RsRscalValue = 0.83393;
+          ppm = sensor.calculateRsRsPPM(sensorVal, gasType.a, gasType.b, RsRscalValue, sensorModel->rlcal, gasType.maxPpm);
+        }
+           
          /* There are exceptions to calibration for some gases of MQ307A and MQ309A. 
           * Using this code you can return the correct value in case of calibration exceptions. */
-        
-        // float ppm = sensor.calculateRsRsPPM(sensorVal, gasType.a, gasType.b, RsRscalValue, sensorModel->rlcal, gasType.maxPpm);
-        
-        // for Ro/Rs: MQ131, MQ131_LOW
-        // float RoRscalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
-        // float ppm = sensor.calculateRoRsPPM(sensorVal, correction, gasType.a, gasType.b, RoRscalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
 
-        /* if you use MQ3 use this code: ppm *= 50.0;
-         * if you use MQ131_LOW use this code: ppm *= 0.02; */
+        else if (isMQSensor3(mode)) {
+          float RoRscalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
+          ppm = sensor.calculateRoRsPPM(sensorVal, correction, gasType.a, gasType.b, RoRscalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
+            if (mode == "MQ3") ppm *= 50.0;
+            if (mode == "MQ131_LOW") ppm *= 0.02;
+        }
 
         /* The MQ3's data graph does not measure values ​​in ppm, but instead in mg/L.
          * Therefore, after the final value is found, the result must be multiplied by ×50 to convert the value to ppm. */
@@ -100,6 +121,27 @@ void loop() {
 
     Serial.println("----------");
     delay(5000);
+}
+
+bool isMQSensor(String model) {
+  for (int i = 0; i < sizeof(mqList) / sizeof(mqList[0]); i++) {
+    if (model == mqList[i]) return true;
+  }
+  return false;
+}
+
+bool isMQSensor2(String model) {
+  for (int i = 0; i < sizeof(mqList2) / sizeof(mqList2[0]); i++) {
+    if (model == mqList2[i]) return true;
+  }
+  return false;
+}
+
+bool isMQSensor3(String model) {
+  for (int i = 0; i < sizeof(mqList3) / sizeof(mqList3[0]); i++) {
+    if (model == mqList3[i]) return true;
+  }
+  return false;
 }
 
   // WARNING: Necessary for all users, Here are all the resistance values ​​you need to apply for supported sensors:
