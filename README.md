@@ -228,6 +228,6 @@ Where:
 ## SuggestedRL For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
 
-## For detailed explanation, You can also check out the github <a href="https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki">Wiki Page
+## For detailed explanation, You can also check out the github <a href="https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki">Wiki Page!
 
-## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
+## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">Here!
