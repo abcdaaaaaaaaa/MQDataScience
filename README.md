@@ -21,8 +21,11 @@
 ## 4D Axis Features:
 
 Color --> (Time) W --> Time:
+
 3B1 = X1 --> Temperature (°C) Y1 --> RH (%) Z1 --> (X: Time, Y: CR((°C), (%)))
+
 3B2 = X2 --> Temperature (°C) Y2 --> RH (%) Z2 --> (X: Time, Y: SensorAir)
+
 4B = 3B2(3B1)
 
 ## Ppm Formullas
