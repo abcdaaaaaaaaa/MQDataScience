@@ -186,9 +186,8 @@ https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 
 This repository presents a multivariable exponential regression model to estimate **Average CPM** (counts per minute) based on **Time**, **Radiation dose rate (Usv/hr)**, **Standard Deviation of CPM (sdCPM)**, and **Total CPM Count**.
 
----
 
-## Model Equation
+## 1) Model Equation
 
 The predicted average CPM is defined by the following equation:
 
@@ -198,9 +197,8 @@ Where:
 
 <img width="750" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
 
----
 
-## Algorithm Logic
+## 2) Algorithm Logic
 
 1. **Input features**:  
    - `Time`  
