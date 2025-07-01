@@ -106,16 +106,15 @@ function CorrectionCoefficient(temp, RH) {
         TH_valueb = interpolate(RH, 33, 85, b_RH33, b_RH85);
     } else {
         if (RH <= 60) {
-			TH_valuea = interpolate(RH, 30, 60, a_RH30, a_RH60);
-			TH_valueb = interpolate(RH, 30, 60, b_RH30, b_RH60);
+	  TH_valuea = interpolate(RH, 30, 60, a_RH30, a_RH60);
+	  TH_valueb = interpolate(RH, 30, 60, b_RH30, b_RH60);
         } else {
-			TH_valuea = interpolate(RH, 60, 85, a_RH60, a_RH85);
-			TH_valueb = interpolate(RH, 60, 85, b_RH60, b_RH85);
+	  TH_valuea = interpolate(RH, 60, 85, a_RH60, a_RH85);
+	  TH_valueb = interpolate(RH, 60, 85, b_RH60, b_RH85);
         }
     }
     return yaxb(TH_valuea, temp, TH_valueb);
 }
-
 
 function limit(value, minlim, maxlim) {
     return Math.min(Math.max(value, minlim), maxlim);
@@ -184,14 +183,14 @@ gas_params.forEach((gas, i) => {
         globalThis.CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99);
         minair = convertppm(minair)
         maxair = convertppm(maxair);
-        lastppmvalue = Math.round(limit(Sensorppm(adjusted_valuea, adjusted_valueb, SensorValue, CorrectionCoefficient(scaledTemperature, rh)), 1, maxair));
+        lastppmvalue = Math.round(limit(Sensorppm(adjusted_valuea, adjusted_valueb, SensorValue, CorrectionCoefficient(scaledTemperature, rh)), 1, yaxb(adjusted_valuea, maxair, adjusted_valueb) * CorrectionCoefficient(scaledTemperature, rh)));
     } else {
         globalThis.CalValue = gas.calvalue ?? interpolate(calAir, minair, maxair, 0, 1);
         minair = convertppm(minair)
         maxair = convertppm(maxair);
         if (f == "MQ131_LOW") { 
-            lastppmvalue = round2(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 0.01, maxair));
-        } else { lastppmvalue = Math.round(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 1, maxair)) }
+            lastppmvalue = round2(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 0.01, yaxb(adjusted_valuea, maxair, adjusted_valueb) * CorrectionCoefficient(scaledTemperature, rh)));
+        } else { lastppmvalue = Math.round(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 1, yaxb(adjusted_valuea, maxair, adjusted_valueb) * CorrectionCoefficient(scaledTemperature, rh))) }
     }
     
     globalThis[`ppmvalue${i+1}`] = lastppmvalue;
