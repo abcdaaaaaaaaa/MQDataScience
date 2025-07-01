@@ -191,11 +191,12 @@ This repository presents a multivariable exponential regression model to estimat
 ## Model Equation
 
 The predicted average CPM is defined by the following equation:
-<img width="500" alt="formullas" src="https://github.com/user-attachments/assets/6f94b3f0-cd1f-4432-82df-316aa9cb570a" />
+
+<img width="750" alt="formullas" src="https://github.com/user-attachments/assets/6f94b3f0-cd1f-4432-82df-316aa9cb570a" />
 
 Where:
 
-<img width="500" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
+<img width="750" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
 
 ---
 
@@ -211,7 +212,7 @@ Where:
 
 3. Fit a **linear regression** model to:
 
-<img width="404" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
+<img width="750" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
 
 4. Final prediction is obtained by **exponentiating** the output.
 
