@@ -182,8 +182,6 @@ https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 ## 
 ![2D_preview](https://github.com/user-attachments/assets/1ddea30f-7e8e-4b35-a259-23b3520053ac)
 
-# Multivariable Radioactive Decay Estimation
-
 This repository presents a multivariable exponential regression model to estimate **Average CPM** (counts per minute) based on **Time**, **Radiation dose rate (Usv/hr)**, **Standard Deviation of CPM (sdCPM)**, and **Total CPM Count**.
 
 
