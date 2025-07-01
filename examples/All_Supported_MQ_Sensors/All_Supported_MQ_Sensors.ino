@@ -1,33 +1,23 @@
 // The library also supports data science applications such as gradient 4D Slope Estimation from Python!
 // If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
    
-#include <AirQuality.h>
-#include <Correction.h>
-#include <GasSensor.h>
-#include <SensorDefinitions.h>
+#include "AirQuality.h"
+#include "Correction.h"
+#include "GasSensor.h"
+#include "SensorDefinitions.h"
 
 #define ADC_BIT_RESU (12) // for ESP32
 #define pin          (35) // D35 (ADC1)
 
-String selectedModel;
+float sensorVal, Air, ppm, temp, rh, correction;
+String selectedModel, mode;
+
 GasSensor sensor(ADC_BIT_RESU, pin);
 SensorModel* sensorModel = nullptr;
 
-float sensorVal, ppm, temp, rh, correction;
-String selectedModel, mode;
-
-String mqList[] = {
-  "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7",
-  "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214"
-};
-
-String mqList2[] = {
-  "MQ303A", "MQ303B", "MQ307A", "MQ309A"
-};
-
-String mqList3[] = {
-  "MQ131", "MQ131_LOW"
-};
+String mqList[] = { "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7", "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214" };
+String mqList2[] = { "MQ303A", "MQ303B", "MQ307A", "MQ309A" };
+String mqList3[] = { "MQ131", "MQ131_LOW" };
 
 void setup() {
     Serial.begin(9600);
