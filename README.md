@@ -189,19 +189,6 @@ interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
 
 <img width="750" alt="ppmformulla" src="https://github.com/user-attachments/assets/e37d3148-be7a-4d9f-9886-e4e48c7663fb" />
 
-
-## Wiki Page
-
-For detailed explanation, You can also check out the github wiki page
-
-https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
-
-## STEL Limit For Gases
-![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
-
-## SuggestedRL For MQ Sensors
-![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
-
 ## Multidimensional Radioactive Decay Estimations
 ![3D_preview](https://github.com/user-attachments/assets/586d16b4-6088-4917-b9ea-e49ebb4a5876)
 ## 
@@ -234,5 +221,17 @@ Where:
 <img width="750" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
 
 4. Final prediction is obtained by **exponentiating** the output.
+
+## Wiki Page
+
+For detailed explanation, You can also check out the github wiki page
+
+https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
+
+## STEL Limit For Gases
+![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
+
+## SuggestedRL For MQ Sensors
+![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
