@@ -167,6 +167,15 @@ STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A & B models]
 
 STATUS 3: MQ-131_LOW, MQ131 [MQ131 models]
 
+## Inclusion of Correction Factor
+
+ppm = (ratio / CorrectionCoefficient / a)^(1/b)  ppm = ([1 / CorrectionCoefficient / Air × SensorRLCalRL × (CalValue × (SensorValue – 1)) / (SensorValue × (CalValue – 1))]/a)^(1/b)
+
+ppm=([1/interpolate(RH,33,85,a_RH33,a_RH85)((temp+15)/5)^interpolate(RH,33,85,b_RH33,b_RH85)×Air×SensorRLCalRL×(CalValue×(SensorValue–1))/(SensorValue×(CalValue–1))]/a)^(1/b)
+
+interpolate(RH, 33, 85, a_RH33, a_RH85) --> (RH-33)×(a_RH85-a_RH33)+a_RH33
+interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
+ppm=([Air×SensorRLCalRL×(CalValue×(SensorValue–1))/(((RH–33)×(a_RH85 – a_RH33)+a_RH33)+ a_RH33)((temp+15)/5)^((RH–33)×(b_RH85–b_RH33)+b_RH33)×SensorValue×(CalValue–1))]/a)^(1/b)
 
 NOTE: [For detailed explanation, You can also check out the github wiki page]
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
