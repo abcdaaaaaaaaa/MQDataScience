@@ -177,4 +177,9 @@ https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 ## SuggestedRL For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
 
+## Multidimensional Radioactive Decay Estimations
+![3D_preview](https://github.com/user-attachments/assets/586d16b4-6088-4917-b9ea-e49ebb4a5876)
+## 
+![2D_preview](https://github.com/user-attachments/assets/1ddea30f-7e8e-4b35-a259-23b3520053ac)
+
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
