@@ -18,6 +18,13 @@
 ## 5) Slope Estimation in Time-Dependent 4D Space
 ![4D_Slope_Estimation](https://github.com/user-attachments/assets/34bb358b-8469-4eca-9c63-e2d57971b2ba)
 
+## 4D Axis Features:
+
+Color --> (Time) W --> Time:
+3B1 = X1 --> Temperature (°C) Y1 --> RH (%) Z1 --> (X: Time, Y: CR((°C), (%)))
+3B2 = X2 --> Temperature (°C) Y2 --> RH (%) Z2 --> (X: Time, Y: SensorAir)
+4B = 3B2(3B1)
+
 ## Ppm Formullas
 
 1) ppm = a*ratio^b (a: valuea b: valueb)
@@ -174,7 +181,9 @@ ppm = (ratio / CorrectionCoefficient / a)^(1/b)  ppm = ([1 / CorrectionCoeffi
 ppm=([1/interpolate(RH,33,85,a_RH33,a_RH85)((temp+15)/5)^interpolate(RH,33,85,b_RH33,b_RH85)×Air×SensorRLCalRL×(CalValue×(SensorValue–1))/(SensorValue×(CalValue–1))]/a)^(1/b)
 
 interpolate(RH, 33, 85, a_RH33, a_RH85) --> (RH-33)×(a_RH85-a_RH33)+a_RH33
+
 interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
+
 ppm=([Air×SensorRLCalRL×(CalValue×(SensorValue–1))/(((RH–33)×(a_RH85 – a_RH33)+a_RH33)+ a_RH33)((temp+15)/5)^((RH–33)×(b_RH85–b_RH33)+b_RH33)×SensorValue×(CalValue–1))]/a)^(1/b)
 
 NOTE: [For detailed explanation, You can also check out the github wiki page]
