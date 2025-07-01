@@ -68,20 +68,20 @@ float calculateCorrection(float temp, float rh, const String& model) {
         return a * pow(t1, b);
     }
   	if (model == "MQ3") {
-  		float a = fmap(rh1, 33, 85, 1.6671, 1.4112);
-  		float b = fmap(rh1, 33, 85, -0.2467, -0.2257);
-  		return a * pow(t2, b);
+  	  float a = fmap(rh1, 33, 85, 1.6671, 1.4112);
+  	  float b = fmap(rh1, 33, 85, -0.2467, -0.2257);
+  	  return a * pow(t2, b);
   	}
   	if (model == "MQ131") {
   	   if (rh2 <= 60) {
-           float a = fmap(rh2, 30, 60, 1.876, 1.5885);
-           float b = fmap(rh2, 30, 60, -0.2284, -0.2271);
-           return a * pow(t3, b);
+             float a = fmap(rh2, 30, 60, 1.876, 1.5885);
+             float b = fmap(rh2, 30, 60, -0.2284, -0.2271);
+             return a * pow(t3, b);
   	} else {
-  	   float a = fmap(rh2, 60, 85, 1.5885, 1.3842);
-  	   float b = fmap(rh2, 60, 85, -0.2271, -0.2282);
-           return a * pow(t3, b);
-  	   }
+  	     float a = fmap(rh2, 60, 85, 1.5885, 1.3842);
+  	     float b = fmap(rh2, 60, 85, -0.2271, -0.2282);
+             return a * pow(t3, b);
+  	  }
   	}
     return 1.0;
 }
