@@ -19,8 +19,8 @@ float scaleTemperature(float temp, int mode) {
 }
 
 float calculateCorrection(float temp, float rh, const String& model) {
-  	float rh1 = limit(rh, 30, 85);
-  	float rh2 = limit(rh, 33, 85);
+  	float rh1 = limit(rh, 33, 85);
+  	float rh2 = limit(rh, 30, 85);
   	float temp1 = limit(temp, -10, 50);
   	
     float t1 = scaleTemperature(temp1, 1);
@@ -67,24 +67,55 @@ float calculateCorrection(float temp, float rh, const String& model) {
         float b = fmap(rh1, 33, 85, -0.4263, -0.422);
         return a * pow(t1, b);
     }
-	
-	if (model == "MQ3") {
-		float a = fmap(rh1, 33, 85, 1.6671, 1.4112);
-		float b = fmap(rh1, 33, 85, -0.2467, -0.2257);
-		return a * pow(t2, b);
-	}
-	
-	if (model == "MQ131") {
-		if (rh2 <= 60) {
-			float a = fmap(rh2, 30, 60, 1.876, 1.5885);
-			float b = fmap(rh2, 30, 60, -0.2284, -0.2271);
-      return a * pow(t3, b);
-		} else {
-			float a = fmap(rh2, 60, 85, 1.5885, 1.3842);
-			float b = fmap(rh2, 60, 85, -0.2271, -0.2282);
-      return a * pow(t3, b);
-		}
-	}
+  	if (model == "MQ3") {
+  		float a = fmap(rh1, 33, 85, 1.6671, 1.4112);
+  		float b = fmap(rh1, 33, 85, -0.2467, -0.2257);
+  		return a * pow(t2, b);
+  	}
+  	if (model == "MQ131") {
+  		if (rh2 <= 60) {
+  			float a = fmap(rh2, 30, 60, 1.876, 1.5885);
+  			float b = fmap(rh2, 30, 60, -0.2284, -0.2271);
+        return a * pow(t3, b);
+  		} else {
+  			float a = fmap(rh2, 60, 85, 1.5885, 1.3842);
+  			float b = fmap(rh2, 60, 85, -0.2271, -0.2282);
+        return a * pow(t3, b);
+  		}
+  	}
+    return 1.0;
+}
 
+float unsupported_calculateCorrection1(float temp, float rh, float a_RH33, float b_RH33, float a_RH85, float b_RH85, int scale_mode) {
+    float rh1 = limit(rh, 33, 85);
+    float temp1 = limit(temp, -10, 50);
+    
+    float t1 = scaleTemperature(temp1, 1);
+    float t2 = scaleTemperature(temp1, 2);
+
+    float a = fmap(rh1, 33, 85, a_RH33, a_RH85);
+    float b = fmap(rh1, 33, 85, b_RH33, b_RH85);
+
+    if (scale_mode == 1) return a * pow(t1, b);
+    if (scale_mode == 2) return a * pow(t2, b);
+    
+    return 1.0;
+}
+
+float unsupported_calculateCorrection2(float temp, float rh, float a_RH30, float b_RH30, float a_RH60, float b_RH60, float a_RH85, float b_RH85) {
+    float rh2 = limit(rh, 30, 85);
+    float temp1 = limit(temp, -10, 50);
+    
+    float t3 = scaleTemperature(temp1, 3);
+
+    if (rh2 <= 60) {
+      float a = fmap(rh2, 30, 60, a_RH30, a_RH60);
+      float b = fmap(rh2, 30, 60, b_RH30, b_RH60);
+      return a * pow(t3, b);
+    } else {
+      float a = fmap(rh2, 60, 85, a_RH60, a_RH85);
+      float b = fmap(rh2, 60, 85, b_RH60, b_RH85);
+      return a * pow(t3, b);
+    }
     return 1.0;
 }
