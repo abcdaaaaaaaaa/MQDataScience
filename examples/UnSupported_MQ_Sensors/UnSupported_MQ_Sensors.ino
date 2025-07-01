@@ -1,9 +1,9 @@
 // The library also supports data science applications such as gradient 4D Slope Estimation from Python!
 // If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
    
-#include "AirQuality.h"
-#include "Correction.h"
-#include "GasSensor.h"
+#include <AirQuality.h>
+#include <Correction.h>
+#include <GasSensor.h>
 
 #define ADC_BIT_RESU (12) // for ESP32
 #define pin          (35) // D35 (ADC1)
