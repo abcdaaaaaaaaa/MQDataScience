@@ -190,23 +190,18 @@ This repository presents a multivariable exponential regression model to estimat
 
 ---
 
-## 📘 Model Equation
+## Model Equation
 
 The predicted average CPM is defined by the following equation:
-
-\[
-\hat{y}(t) = N_0 \cdot e^{- \left( \lambda_1 t + \lambda_2 \ln(\text{Usv/hr}) + \lambda_3 \ln(\text{sdCPM}) + \lambda_4 \ln(\text{CPM Count}) \right)}
-\]
+<img width="264" alt="formullas" src="https://github.com/user-attachments/assets/6f94b3f0-cd1f-4432-82df-316aa9cb570a" />
 
 Where:
 
-- \( \hat{y}(t) \): Estimated **Average CPM** at time \(t\)  
-- \(N_0 = e^{\text{Intercept}}\): Initial decay constant  
-- \(\lambda_1, \lambda_2, \lambda_3, \lambda_4\): Regression coefficients
+<img width="328" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
 
 ---
 
-## 🔬 Algorithm Logic
+## Algorithm Logic
 
 1. **Input features**:  
    - `Time`  
@@ -217,26 +212,12 @@ Where:
 2. Apply **natural logarithm** (`ln`) to all features except time to linearize exponential behavior.
 
 3. Fit a **linear regression** model to:
-   \[
-   \log(\text{Avg CPM}) = \lambda_1 t + \lambda_2 \ln(\text{Usv/hr}) + \lambda_3 \ln(\text{sdCPM}) + \lambda_4 \ln(\text{CPM Count}) + \text{Intercept}
-   \]
+
+<img width="404" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
 
 4. Final prediction is obtained by **exponentiating** the output.
 
 ---
-
-## 💡 Advantages
-
-- Captures multidimensional decay behavior in real-time sensor data
-- Robust for use in **environmental monitoring**, **radiation detection**, and **long-term prediction**
-- Visualizable in 3D and multivariate plots for scientific reports
-
----
-
-## 📁 Data File
-
-Make sure your data is stored in an Excel file named:
-
 
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
