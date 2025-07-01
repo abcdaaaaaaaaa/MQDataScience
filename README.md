@@ -17,8 +17,6 @@
 
 ## 5) Slope Estimation in Time-Dependent 4D Space
 ![4D_Slope_Estimation](https://github.com/user-attachments/assets/34bb358b-8469-4eca-9c63-e2d57971b2ba)
-![4D_image](https://github.com/user-attachments/assets/10ed6ced-9779-493b-ba7d-d475e539990f)
-
 
 ## Ppm Formullas
 
@@ -193,11 +191,11 @@ This repository presents a multivariable exponential regression model to estimat
 ## Model Equation
 
 The predicted average CPM is defined by the following equation:
-<img width="264" alt="formullas" src="https://github.com/user-attachments/assets/6f94b3f0-cd1f-4432-82df-316aa9cb570a" />
+<img width="500" alt="formullas" src="https://github.com/user-attachments/assets/6f94b3f0-cd1f-4432-82df-316aa9cb570a" />
 
 Where:
 
-<img width="328" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
+<img width="500" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
 
 ---
 
@@ -216,8 +214,6 @@ Where:
 <img width="404" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
 
 4. Final prediction is obtained by **exponentiating** the output.
-
----
 
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
