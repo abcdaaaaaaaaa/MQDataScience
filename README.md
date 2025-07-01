@@ -20,13 +20,8 @@
 
 ## 4D Axis Features:
 
-Color --> (Time) W --> Time:
+<img width="750" alt="4dformullas" src="https://github.com/user-attachments/assets/7c5a1464-fcb9-4a8f-9693-c2c473f1ec1a" />
 
-3B1 = X1 --> Temperature (°C) Y1 --> RH (%) Z1 --> (X: Time, Y: CR((°C), (%)))
-
-3B2 = X2 --> Temperature (°C) Y2 --> RH (%) Z2 --> (X: Time, Y: SensorAir)
-
-4B = 3B2(3B1)
 
 ## Ppm Formullas
 
@@ -187,7 +182,7 @@ interpolate(RH, 33, 85, a_RH33, a_RH85) --> (RH-33)×(a_RH85-a_RH33)+a_RH33
 
 interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
 
-ppm=([Air×SensorRLCalRL×(CalValue×(SensorValue–1))/(((RH–33)×(a_RH85 – a_RH33)+a_RH33)+ a_RH33)((temp+15)/5)^((RH–33)×(b_RH85–b_RH33)+b_RH33)×SensorValue×(CalValue–1))]/a)^(1/b)
+<img width="750" alt="ppmformulla" src="https://github.com/user-attachments/assets/e37d3148-be7a-4d9f-9886-e4e48c7663fb" />
 
 NOTE: [For detailed explanation, You can also check out the github wiki page]
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
