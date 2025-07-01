@@ -18,7 +18,7 @@ float logarithmic_interpolate(float x, float x_min, float x_max, float ppm_min, 
 
 float airConcentration(String m, float sensorVal) {
   float ppm_min, ppm_max;
-  if (m == "MQ2" || m == "MQ4" || m == "MQ5" || m == "MQ6" || m == "MQ8" || m == "MQ136" || m == "MQ137" || m == "MQ138") ppm_min = 200, ppm_max = 10000;
+  if (m == "MQ2" || m == "MQ4" || m == "MQ5" || m == "MQ6" || m == "MQ8" || m == "MQ9" || m == "MQ136" || m == "MQ137" || m == "MQ138") ppm_min = 200, ppm_max = 10000;
   else if (m == "MQ303A" || m == "MQ303B"){ ppm_min = 1.2, ppm_max = 3.45; }
   else if (m == "MQ7"){ ppm_min = 50, ppm_max = 4000; }
   else if (m == "MQ135"){ ppm_min = 10, ppm_max = 200; }
@@ -28,5 +28,9 @@ float airConcentration(String m, float sensorVal) {
   else if (m == "MQ131" || m == "MQ131_LOW"){ ppm_min = 5; ppm_max = 100; } // for MQ131_LOW the result must be multiplied by ×0.02 to convert the ppb --> ppm
   else if (m == "MQ307A"){ ppm_min = 0; ppm_max = 0; } // Air concentration value of MQ307A is not available.
   else { ppm_min = 0; ppm_max = 0; }
+  return exponential_interpolate(sensorVal, 0, 1, ppm_min, ppm_max);
+}
+
+float unsupported_airConcentration(float ppm_min, float ppm_max, float sensorVal) {
   return exponential_interpolate(sensorVal, 0, 1, ppm_min, ppm_max);
 }
