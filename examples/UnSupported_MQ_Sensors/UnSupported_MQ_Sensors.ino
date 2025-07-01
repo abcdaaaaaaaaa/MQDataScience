@@ -1,12 +1,11 @@
-// The library also supports data science applications such as gradient 4D Slope Estimation from Python!
-// If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
-   
 #include <AirQuality.h>
 #include <Correction.h>
 #include <GasSensor.h>
 
 #define ADC_BIT_RESU (12) // for ESP32
 #define pin          (35) // D35 (ADC1)
+
+float sensorVal, Air, ppm, temp, rh, correction;
 
 GasSensor sensor(ADC_BIT_RESU, pin);
 
@@ -99,8 +98,8 @@ void setup() {
 }
 
 void loop() {
-    float temp = 20.0; // DHT22 is recommended °C (Celsius)
-    float rh = 33.0;   // DHT22 is recommended %  (Relative Humidity)
+    temp = 20.0; // DHT22 is recommended °C (Celsius)
+    rh = 33.0;   // DHT22 is recommended %  (Relative Humidity)
     
     /* NOTE: The temperature and humidity of the environment do not have a direct effect on the ppm value of the environment.
     On the other hand, the temperature and humidity of the environment will cause the sensor to detect ppm more or less than normal. 
@@ -111,12 +110,11 @@ void loop() {
     If the correction coefficient is greater than 1.0, the sensor will measure values ​​lower​​ than the true value, and if it is less than 1.0, 
     it will measure values higher than the true value. Temperature and humidity are inversely proportional to the correction coefficient. */
      
-    float sensorVal = sensor.read();
-    float correction = unsupported_calculateCorrection1(temp, rh, a_RH33, b_RH33, a_RH85, b_RH85, scale_mode); // for mode1 and mode2
-    // float correction = unsupported_calculateCorrection2(temp, rh, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85); // for mode3
+    sensorVal = sensor.read();
+    correction = unsupported_calculateCorrection1(temp, rh, a_RH33, b_RH33, a_RH85, b_RH85, scale_mode); // for mode1 and mode2
+    // correction = unsupported_calculateCorrection2(temp, rh, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85); // for mode3
 
-    float Air = sensorVal > 0 ? unsupported_airConcentration(min_air_ppm, max_air_ppm, sensorVal) * correction : 0;
-    
+    Air = sensorVal > 0 ? unsupported_airConcentration(min_air_ppm, max_air_ppm, sensorVal) * correction : 0;
     // Air gives the overall concentration of the sensor.
     // The ppm air value of gases measured at different sensitivities contains important information about Air Quality.
 
@@ -128,19 +126,19 @@ void loop() {
     Serial.print(correction, 4); // writes decimal part and the first four digits of the decimal part
     Serial.println();
 
-    // --------GAS-1--------
-    // sensor_gases(gasname, valuea, valueb, min_gas_ppm, max_gas_ppm, calibrateAir, rlcal, correction, sensorVal); Please fill in these sections according to your sensor.
-    // --------GAS-2--------
-    // sensor_gases(gasname, valuea, valueb, min_gas_ppm, max_gas_ppm, calibrateAir, rlcal, correction, sensorVal); Please fill in these sections according to your sensor.
+    // --------GAS-1-------- Please fill in these sections according to your sensor.
+    // sensor_gases(gasname, valuea, valueb, min_gas_ppm, max_gas_ppm, calibrateAir, rlcal, correction, sensorVal);
+    // --------GAS-2-------- Please fill in these sections according to your sensor.
+    // sensor_gases(gasname, valuea, valueb, min_gas_ppm, max_gas_ppm);
 
-    sensor_gases("LPG", 17.6135, -0.4539, 200, 10000, calibrateAir, rlcal, correction, sensorVal);
-    sensor_gases("Propane", 19.5575, -0.461, 200, 10000, calibrateAir, rlcal, correction, sensorVal);
+    sensor_gases("LPG", 17.6135, -0.4539, 200, 10000); // Example for MQ-2
+    sensor_gases("Propane", 19.5575, -0.461, 200, 10000); // Example for MQ-2
 
     Serial.println("----------");
     delay(5000);
 }
 
-void sensor_gases(String gasname, float valuea, float valueb, float minPpm, float maxPpm, float calibrateAir, float rlcal, float correction, float sensorVal) {
+void sensor_gases(String gasname, float valuea, float valueb, float minPpm, float maxPpm) {
     // for Rs/Ro:
     float RsRocalValue = sensor.calculateCalValue1(valuea, valueb, calibrateAir, minPpm, maxPpm);
     float ppm = sensor.calculateRsRoPPM(sensorVal, correction, valuea, valueb, RsRocalValue, air, rlcal, maxPpm);
