@@ -17,6 +17,8 @@
 
 ## 5) Slope Estimation in Time-Dependent 4D Space
 ![4D_Slope_Estimation](https://github.com/user-attachments/assets/34bb358b-8469-4eca-9c63-e2d57971b2ba)
+![4D_image](https://github.com/user-attachments/assets/10ed6ced-9779-493b-ba7d-d475e539990f)
+
 
 ## Ppm Formullas
 
@@ -181,5 +183,60 @@ https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 ![3D_preview](https://github.com/user-attachments/assets/586d16b4-6088-4917-b9ea-e49ebb4a5876)
 ## 
 ![2D_preview](https://github.com/user-attachments/assets/1ddea30f-7e8e-4b35-a259-23b3520053ac)
+
+# Multivariable Radioactive Decay Estimation
+
+This repository presents a multivariable exponential regression model to estimate **Average CPM** (counts per minute) based on **Time**, **Radiation dose rate (Usv/hr)**, **Standard Deviation of CPM (sdCPM)**, and **Total CPM Count**.
+
+---
+
+## 📘 Model Equation
+
+The predicted average CPM is defined by the following equation:
+
+\[
+\hat{y}(t) = N_0 \cdot e^{- \left( \lambda_1 t + \lambda_2 \ln(\text{Usv/hr}) + \lambda_3 \ln(\text{sdCPM}) + \lambda_4 \ln(\text{CPM Count}) \right)}
+\]
+
+Where:
+
+- \( \hat{y}(t) \): Estimated **Average CPM** at time \(t\)  
+- \(N_0 = e^{\text{Intercept}}\): Initial decay constant  
+- \(\lambda_1, \lambda_2, \lambda_3, \lambda_4\): Regression coefficients
+
+---
+
+## 🔬 Algorithm Logic
+
+1. **Input features**:  
+   - `Time`  
+   - `Usv/hr` (radiation dose rate)  
+   - `sdCPM` (standard deviation of CPM)  
+   - `CPM Count` (total count)
+
+2. Apply **natural logarithm** (`ln`) to all features except time to linearize exponential behavior.
+
+3. Fit a **linear regression** model to:
+   \[
+   \log(\text{Avg CPM}) = \lambda_1 t + \lambda_2 \ln(\text{Usv/hr}) + \lambda_3 \ln(\text{sdCPM}) + \lambda_4 \ln(\text{CPM Count}) + \text{Intercept}
+   \]
+
+4. Final prediction is obtained by **exponentiating** the output.
+
+---
+
+## 💡 Advantages
+
+- Captures multidimensional decay behavior in real-time sensor data
+- Robust for use in **environmental monitoring**, **radiation detection**, and **long-term prediction**
+- Visualizable in 3D and multivariate plots for scientific reports
+
+---
+
+## 📁 Data File
+
+Make sure your data is stored in an Excel file named:
+
+
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
