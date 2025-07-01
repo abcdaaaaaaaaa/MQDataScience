@@ -21,6 +21,6 @@ struct SensorModel {
     uint8_t gasCount;
 };
 
-const SensorModel* getSensorModel(const String& modelName);
+SensorModel* getSensorModel(const String& modelName);
 
 #endif
