@@ -182,7 +182,9 @@ interpolate(RH, 33, 85, a_RH33, a_RH85) --> (RH-33)×(a_RH85-a_RH33)+a_RH33
 
 interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
 
+
 <img width="750" alt="ppmformulla" src="https://github.com/user-attachments/assets/e37d3148-be7a-4d9f-9886-e4e48c7663fb" />
+
 
 NOTE: [For detailed explanation, You can also check out the github wiki page]
 https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
@@ -200,7 +202,6 @@ https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki
 
 This repository presents a multivariable exponential regression model to estimate **Average CPM** (counts per minute) based on **Time**, **Radiation dose rate (Usv/hr)**, **Standard Deviation of CPM (sdCPM)**, and **Total CPM Count**.
 
-
 ## 1) Model Equation
 
 The predicted average CPM is defined by the following equation:
@@ -210,7 +211,6 @@ The predicted average CPM is defined by the following equation:
 Where:
 
 <img width="750" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
-
 
 ## 2) Algorithm Logic
 
@@ -227,6 +227,5 @@ Where:
 <img width="750" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
 
 4. Final prediction is obtained by **exponentiating** the output.
-
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">here
