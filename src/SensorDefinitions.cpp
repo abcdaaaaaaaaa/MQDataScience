@@ -178,7 +178,7 @@ GasModel MQ309A_Gases[] = {
 SensorModel MQ309A = {"MQ309A", 11.0, 1.0, 0.2, true, MQ309A_Gases, sizeof(MQ309A_Gases)/sizeof(GasModel)};
 
 // Return pointer based on name
-const SensorModel* getSensorModel(const String& modelName) {
+SensorModel* getSensorModel(const String& modelName) {
     if (modelName == "MQ135") return &MQ135;
     if (modelName == "MQ2") return &MQ2;
     if (modelName == "MQ3") return &MQ3;
