@@ -21,7 +21,6 @@ public:
   GeigerCounter(bool uSvhr, bool Avg1, bool CPM_Count, bool sdCPMbool, int LOG_PERIOD1, byte pin2);
   void begin();
   void radioactive();
-
   float usvhr;
   float count;
   float Avg;
