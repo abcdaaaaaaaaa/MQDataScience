@@ -91,7 +91,7 @@ float min_air_ppm = 200;
 float max_air_ppm = 10000;
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(115200); // for ESP32
     sensor.begin();
     Serial.print("Selected sensor: ");
     Serial.println(MySensorModel);
