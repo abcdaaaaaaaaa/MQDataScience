@@ -13,20 +13,20 @@
 GeigerCounter Radioactive(uSvhr1, Avg1, CPM_Count1, sdCPM1, LOG_PERIOD1, GeigerPin1);
 
 void setup() {
-  Serial.begin(9600);
-  Radioactive.begin();
+    Serial.begin(115200); // for ESP32
+    Radioactive.begin();
 }
 
 void loop() {
-  Radioactive.radioactive();
-  delay(LOG_PERIOD1);
-
-  Serial.print("Usv/hr: ");
-  Serial.println(Radioactive.usvhr);
-
-  Serial.print("Avg: ");
-  Serial.println(String(Radioactive.Avg) + "+/-" + String(Radioactive.sdCPM));
-
-  Serial.print("CPM Count: ");
-  Serial.println(Radioactive.count);
+    Radioactive.radioactive();
+    delay(LOG_PERIOD1);
+  
+    Serial.print("Usv/hr: ");
+    Serial.println(Radioactive.usvhr);
+  
+    Serial.print("Avg: ");
+    Serial.println(String(Radioactive.Avg) + "+/-" + String(Radioactive.sdCPM));
+  
+    Serial.print("CPM Count: ");
+    Serial.println(Radioactive.count);
 }
