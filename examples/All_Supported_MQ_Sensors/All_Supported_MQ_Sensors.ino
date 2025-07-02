@@ -1,10 +1,10 @@
 // The library also supports data science applications such as gradient 4D Slope Estimation from Python!
 // If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
    
-#include "AirQuality.h"
-#include "Correction.h"
-#include "GasSensor.h"
-#include "SensorDefinitions.h"
+#include <AirQuality.h>
+#include <Correction.h>
+#include <GasSensor.h>
+#include <SensorDefinitions.h>
 
 #define ADC_BIT_RESU (12) // for ESP32
 #define pin          (35) // D35 (ADC1)
@@ -20,7 +20,7 @@ String mqList2[] = { "MQ303A", "MQ303B", "MQ307A", "MQ309A" };
 String mqList3[] = { "MQ131", "MQ131_LOW" };
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(115200); // for ESP32
     sensor.begin();
    
    // NOTE: If you are thinking of creating an adjustable sensor structure with the Plug-UnPlug system, you can also do this in a void loop.
