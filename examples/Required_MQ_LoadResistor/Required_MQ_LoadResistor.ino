@@ -1,4 +1,5 @@
- // WARNING: Necessary for all users, Here are all the resistance values ​​you need to apply for supported sensors:
+  // WARNING: Necessary for all users, Here are all the resistance values ​​you need to apply for supported sensors:
+
  /* MQ135:     20  kΩ
   * MQ2:       5   kΩ
   * MQ3:       200 kΩ
