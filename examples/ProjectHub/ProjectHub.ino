@@ -1,5 +1,7 @@
-// The library also supports data science applications such as gradient 4D Slope Estimation from Python!
-// If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
+// (1) The library also supports data science applications such as gradient 4D Slope Estimation from Python!:
+// (1) https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope
+// (2) If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
+// (2) https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScript
    
 #include <AirQuality.h>
 #include <Correction.h>
@@ -133,28 +135,6 @@ bool isMQSensor3(String model) {
   }
   return false;
 }
-
-  // WARNING: Necessary for all users, Here are all the resistance values ​​you need to apply for supported sensors:
- /* MQ135:     20  kΩ
-  * MQ2:       5   kΩ
-  * MQ3:       200 kΩ
-  * MQ4:       20  kΩ
-  * MQ5:       20  kΩ
-  * MQ6:       20  kΩ
-  * MQ7:       10  kΩ
-  * MQ8:       10  kΩ
-  * MQ9:       10  kΩ
-  * MQ131_LOW: 20  kΩ
-  * MQ131:     20  kΩ
-  * MQ136:     20  kΩ
-  * MQ137:     47  kΩ
-  * MQ138:     20  kΩ
-  * MQ214:     50  kΩ
-  * MQ303A:    47  kΩ
-  * MQ303B:    10  kΩ
-  * MQ307A:    1   kΩ
-  * MQ309A:    10  kΩ
-  */
 
   /* The graph shows the recommended resistance values specified in each sensor's datasheet as the most accurate operating points.
   *  Although the datasheets also indicate broader operational ranges beyond these ideal values,
