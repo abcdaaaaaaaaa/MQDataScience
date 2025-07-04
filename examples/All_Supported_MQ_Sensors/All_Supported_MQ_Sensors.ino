@@ -78,8 +78,12 @@ void loop() {
         if (isMQSensor(mode)) {
           float RsRocalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
           ppm = sensor.calculateRsRoPPM(sensorVal, correction, gasType.a, gasType.b, RsRocalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
+          if (mode == "MQ3") ppm *= 50.0;
         } 
 
+        /* The MQ3's data graph does not measure values ​​in ppm, but instead in mg/L.
+         * Therefore, after the final value is found, the result must be multiplied by ×50 to convert the value to ppm. */
+           
         else if (isMQSensor2(mode)) {
           float RsRscalValue = sensor.calculateCalValue2(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
           if (mode == "MQ307A" && i == 1) RsRscalValue = 0.999619;
@@ -93,12 +97,8 @@ void loop() {
         else if (isMQSensor3(mode)) {
           float RoRscalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
           ppm = sensor.calculateRoRsPPM(sensorVal, correction, gasType.a, gasType.b, RoRscalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
-            if (mode == "MQ3") ppm *= 50.0;
-            if (mode == "MQ131_LOW") ppm *= 0.02;
+          if (mode == "MQ131_LOW") ppm *= 0.02;
         }
-
-        /* The MQ3's data graph does not measure values ​​in ppm, but instead in mg/L.
-         * Therefore, after the final value is found, the result must be multiplied by ×50 to convert the value to ppm. */
 
         /* The MQ131_LOW's (MQ131 Low Sensitivity) data graph does not measure values ​​in ppm, but instead in ppb.
          * Therefore, after the final value is found, the result must be multiplied by ×0.02 to convert the value to ppm. */
