@@ -1,4 +1,4 @@
-// The library also supports data science (RadioactiveScience folder) applications such as gradient Multidimensional Radioactive Decay Estimation from Python!
+// The library also supports data science (RadioactiveScience) applications such as gradient Multidimensional Radioactive Decay Estimation from Python!
 
 #include <Radioactive.h>
 
