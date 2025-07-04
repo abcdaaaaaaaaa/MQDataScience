@@ -135,7 +135,3 @@ bool isMQSensor3(String model) {
   }
   return false;
 }
-
-  /* The graph shows the recommended resistance values specified in each sensor's datasheet as the most accurate operating points.
-  *  Although the datasheets also indicate broader operational ranges beyond these ideal values,
-  *  the library enforces the use of only the optimal ones to ensure consistent measurement accuracy. */
