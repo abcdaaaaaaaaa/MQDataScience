@@ -9,7 +9,7 @@ Different Model Sensors:  Sensors unsupported in this library.
 
 ---------- For Data Science ----------
 For data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScience
-For correction coefficient assisted ppm 4d slope estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope/4DSlope.py
+For correction coefficient assisted 4d ppm slope estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope/4DSlope.py
 For model gases ppm estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelSlope.py
 For 3D air quality graphical sensor simulation with correction factor support in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/3D_Surface/3DSurface.py
 For air quality graphical sensor simulation of model gases in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelGraph.py
