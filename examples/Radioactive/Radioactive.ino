@@ -1,3 +1,5 @@
+// The library also supports data science (RadioactiveScience folder) applications such as gradient Multidimensional Radioactive Decay Estimation from Python!
+
 #include <Radioactive.h>
 
 // Define true to the values ​​you want to calculate as false you don't want.
