@@ -127,11 +127,11 @@ def ppmLimits():
     return sensitivity, minvalue, maxvalue
 
 def ppm(valuea, valueb, ratio, RH, temp):
-    return convertppm(inverseyaxb(valuea, ratio / CorrectionCoefficient(temp, RH), valueb))
+    return limit(convertppm(inverseyaxb(valuea, ratio / CorrectionCoefficient(temp, RH), valueb)), 0, maxair * CorrectionCoefficient(temp, RH))
 
 def Sensorppm(valuea, valueb, SensorValue, RH, temp):
     SensorRatio_value = Air * SensorRLCalRL * (CalValue * (SensorValue - 1)) / (SensorValue * (CalValue - 1))
-    return convertppm(inverseyaxb(valuea, SensorRatio_value / CorrectionCoefficient(temp, RH), valueb))
+    return limit(convertppm(inverseyaxb(valuea, SensorRatio_value / CorrectionCoefficient(temp, RH), valueb)), 0, maxair * CorrectionCoefficient(temp, RH))
 
 def LowSensitivityppm(valuea, valueb, ratio, RH, temp):
     return limit(ppm(valuea, valueb, ratio, RH, temp), minair, maxair)
