@@ -13,7 +13,7 @@
 ![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/8783b3a5-7956-47f1-a61b-ae300041e047)
 
 ## 4) 3D Surface Diagram for MQ-135 Gases
-![MQ135_CO2_3D)](https://github.com/user-attachments/assets/f95d0886-f08d-44e6-a851-a54e63810e6b)
+![MQ135_CO2_3D)](https://github.com/user-attachments/assets/5295ad32-65e2-4e4a-bbdb-d2a98b173e86)
 
 ## 5) Slope Estimation in Time-Dependent 4D Space
 ![4D_Slope_Estimation](https://github.com/user-attachments/assets/34bb358b-8469-4eca-9c63-e2d57971b2ba)
