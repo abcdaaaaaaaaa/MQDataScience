@@ -134,10 +134,10 @@ def Sensorppm(valuea, valueb, SensorValue, RH, temp):
     return limit(convertppm(inverseyaxb(valuea, SensorRatio_value / CorrectionCoefficient(temp, RH), valueb)), 0, maxair * CorrectionCoefficient(temp, RH))
 
 def LowSensitivityppm(valuea, valueb, ratio, RH, temp):
-    return limit(ppm(valuea, valueb, ratio, RH, temp), minair, maxair)
+    return limit(ppm(valuea, valueb, ratio, RH, temp), 0, maxair * CorrectionCoefficient(temp, RH))
 
 def LowSensitivitySensorppm(valuea, valueb, SensorValue, RH, temp):
-    return limit(Sensorppm(valuea, valueb, SensorValue, RH, temp), minair, maxair)
+    return limit(Sensorppm(valuea, valueb, SensorValue, RH, temp), 0, maxair * CorrectionCoefficient(temp, RH))
 
 minrh = 30 if CRMode == 3 else 33
 
