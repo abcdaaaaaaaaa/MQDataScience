@@ -21,7 +21,7 @@
   For the microcontroller to process the information obtained from the data graphs of unsupported MQ sensors by data science applications: UnSupported_MQ_Sensors.ino
 
 ---------- For JS and IoT Projects ----------
-  To do these ppm calculations in javascript instead of microcontroller in IoT projects: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScript:
+  To do these ppm calculations in javascript instead of microcontroller in IoT projects: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScript
   To estimate decay times in radioactive data science application: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/RadioactiveScience
 
 ---------- Library Sample Files ----------
