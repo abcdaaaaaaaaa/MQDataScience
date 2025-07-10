@@ -21,7 +21,7 @@ struct SensorModel {
     uint8_t gasCount;
 };
 
-isMQSensor(String model, String mqList[], int listSize);
+bool isMQSensor(String model, String mqList[], int listSize);
 SensorModel* getSensorModel(const String& modelName);
 
 #endif
