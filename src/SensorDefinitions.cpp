@@ -177,6 +177,13 @@ GasModel MQ309A_Gases[] = {
 };
 SensorModel MQ309A = {"MQ309A", 11.0, 1.0, 0.2, true, MQ309A_Gases, sizeof(MQ309A_Gases)/sizeof(GasModel)};
 
+bool isMQSensor(String model, String mqList[], int listSize) {
+  for (int i = 0; i < listSize; i++) {
+    if (model == mqList[i]) return true;
+  }
+  return false;
+}
+
 // Return pointer based on name
 SensorModel* getSensorModel(const String& modelName) {
     if (modelName == "MQ135") return &MQ135;
