@@ -21,6 +21,10 @@ String mqList1[] = { "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7", "MQ8", "
 String mqList2[] = { "MQ303A", "MQ303B", "MQ307A", "MQ309A" };
 String mqList3[] = { "MQ131", "MQ131_LOW" };
 
+// mqList1[] --> Rs/Ro Sensors
+// mqList2[] --> Rs/Rs Sensors
+// mqList3[] --> Ro/Rs Sensors
+
 void setup() {
     Serial.begin(115200); // for ESP32
     sensor.begin();
