@@ -17,7 +17,7 @@ String selectedModel, mode;
 GasSensor sensor(ADC_BIT_RESU, pin);
 SensorModel* sensorModel = nullptr;
 
-String mqList[] = { "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7", "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214" };
+String mqList1[] = { "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7", "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214" };
 String mqList2[] = { "MQ303A", "MQ303B", "MQ307A", "MQ309A" };
 String mqList3[] = { "MQ131", "MQ131_LOW" };
 
@@ -26,7 +26,7 @@ void setup() {
     sensor.begin();
    
    // NOTE: If you are thinking of creating an adjustable sensor structure with the Plug-UnPlug system, you can also do this in a void loop.
-    selectedModel = "MQ135"; // You can change it with the model you use!
+    selectedModel = "MQ2"; // You can change it with the model you use!
     sensorModel = getSensorModel(selectedModel);
     if (!sensorModel) {
         Serial.println("Sensor model not found.");
@@ -77,7 +77,7 @@ void loop() {
     for (byte i = 0; i < sensorModel->gasCount; i++) {
         const GasModel& gasType = sensorModel->gasList[i];
 
-        if (isMQSensor(mode)) {
+        if (isMQSensor(mode, mqList1, sizeof(mqList1) / sizeof(mqList1[0]))) {
           float RsRocalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
           ppm = sensor.calculateRsRoPPM(sensorVal, correction, gasType.a, gasType.b, RsRocalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
           if (mode == "MQ3") ppm *= 50.0;
@@ -86,7 +86,7 @@ void loop() {
         /* The MQ3's data graph does not measure values ​​in ppm, but instead in mg/L.
          * Therefore, after the final value is found, the result must be multiplied by ×50 to convert the value to ppm. */
            
-        else if (isMQSensor2(mode)) {
+        else if (isMQSensor(mode, mqList2, sizeof(mqList2) / sizeof(mqList2[0]))) {
           float RsRscalValue = sensor.calculateCalValue2(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
           if (mode == "MQ307A" && i == 1) RsRscalValue = 0.999619;
           if (mode == "MQ309A" && i >= 2) RsRscalValue = 0.83393;
@@ -96,7 +96,7 @@ void loop() {
          /* There are exceptions to calibration for some gases of MQ307A and MQ309A. 
           * Using this code you can return the correct value in case of calibration exceptions. */
 
-        else if (isMQSensor3(mode)) {
+        else if (isMQSensor(mode, mqList3, sizeof(mqList3) / sizeof(mqList3[0]))) {
           float RoRscalValue = sensor.calculateCalValue1(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
           ppm = sensor.calculateRoRsPPM(sensorVal, correction, gasType.a, gasType.b, RoRscalValue, sensorModel->air, sensorModel->rlcal, gasType.maxPpm);
           if (mode == "MQ131_LOW") ppm *= 0.02;
@@ -113,25 +113,4 @@ void loop() {
 
     Serial.println("----------");
     delay(5000);
-}
-
-bool isMQSensor(String model) {
-  for (int i = 0; i < sizeof(mqList) / sizeof(mqList[0]); i++) {
-    if (model == mqList[i]) return true;
-  }
-  return false;
-}
-
-bool isMQSensor2(String model) {
-  for (int i = 0; i < sizeof(mqList2) / sizeof(mqList2[0]); i++) {
-    if (model == mqList2[i]) return true;
-  }
-  return false;
-}
-
-bool isMQSensor3(String model) {
-  for (int i = 0; i < sizeof(mqList3) / sizeof(mqList3[0]); i++) {
-    if (model == mqList3[i]) return true;
-  }
-  return false;
 }
