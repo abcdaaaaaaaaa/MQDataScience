@@ -2,6 +2,9 @@
 // (1) https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope
 // (2) If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
 // (2) https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScript
+
+// You can access the wokwi simulation of the project here:
+// https://wokwi.com/projects/436125805761726465
    
 #include <AirQuality.h>
 #include <Correction.h>
