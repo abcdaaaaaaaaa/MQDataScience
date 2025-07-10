@@ -26,7 +26,7 @@ void setup() {
     sensor.begin();
    
    // NOTE: If you are thinking of creating an adjustable sensor structure with the Plug-UnPlug system, you can also do this in a void loop.
-    selectedModel = "MQ2"; // You can change it with the model you use!
+    selectedModel = "MQ135"; // You can change it with the model you use!
     sensorModel = getSensorModel(selectedModel);
     if (!sensorModel) {
         Serial.println("Sensor model not found.");
