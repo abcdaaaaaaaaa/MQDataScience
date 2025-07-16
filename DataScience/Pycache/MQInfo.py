@@ -149,10 +149,18 @@ def MQ9():
         {'name': 'LPG', 'ppmvals': (MinAirPpm, MaxAirPpm), 'ppm': (24.918, -0.4695)},
         {'name': 'CH4', 'ppmvals': (MinAirPpm, MaxAirPpm), 'ppm': (21.8247, -0.3663)}
     ]
+    """
     a_RH33 = 1.4292
     b_RH33 = -0.3206
     a_RH85 = 1.1735
     b_RH85 = -0.2801
+    """
+    a_RH30 = 1.876
+    b_RH30 = -0.2284
+    a_RH60 = 1.5885
+    b_RH60 = -0.2271
+    a_RH85 = 1.3842
+    b_RH85 = -0.2282
     group1_subgroup5()
 
 def MQ131():
@@ -363,7 +371,7 @@ def group1_subgroup4():
     # MQ-214
 
 def group1_subgroup5():
-    MQ_Calculation_Mode('Rs/Ro', None, True, False, 1, SensorRLCalRL, CleanAir, 'ppm')
+    MQ_Calculation_Mode('Rs/Ro', None, True, False, 3, SensorRLCalRL, CleanAir, 'ppm')
     # MQ-9
 
 def group1_subgroup6():
