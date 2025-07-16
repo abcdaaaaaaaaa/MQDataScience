@@ -376,7 +376,7 @@ export function group1_subgroup4() {
 }
 
 export function group1_subgroup5() {
-    MQ_Calculation_Mode('Rs/Ro', undefined, true, false, 1, SensorRLCalRL, CleanAir, 'ppm');
+    MQ_Calculation_Mode('Rs/Ro', undefined, true, false, 3, SensorRLCalRL, CleanAir, 'ppm');
     // MQ-9
 }
 
