@@ -139,7 +139,7 @@ def MQ8():
     group1_subgroup1()
 
 def MQ9():
-    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85
     SensorName = 'MQ-9'
     Air = 9.7
     SensorRLCalRL = 0.5
