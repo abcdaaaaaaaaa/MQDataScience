@@ -2,7 +2,6 @@
 
 ### 1) New sensor types to be supported!: MQ306A, MQ216, MG811, SP3S-AQ2
 ### 2) TGS Series!: TGS2600, TGS2610, TGS2611 TGS2620, TGS2612, TGS2442, TGS2201, TGS4161, TGS8100, TGS813, TGS822, TGS2602, TGS6812
-### 3) MQ-9's correction coefficient will be updated!
 
 # MQSpaceData v4.2.5
 
