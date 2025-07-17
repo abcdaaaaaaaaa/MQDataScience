@@ -334,6 +334,21 @@ export function MQ303B() {
     group2_subgroup1();
 }
 
+export function MQ306A() {
+    SensorName = 'MQ306A';
+    Air = 1.66;
+    CalibrateAir = 0.1;
+    SensorRLCalRL = 0.2;
+    [MinAirPpm, MaxAirPpm] = [15, 30];
+    gas_params = [
+        { name: 'Ethanol', ppmvals: [100, 3000], ppm: [3.3559, -0.3563] },
+        { name: 'Hydrogen', ppmvals: [100, 10000], ppm: [3.6812, -0.4308] },
+        { name: 'Methane', ppmvals: [100, 10000], ppm: [7.3489, -0.5979] },
+        { name: 'IsoButane', ppmvals: [100, 10000], ppm: [2.7521, -0.4732] }
+    ];
+    group2_subgroup3();
+}
+
 export function MQ307A() {
     SensorName = 'MQ307A';
     [Air, MinAirPpm, MaxAirPpm] = [undefined, undefined, undefined];
@@ -417,7 +432,7 @@ export function group2_subgroup2() {
 
 export function group2_subgroup3() {
     MQ_Calculation_Mode('Rs/Rs', undefined, true, false, 0, SensorRLCalRL, CalibrateAir, 'ppm');
-    // MQ303A
+    // MQ303A, MQ306A
 }
 
 export function group2_subgroup4() {
