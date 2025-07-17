@@ -27,7 +27,7 @@ float calculateCorrection(float temp, float rh, const String& model) {
     float t2 = scaleTemperature(temp1, 2);
     float t3 = scaleTemperature(temp1, 3);
 
-    if (model == "MQ2" || model == "MQ135" || model == "MQ138" || model == "MQ214") {		
+    if (model == "MQ2" || model == "MQ135" || model == "MQ138" || model == "MQ214" || model == "MQ216") {		
         float a = fmap(rh1, 33, 85, 1.6867, 1.5291);
         float b = fmap(rh1, 33, 85, -0.4263, -0.422);
         return a * pow(t1, b);
