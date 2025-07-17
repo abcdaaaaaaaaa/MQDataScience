@@ -289,6 +289,25 @@ def MQ214():
     b_RH85 = -0.422
     group1_subgroup4()
 
+def MQ216():
+    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    SensorName = 'MQ-216'
+    Air = 9.8
+    MinAirPpm, MaxAirPpm = 200, 10000
+    gas_params = [
+        {'name': 'LPG', 'ppm': (17.6135, -0.4539)},
+        {'name': 'propane', 'ppm': (19.5575, -0.461)},
+        {'name': 'i-butane', 'ppm': (25.7473, -0.4731)},
+        {'name': 'alcohol', 'ppm': (19.2641, -0.3604)},
+        {'name': 'CH4', 'ppm': (20.7074, -0.36)}
+    ]
+    a_RH33 = 1.6867
+    b_RH33 = -0.4263
+    a_RH85 = 1.5291
+    b_RH85 = -0.422
+    group1_subgroup1()
+
+
 def MQ303A():
     global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params
     SensorName = 'MQ303A'
@@ -356,7 +375,7 @@ def MQ_Calculation_Mode(set1, set2, set3, set4, set5, set6, set7, set8):
 
 def group1_subgroup1():
     MQ_Calculation_Mode('Rs/Ro', None, True, True, 1, 1, CleanAir, 'ppm')
-    # MQ-6, MQ-8, MQ-135
+    # MQ-6, MQ-8, MQ-135, MQ-216
 
 def group1_subgroup2():
     MQ_Calculation_Mode('Rs/Ro', None, True, True, 1, 1, CalibrateAir, 'ppm')
