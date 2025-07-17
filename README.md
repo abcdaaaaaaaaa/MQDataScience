@@ -230,7 +230,7 @@ Where:
 ![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
 
 ## SuggestedRL For MQ Sensors
-![suggestedRL](https://github.com/user-attachments/assets/179353ab-5868-4555-9eab-473d8d287018)
+![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
 
 ## For detailed explanation, You can also check out the github <a href="https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki">Wiki Page!
 
