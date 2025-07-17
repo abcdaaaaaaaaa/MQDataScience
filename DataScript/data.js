@@ -21,8 +21,9 @@ switch (data1) {
     case 16: f = "MQ216"; break;
     case 17: f = "MQ303A"; break;
     case 18: f = "MQ303B"; break;
-    case 19: f = "MQ307A"; break;
-    case 20: f = "MQ309A"; break;
+    case 19: f = "MQ306A"; break;
+    case 20: f = "MQ307A"; break;
+    case 21: f = "MQ309A"; break;
 }
 
 switch (data1) { 
