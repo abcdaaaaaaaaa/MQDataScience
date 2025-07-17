@@ -18,14 +18,15 @@ switch (data1) {
     case 13: f = "MQ137"; break;
     case 14: f = "MQ138"; break;
     case 15: f = "MQ214"; break;
-    case 16: f = "MQ303A"; break;
-    case 17: f = "MQ303B"; break;
-    case 18: f = "MQ307A"; break;
-    case 19: f = "MQ309A"; break;
+    case 16: f = "MQ216"; break;
+    case 17: f = "MQ303A"; break;
+    case 18: f = "MQ303B"; break;
+    case 19: f = "MQ307A"; break;
+    case 20: f = "MQ309A"; break;
 }
 
 switch (data1) { 
-    case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 12: case 13: case 14: case 15: standard = 1; break; 
+    case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 12: case 13: case 14: case 15: case 16: standard = 1; break; 
     default: standard = 0; break; 
 }
 
