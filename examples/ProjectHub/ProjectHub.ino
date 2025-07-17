@@ -24,8 +24,8 @@ String selectedModel, mode;
 GasSensor sensor(ADC_BIT_RESU, pin);
 SensorModel* sensorModel = nullptr;
 
-String mqList1[] = { "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7", "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214" };
-String mqList2[] = { "MQ303A", "MQ303B", "MQ307A", "MQ309A" };
+String mqList1[] = { "MQ135", "MQ2", "MQ3", "MQ4", "MQ5", "MQ6", "MQ7", "MQ8", "MQ9", "MQ136", "MQ137", "MQ138", "MQ214", "MQ216" };
+String mqList2[] = { "MQ303A", "MQ303B", "MQ306A", "MQ307A", "MQ309A" };
 String mqList3[] = { "MQ131", "MQ131_LOW" };
 
 int lcdColumns = 16;
