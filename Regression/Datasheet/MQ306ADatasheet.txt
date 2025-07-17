@@ -1,6 +1,44 @@
 Air: 1.66
 Con: 15-30
 
+For New Curve (R² >= 0.9995):
+
+for ppm = a*ratio^b:
+
+Gas    | a       | b
+Ethanol| 3.3559  | -0.3563
+Hydrogen| 3.6812  | -0.4308
+Methane| 7.3489  | -0.5979
+Iso-Butane| 2.7521  | -0.4732
+
+for ppm = 10^[(log10(ratio)-b)/m]:
+
+Gas    | m       | b
+Ethanol| -0.3563 | 0.5258 
+Hydrogen| -0.4308 | 0.566  
+Methane| -0.5979 | 0.8662 
+Iso-Butane| -0.4732 | 0.4397 
+
+
+For Old Curve:
+
+for ppm = a*ratio^b:
+
+Gas    | a       | b
+Ethanol| 3.3559  | -0.3563
+Hydrogen| 3.6812  | -0.4308
+Methane| 7.3489  | -0.5979
+Iso-Butane| 2.7521  | -0.4732
+
+for ppm = 10^[(log10(ratio)-b)/m]:
+
+Gas    | m       | b
+Ethanol| -0.3563 | 0.5258 
+Hydrogen| -0.4308 | 0.566  
+Methane| -0.5979 | 0.8662 
+Iso-Butane| -0.4732 | 0.4397 
+
+
 Ethanol
 100, 0.65
 300, 0.44
