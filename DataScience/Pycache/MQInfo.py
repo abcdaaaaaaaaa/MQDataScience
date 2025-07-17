@@ -290,7 +290,7 @@ def MQ214():
     group1_subgroup4()
 
 def MQ216():
-    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
     SensorName = 'MQ-216'
     Air = 9.8
     MinAirPpm, MaxAirPpm = 200, 10000
@@ -333,6 +333,20 @@ def MQ303B():
         {'name': 'IsoButane', 'ppmvals': (100, 10000), 'ppm': (1.8622, -0.3374)}
     ]
     group2_subgroup1()
+
+def MQ306A():
+    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params
+    SensorName = 'MQ306A'
+    Air = 1.66
+    CalibrateAir = 0.1
+    SensorRLCalRL = 0.2;
+    MinAirPpm, MaxAirPpm = 15, 30
+    gas_params = [
+        {'name': 'Hydrogen', 'ppmvals': (10, 10000), 'ppm': (1.7955, -0.3767)},
+        {'name': 'Ethanol', 'ppmvals': (10, 10000), 'ppm': (1.7007, -0.4214)},
+        {'name': 'IsoButane', 'ppmvals': (100, 10000), 'ppm': (1.8622, -0.3374)}
+    ]
+    group2_subgroup3()
     
 def MQ307A():
     global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params
@@ -408,7 +422,7 @@ def group2_subgroup2():
 
 def group2_subgroup3():
     MQ_Calculation_Mode('Rs/Rs', None, True, False, 0, SensorRLCalRL, CalibrateAir, 'ppm')
-    # MQ303A
+    # MQ303A, MQ306A
 
 def group2_subgroup4():
     MQ_Calculation_Mode('Rs/Rs', None, False, False, 0, SensorRLCalRL, CleanAir, 'ppm')
