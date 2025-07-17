@@ -2,7 +2,7 @@ WARNING: To run the code, import the MQInfo.cpython-311.pyc file into the C:\Use
 
 NOTE: This code is suitable for gas sensors measuring different model gases.
 
-Sensor modes measuring different "Model Gases": MQ131_LOW, MQ303A, MQ303B, MQ307A, MQ309A
+Sensor modes measuring different "Model Gases": MQ131_LOW, MQ303A, MQ303B, MQ306A, MQ307A, MQ309A
 
 -- ModelSlope.py --
 This code aims to predict future data based on past data. 
