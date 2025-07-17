@@ -364,8 +364,7 @@ export function MQ309A() {
     SensorName = 'MQ309A';
     Air = 11;
     SensorRLCalRL = 0.2;
-    MinAirPpm = 160;
-    MaxAirPpm = 260;
+    [MinAirPpm, MaxAirPpm] = [160, 260];
     gas_params = [
         { name: 'H2', ppmvals: [10, 10000], ppm: [44.8077, -0.5156] },
         { name: 'CH4', ppmvals: [10, 10000], ppm: [67.5665, -0.6088] },
