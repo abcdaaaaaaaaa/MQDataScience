@@ -289,16 +289,34 @@ export function MQ214() {
     group1_subgroup4();
 }
 
+export function MQ216() {
+    SensorName = 'MQ-216';
+    Air = 9.8;
+    [MinAirPpm, MaxAirPpm] = [200, 10000];
+    gas_params = [
+        { name: 'LPG', ppm: [17.6135, -0.4539] },
+        { name: 'propane', ppm: [19.5575, -0.461] },
+        { name: 'i-butane', ppm: [25.7473, -0.4731] },
+        { name: 'alcohol', ppm: [19.2641, -0.3604] },
+        { name: 'CH4', ppm: [20.7074, -0.36] },
+    ];
+    a_RH33 = 1.6867;
+    b_RH33 = -0.4263;
+    a_RH85 = 1.5291;
+    b_RH85 = -0.422;
+    group1_subgroup1();
+}
+
 export function MQ303A() {
     SensorName = 'MQ303A';
     Air = CleanAir;
-    CalibrateAir = 0.27;
+    CalibrateAir = 0.17;
     SensorRLCalRL = 47 / 50;
     [MinAirPpm, MaxAirPpm] = [1.2, 3.45];
     gas_params = [
         { name: 'Hydrogen', ppmvals: [10, 10000], ppm: [1.7955, -0.3767] },
-        { name: 'Ethanol', ppmvals: [10, 10000], ppm: [2.1052, -0.4409] },
-        { name: 'IsoButane', ppmvals: [100, 10000], ppm: [1.9209, -0.3443] }
+        { name: 'Ethanol', ppmvals: [10, 10000], ppm: [1.7007, -0.4214] },
+        { name: 'IsoButane', ppmvals: [100, 10000], ppm: [1.8622, -0.3374] }
     ];
     group2_subgroup3();
 }
@@ -306,12 +324,12 @@ export function MQ303A() {
 export function MQ303B() {
     SensorName = 'MQ303B';
     Air = CleanAir;
-    CalibrateAir = 0.258;
+    CalibrateAir = 0.2632;
     [MinAirPpm, MaxAirPpm] = [1.2, 3.45];
     gas_params = [
         { name: 'Hydrogen', ppmvals: [10, 10000], ppm: [1.7955, -0.3767] },
-        { name: 'Ethanol', ppmvals: [10, 10000], ppm: [2.1052, -0.4409] },
-        { name: 'IsoButane', ppmvals: [100, 10000], ppm: [1.9209, -0.3443] }
+        { name: 'Ethanol', ppmvals: [10, 10000], ppm: [1.7007, -0.4214] },
+        { name: 'IsoButane', ppmvals: [100, 10000], ppm: [1.8622, -0.3374] }
     ];
     group2_subgroup1();
 }
@@ -357,7 +375,7 @@ export function MQ_Calculation_Mode(set1, set2, set3, set4, set5, set6, set7, se
 
 export function group1_subgroup1() {
     MQ_Calculation_Mode('Rs/Ro', undefined, true, true, 1, 1, CleanAir, 'ppm');
-    // MQ-6, MQ-8, MQ-135
+    // MQ-6, MQ-8, MQ-135, MQ-216
 }
 
 export function group1_subgroup2() {
