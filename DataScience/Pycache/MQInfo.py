@@ -307,7 +307,6 @@ def MQ216():
     b_RH85 = -0.422
     group1_subgroup1()
 
-
 def MQ303A():
     global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params
     SensorName = 'MQ303A'
