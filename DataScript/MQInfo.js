@@ -298,7 +298,7 @@ export function MQ216() {
         { name: 'propane', ppm: [19.5575, -0.461] },
         { name: 'i-butane', ppm: [25.7473, -0.4731] },
         { name: 'alcohol', ppm: [19.2641, -0.3604] },
-        { name: 'CH4', ppm: [20.7074, -0.36] },
+        { name: 'CH4', ppm: [20.7074, -0.36] }
     ];
     a_RH33 = 1.6867;
     b_RH33 = -0.4263;
