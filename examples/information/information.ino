@@ -24,8 +24,9 @@
   To do these ppm calculations in javascript instead of microcontroller in IoT projects: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScript
   To estimate decay times in radioactive data science application: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/RadioactiveScience
 
----------- Library Sample Files ----------
+---------- Library Examples Files ----------
   For the microcontroller to process the information obtained from the data graphs of unsupported MQ sensors by data science applications: UnSupported_MQ_Sensors.ino
+  For accurate ppm results, you need to provide the following resistance values to the sensor: Required_MQ_LoadResistor.ino
   To access the codes for the latest version of the library published on the Arduino Project Hub for easy use of the library: ProjectHub.ino
   To process supported MQ sensors to the microcontroller: All_Supported_MQ_Sensors.ino
   To process your Geiger Counter into the microcontroller: Radioactive.ino
