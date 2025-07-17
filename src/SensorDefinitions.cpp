@@ -144,22 +144,31 @@ GasModel MQ214_Gases[] = {
 };
 SensorModel MQ214 = {"MQ214", 595.18, 105.554, 1.0, true, MQ214_Gases, sizeof(MQ214_Gases)/sizeof(GasModel)};
 
+// MQ216
+GasModel MQ216_Gases[] = {
+    {"LPG",       17.6135,    -0.4539, 200,   10000},
+    {"Propane",   19.5575,    -0.461,  200,   10000},
+    {"i-butane",  25.7473,    -0.4731, 200,   10000},
+    {"Alcohol",   19.2641,    -0.3604, 200,   10000},
+    {"CH4",       20.7074,    -0.36,   200,   10000}
+};
+SensorModel MQ216 = {"MQ216", 9.8, 1.0, 1.0, true, MQ216_Gases, sizeof(MQ216_Gases)/sizeof(GasModel)};
+
 // MQ303A
 GasModel MQ303A_Gases[] = {
     {"Hydrogen",  1.7955,     -0.3767, 10,    10000},
-    {"Ethanol",   2.1052,     -0.4409, 10,    10000},
-    {"IsoButane", 1.9209,     -0.3443, 100,   10000}
+    {"Ethanol",   1.7007,     -0.4214, 10,    10000}, // Old Curve
+    {"IsoButane", 1.8622,     -0.3374, 100,   10000}
 };
-SensorModel MQ303A = {"MQ303A", 1.0, 0.27, 47.0/50.0, false, MQ303A_Gases, sizeof(MQ303A_Gases)/sizeof(GasModel)};
+SensorModel MQ303A = {"MQ303A", 1.0, 0.17, 47.0/50.0, false, MQ303A_Gases, sizeof(MQ303A_Gases)/sizeof(GasModel)};
 
 // MQ303B
 GasModel MQ303B_Gases[] = {
     {"Hydrogen",  1.7955,     -0.3767, 10,    10000},
-    {"Ethanol",   2.1052,     -0.4409, 10,    10000},
-    {"IsoButane", 1.9209,     -0.3443, 100,   10000}
-
+    {"Ethanol",   1.7007,     -0.4214, 10,    10000}, // Old Curve
+    {"IsoButane", 1.8622,     -0.3374, 100,   10000}
 };
-SensorModel MQ303B = {"MQ303B", 1.0, 0.258, 1.0, false, MQ303B_Gases, sizeof(MQ303B_Gases)/sizeof(GasModel)};
+SensorModel MQ303B = {"MQ303B", 1.0, 0.2632, 1.0, false, MQ303B_Gases, sizeof(MQ303B_Gases)/sizeof(GasModel)};
 
 // MQ307A
 GasModel MQ307A_Gases[] = {
