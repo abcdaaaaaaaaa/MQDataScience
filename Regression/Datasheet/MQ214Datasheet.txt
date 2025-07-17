@@ -1,6 +1,31 @@
 Air: 595.18
 Con: 1000-20000
 
+For New Curve (R² >= 0.9995):
+
+for ppm = a*ratio^b:
+
+Gas    | a       | b
+CH4    | 2669.39 | -0.3784
+
+for ppm = 10^[(log10(ratio)-b)/m]:
+
+Gas    | m       | b
+CH4    | -0.3784 | 3.4264 
+
+
+For Old Curve:
+
+for ppm = a*ratio^b:
+
+Gas    | a       | b
+CH4    | 2669.39 | -0.3784
+
+for ppm = 10^[(log10(ratio)-b)/m]:
+
+Gas    | m       | b
+CH4    | -0.3784 | 3.4264 
+
 CH4
 3000, 131
 5000, 105.554
