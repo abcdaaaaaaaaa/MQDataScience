@@ -11,7 +11,7 @@
 ![MQ-135_gas_curves](https://github.com/user-attachments/assets/e8d6e1bf-6f61-40c8-9cc8-fd0cd7189c22)
 
 ## 2) Ppm Analysis of Different Model Gases
-![MQ303A_Ppm_Analysis](https://github.com/user-attachments/assets/3ef822b4-57fd-4df3-8aef-1d52770dbfbf)
+![MQ303A_Ppm_Analysis](https://github.com/user-attachments/assets/91be952f-5374-41a7-a64f-4d0e24a1af0e)
 
 ## 3) Formulated Correction Coefficients depending on Temperature and Humidity
 ![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/8783b3a5-7956-47f1-a61b-ae300041e047)
@@ -20,7 +20,7 @@
 ![MQ135_CO2_3D)](https://github.com/user-attachments/assets/5295ad32-65e2-4e4a-bbdb-d2a98b173e86)
 
 ## 5) Slope Estimation in Time-Dependent 4D Space
-![4D_Slope_Estimation](https://github.com/user-attachments/assets/34bb358b-8469-4eca-9c63-e2d57971b2ba)
+![4D_Slope_Estimation](https://github.com/user-attachments/assets/82f412d6-53f8-409c-9ce6-84a03cc2b30f)
 
 ## 4D Axis Features:
 
