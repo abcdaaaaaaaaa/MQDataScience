@@ -1,4 +1,5 @@
-WARNING: To run the code, import the MQInfo.cpython-311.pyc file into the C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\__pycache__\MQInfo.cpython-311.pyc path.
+WARNING: To run the code, import the MQInfo.py file into the C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\MQInfo.py path. (Necessary)
+WARNING: To run the code, import the MQInfo.cpython-311.pyc file into the C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\__pycache__\MQInfo.cpython-311.pyc path. (If not done, Python will automatically create it after the first run)
 
 NOTE: This code is suitable for gas sensors measuring different model gases.
 
