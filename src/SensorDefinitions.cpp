@@ -219,8 +219,10 @@ SensorModel* getSensorModel(const String& modelName) {
     if (modelName == "MQ137") return &MQ137;
     if (modelName == "MQ138") return &MQ138;
     if (modelName == "MQ214") return &MQ214;
+    if (modelName == "MQ216") return &MQ216;
     if (modelName == "MQ303A") return &MQ303A;
     if (modelName == "MQ303B") return &MQ303B;
+    if (modelName == "MQ306A") return &MQ306A;
     if (modelName == "MQ307A") return &MQ307A;
     if (modelName == "MQ309A") return &MQ309A;
     return nullptr;
