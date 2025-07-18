@@ -1,8 +1,4 @@
-# What's await 🎁 v5.0.0? (September 1, 2025)
-
-### 1) New sensor types to be supported!: MG811, SP3S-AQ2, TGS2600, TGS2610, TGS2611 TGS2620, TGS2612, TGS2442, TGS2201, TGS4161, TGS8100, TGS813, TGS822, TGS2602, TGS6812
-
-# MQSpaceData v4.2.5
+# MQSpaceData v4.5.0
 
 ## MQDataScience What can be create?
 "The first and only Arduino library where Geiger Counter and MQ Sensors combine with Data Science"
