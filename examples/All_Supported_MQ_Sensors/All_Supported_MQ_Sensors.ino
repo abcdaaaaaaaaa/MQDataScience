@@ -92,6 +92,7 @@ void loop() {
            
         else if (isMQSensor(mode, mqList2, sizeof(mqList2) / sizeof(mqList2[0]))) {
           float RsRscalValue = sensor.calculateCalValue2(gasType.a, gasType.b, sensorModel->calibrateAir, gasType.minPpm, gasType.maxPpm);
+          if (mode == "MQ306A" && i == 0) RsRscalValue = 0.873876;
           if (mode == "MQ307A" && i == 1) RsRscalValue = 0.999619;
           if (mode == "MQ309A" && i >= 2) RsRscalValue = 0.83393;
           ppm = sensor.calculateRsRsPPM(sensorVal, gasType.a, gasType.b, RsRscalValue, sensorModel->rlcal, gasType.maxPpm);
