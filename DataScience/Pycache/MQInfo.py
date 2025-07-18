@@ -290,7 +290,7 @@ def MQ214():
     group1_subgroup4()
 
 def MQ216():
-    global SensorName, Air, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
     SensorName = 'MQ-216'
     Air = 9.8
     MinAirPpm, MaxAirPpm = 200, 10000
