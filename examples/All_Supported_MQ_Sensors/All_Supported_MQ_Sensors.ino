@@ -98,7 +98,7 @@ void loop() {
           ppm = sensor.calculateRsRsPPM(sensorVal, gasType.a, gasType.b, RsRscalValue, sensorModel->rlcal, gasType.maxPpm);
         }
            
-         /* There are exceptions to calibration for some gases of MQ307A and MQ309A. 
+         /* There are exceptions to calibration for some gases of MQ306A, MQ307A and MQ309A. 
           * Using this code you can return the correct value in case of calibration exceptions. */
 
         else if (isMQSensor(mode, mqList3, sizeof(mqList3) / sizeof(mqList3[0]))) {
