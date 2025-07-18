@@ -342,8 +342,8 @@ def MQ306A():
     SensorRLCalRL = 0.2;
     MinAirPpm, MaxAirPpm = 15, 30
     gas_params = [
-        {'name': 'Hydrogen', 'ppmvals': (10, 10000), 'ppm': (1.7955, -0.3767)},
-        {'name': 'Ethanol', 'ppmvals': (10, 10000), 'ppm': (1.7007, -0.4214)},
+        {'name': 'Hydrogen', 'ppmvals': (100, 3000), 'ppm': (1.7955, -0.3767)},
+        {'name': 'Ethanol', 'ppmvals': (100, 10000), 'ppm': (1.7007, -0.4214)},
         {'name': 'IsoButane', 'ppmvals': (100, 10000), 'ppm': (1.8622, -0.3374)}
     ]
     group2_subgroup3()
