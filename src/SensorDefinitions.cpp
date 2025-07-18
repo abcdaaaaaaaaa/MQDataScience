@@ -101,7 +101,6 @@ GasModel MQ131_Gases[] = {
 };
 SensorModel MQ131 = {"MQ131", 12.0, 1.0, 1.0, true, MQ131_Gases, sizeof(MQ131_Gases)/sizeof(GasModel)};
 
-
 // MQ131_LOW
 GasModel MQ131_LOW_Gases[] = {
     {"O3",        16.0871,    -0.8603, 5,     100},
