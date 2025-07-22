@@ -191,8 +191,8 @@ gas_params.forEach((gas, i) => {
         minair = convertppm(minair)
         maxair = convertppm(maxair);
         if (f == "MQ131_LOW") { 
-            lastppmvalue = round2(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 0.01, maxair * CorrectionCoefficient(scaledTemperature, rh)));
-        } else { lastppmvalue = Math.round(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 1, maxair * CorrectionCoefficient(scaledTemperature, rh))) }
+            lastppmvalue = round2(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 0.01, maxair));
+        } else { lastppmvalue = Math.round(limit(Sensorppm2(adjusted_valuea, adjusted_valueb, SensorValue), 1, maxair)) }
     }
     
     globalThis[`ppmvalue${i+1}`] = lastppmvalue;
