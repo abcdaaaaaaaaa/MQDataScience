@@ -1,8 +1,4 @@
-# What's await 🎁 v5.0.0? (September 1, 2025)
-
-### 1) New sensor types to be supported!: MG811, SP3S-AQ2, TGS2600, TGS2610, TGS2611 TGS2620, TGS2612, TGS2442, TGS2201, TGS4161, TGS8100, TGS813, TGS822, TGS2602, TGS6812
-
-# MQSpaceData v4.5.1
+# MQSpaceData v5.0.0
 
 ## MQDataScience What can be create?
 "The first and only Arduino library where Geiger Counter and MQ Sensors combine with Data Science"
@@ -192,39 +188,6 @@ interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
 </b>
 
 <img width="750" alt="ppmformulla" src="https://github.com/user-attachments/assets/e37d3148-be7a-4d9f-9886-e4e48c7663fb" />
-
-## Multidimensional Radioactive Decay Estimations
-![3D_preview](https://github.com/user-attachments/assets/586d16b4-6088-4917-b9ea-e49ebb4a5876)
-## 
-![2D_preview](https://github.com/user-attachments/assets/1ddea30f-7e8e-4b35-a259-23b3520053ac)
-
-This repository presents a multivariable exponential regression model to estimate **Average CPM** (counts per minute) based on **Time**, **Radiation dose rate (Usv/hr)**, **Standard Deviation of CPM (sdCPM)**, and **Total CPM Count**.
-
-## 1) Model Equation
-
-The predicted average CPM is defined by the following equation:
-
-<img width="750" alt="formullas" src="https://github.com/user-attachments/assets/6f94b3f0-cd1f-4432-82df-316aa9cb570a" />
-
-Where:
-
-<img width="750" alt="formullas2" src="https://github.com/user-attachments/assets/4ceb5d3a-1599-4932-bd29-cc81fadf0e23" />
-
-## 2) Algorithm Logic
-
-1. **Input features**:  
-   - `Time`  
-   - `Usv/hr` (radiation dose rate)  
-   - `sdCPM` (standard deviation of CPM)  
-   - `CPM Count` (total count)
-
-2. Apply **natural logarithm** (`ln`) to all features except time to linearize exponential behavior.
-
-3. Fit a **linear regression** model to:
-
-<img width="750" alt="logformulla" src="https://github.com/user-attachments/assets/a9037f56-0f8d-488d-baa1-ff7c6fa4f279" />
-
-4. Final prediction is obtained by **exponentiating** the output.
 
 ## STEL Limit For Gases
 ![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
