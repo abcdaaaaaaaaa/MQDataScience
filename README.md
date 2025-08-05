@@ -1,7 +1,7 @@
 # MQSpaceData v5.0.0
 
 ## MQDataScience What can be create?
-"The first and only Arduino library where Geiger Counter and MQ Sensors combine with Data Science"
+"The first and only Arduino library where MQ Sensors combine with Data Science"
 
 ## 1) Advanced Data Science System for Regression Calculations
 ![MQ-135_gas_curves](https://github.com/user-attachments/assets/e8d6e1bf-6f61-40c8-9cc8-fd0cd7189c22)
