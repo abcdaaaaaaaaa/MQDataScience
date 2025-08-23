@@ -203,12 +203,6 @@ temperature_surface = ScaleTemp(temperature_surface, '-')
 mintime = np.min(time_surface)
 maxtime = np.max(time_surface)
 
-minrealtemp = np.min(temperature)
-maxrealtemp = np.max(temperature)
-
-minrealrh = np.min(rh)
-maxrealrh = np.max(rh)
-
 ppm_range = []
 ppms_range = []
 
