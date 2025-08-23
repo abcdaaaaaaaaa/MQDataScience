@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from scipy.optimize import curve_fit
 import plotly.colors as pc
 import pandas as pd
+from datetime import datetime
 import MQInfo
 
 df = pd.read_excel("4D_Datas.xlsx")
@@ -49,6 +50,23 @@ AirVals = MQInfo.AirVals
 AirValsEqualGasVals = MQInfo.AirValsEqualGasVals
 CRMode = MQInfo.CRMode
 FormulaMode = MQInfo.FormulaMode
+
+now = datetime.now()
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+
+print("")
+print("")
+print(SensorName + " " + formatted)
+print("")
+print("")
+
+with open("EstimationReport.txt", "a") as f:
+    f.write("\n")
+    f.write("\n")
+    f.write(SensorName + " " + formatted)
+    f.write("\n")
+    f.write("\n")
+    f.write("\n")
 
 def roundf(*args):
     return tuple(round(x, 4) for x in args)
@@ -191,30 +209,14 @@ maxrealtemp = np.max(temperature)
 minrealrh = np.min(rh)
 maxrealrh = np.max(rh)
 
-temp_range = [ScaleTemp(yaxb(a_temp_time, mintime, b_temp_time), '-'), ScaleTemp(yaxb(a_temp_time, maxtime, b_temp_time), '-'), minrealtemp, maxrealtemp]
-rh_range = [yaxb(a_rh_time, mintime, b_rh_time), yaxb(a_rh_time, maxtime, b_rh_time), minrealrh, maxrealrh]
-
-air_range = []
-cr_range = []
 ppm_range = []
 ppms_range = []
 
-for i in range(len(time)):
-    air_range.append(air[i])
-    cr_range.append(CorrectionCoefficient(ScaleTemp(temperature, '+'), rh))
+xmin, xmax = np.min(temperature_surface), np.max(temperature_surface)
+ymin, ymax = np.min(rh_surface), np.max(rh_surface)
+zmin, zmax = np.min(air_surface), np.max(air_surface)
 
-air_range = [np.min(air_range), np.max(air_range)]
-cr_range = [np.min(cr_range), np.max(cr_range)]
-
-for i in range(len(time_surface)):
-    air_range.append(air_surface[i])
-    cr_range.append(correction_coefficient_surface[i])
-
-xmin, xmax = np.min(temp_range), np.max(temp_range)
-ymin, ymax = np.min(rh_range), np.max(rh_range)
-zmin, zmax = np.min(air_range), np.max(air_range)
-
-mincr, maxcr = np.min(cr_range), np.max(cr_range)
+mincr, maxcr = np.min(correction_coefficient_surface), np.max(correction_coefficient_surface)
 
 x_middle_min = (xmax-xmin)/4
 x_middle_max = x_middle_min*3
@@ -366,7 +368,6 @@ for i, gas in enumerate(gas_params):
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
     CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
     minair, maxair = convertppm(minair), convertppm(maxair)
-    realgasname = 'Real ' + gasname
     """
     colornum += 1
     match colornum:
@@ -390,6 +391,18 @@ for i, gas in enumerate(gas_params):
     x2, y2 = filter_repeats(time_surface, ppm_surface)
     ppms_range.append(ppm_surface)
     fig.add_trace(go.Scatter(x=x2, y=y2, mode='lines', marker=dict(color=color), name=gasname))
+
+    print(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}")
+    with open("EstimationReport.txt", "a") as f:
+        f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
+
+    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
+        print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
+        with open("EstimationReport.txt", "a") as f:
+            f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
+    print("")
+    with open("EstimationReport.txt", "a") as f:
+        f.write("\n")
     
 ppm_graph = [np.min(ppms_range), np.min(ppm_range), np.max(ppms_range), np.max(ppm_range)]
 graphmin, graphmax = np.min(ppm_graph), np.max(ppm_graph)
