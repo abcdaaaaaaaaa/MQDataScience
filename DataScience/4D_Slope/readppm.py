@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit
 import pandas as pd
+from datetime import datetime
 import MQInfo
 
 df = pd.read_excel("4D_Datas.xlsx")
@@ -48,6 +49,23 @@ AirValsEqualGasVals = MQInfo.AirValsEqualGasVals
 CRMode = MQInfo.CRMode
 FormulaMode = MQInfo.FormulaMode
 
+now = datetime.now()
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+
+print("")
+print("")
+print(SensorName + " " + formatted)
+print("")
+print("")
+
+with open("EstimationReport.txt", "a") as f:
+    f.write("\n")
+    f.write("\n")
+    f.write(SensorName + " " + formatted)
+    f.write("\n")
+    f.write("\n")
+    f.write("\n")
+
 def roundf(*args):
     return tuple(round(x, 4) for x in args)
 
@@ -63,8 +81,12 @@ def inverseyaxb(valuea, value, valueb):
 def interpolate(value, min_value, max_value, target_min, target_max):
     return target_min + (value - min_value) * (target_max - target_min) / (max_value - min_value)
 
-def function(constant, mini_slope):
-    return constant * mini_slope + constant
+def exponential_interpolate(value, min_value, max_value, target_min, target_max):
+    log_min = np.log10(target_min)
+    log_max = np.log10(target_max)
+    ratio = (value - min_value) / (max_value - min_value)
+    log_val = log_min + ratio * (log_max - log_min)
+    return np.power(10, log_val)
 
 def ScaleTemp(temp, mode):
     if mode == '+': temp_scaled = (temp + 25) / 15 if CRMode == 1 else (temp + 15) / 5
@@ -99,15 +121,6 @@ def fit_time_with_r2(x, y):
     r2 = 1 - (ss_res / ss_tot)
     return a, b, r2
 
-def filter_repeats(x, y):
-    filtered_x = [x[0]]
-    filtered_y = [y[0]]
-    for i in range(1, len(y)):
-        if (y[i - 1] != minair) and (y[i - 1] != maxair):
-            filtered_x.append(x[i])
-            filtered_y.append(y[i])
-    return filtered_x, filtered_y
-
 def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
 
@@ -120,8 +133,7 @@ def convertppm(value):
 
 def Sensorppm(valuea, valueb, SensorValue, CorrectionCoefficient):
     SensorRatio_value = Air * SensorRLCalRL * (CalValue * (SensorValue - 1)) / (SensorValue * (CalValue - 1))
-    return convertppm(inverseyaxb(valuea, SensorRatio_value * CorrectionCoefficient, valueb))
-
+    return convertppm(inverseyaxb(valuea, SensorRatio_value / CorrectionCoefficient, valueb))
 
 time, percentile, temperature, rh = np.array(df["Time"], dtype=float), np.array(df["Per"], dtype=float), np.array(df["Temp"], dtype=float), np.array(df["Rh"], dtype=float)
 percentile, temperature, rh = limit(percentile, 0, 100), limit(temperature, -10, 50), limit(rh, 0, 100)
@@ -129,7 +141,7 @@ percentile, temperature, rh = limit(percentile, 0, 100), limit(temperature, -10,
 SensorValue = percentile / 100
 temperature = ScaleTemp(temperature, '+')
 correction_coefficient = CorrectionCoefficient(temperature, rh)
-air = limit(interpolate(SensorValue, 0, 1, convertppm(MinAirPpm), convertppm(MaxAirPpm)) / correction_coefficient, 0, convertppm(MaxAirPpm))
+air = limit(exponential_interpolate(SensorValue, 0, 1, convertppm(MinAirPpm), convertppm(MaxAirPpm)), 0, convertppm(MaxAirPpm)) * correction_coefficient
 
 a_temp_time, b_temp_time, r2_temp_time = fit_time_with_r2(time, temperature)
 a_rh_time, b_rh_time, r2_rh_time = fit_time_with_r2(time, rh)
@@ -139,9 +151,19 @@ a_temp_time, b_temp_time, r2_temp_time = roundf(a_temp_time, b_temp_time, r2_tem
 a_rh_time, b_rh_time, r2_rh_time = roundf(a_rh_time, b_rh_time, r2_rh_time)
 a_percentile_time, b_percentile_time, r2_percentile_time = roundf(a_percentile_time, b_percentile_time, r2_percentile_time)
 
-temperature = ScaleTemp(temperature, '-')
+time_surface = vals(min(time), max(time)*2, 200)
+temperature_surface = limit(yaxb(a_temp_time, time_surface, b_temp_time), ScaleTemp(-10, '+'), ScaleTemp(50, '+'))
+rh_surface = limit(yaxb(a_rh_time, time_surface, b_rh_time), 0, 100)
+correction_coefficient_surface = CorrectionCoefficient(temperature_surface, rh_surface)
+percentile_surface = limit(yaxb(a_percentile_time, time_surface, b_percentile_time), 0, 100)
+SensorValue_surface = percentile_surface / 100
+air_surface = limit(exponential_interpolate(SensorValue_surface, 0, 1, convertppm(MinAirPpm), convertppm(MaxAirPpm)), 0, convertppm(MaxAirPpm)) * correction_coefficient_surface
 
-# temperature, rh, CorrectionCoefficient(ScaleTemp(temperature, '+'), rh))
+temperature = ScaleTemp(temperature, '-')
+temperature_surface = ScaleTemp(temperature_surface, '-')
+
+mintime = np.min(time_surface)
+maxtime = np.max(time_surface)
 
 for i, gas in enumerate(gas_params):
     minair, maxair = (MinAirPpm, MaxAirPpm) if AirValsEqualGasVals else gas['ppmvals']
@@ -153,7 +175,17 @@ for i, gas in enumerate(gas_params):
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
     CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
     minair, maxair = convertppm(minair), convertppm(maxair)
-    realgasname = 'Real ' + gasname
-    ppm = limit(Sensorppm(valuea, valueb, SensorValue, CorrectionCoefficient(ScaleTemp(temperature, '+'), rh)), 0, maxair * CorrectionCoefficient(ScaleTemp(temperature, '+'), rh))
-    print(gasname + ": ", ppm) # It is not time-based, it only calculates the current ppm value from instantaneous analog values.
 
+    ppm_surface = limit(Sensorppm(valuea, valueb, SensorValue_surface, correction_coefficient_surface), 0, maxair * correction_coefficient_surface)
+
+    print(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}")
+    with open("EstimationReport.txt", "a") as f:
+        f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
+
+    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
+        print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
+        with open("EstimationReport.txt", "a") as f:
+            f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
+    print("")
+    with open("EstimationReport.txt", "a") as f:
+        f.write("\n")
