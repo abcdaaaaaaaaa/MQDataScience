@@ -22,8 +22,10 @@
 
 <img width="750" alt="4dformullas" src="https://github.com/user-attachments/assets/7c5a1464-fcb9-4a8f-9693-c2c473f1ec1a" />
 
-
 ## Ppm Formullas
+
+<img width="380" alt="log" src="https://github.com/user-attachments/assets/2e3e648a-8c7f-4998-8d6e-ca267c82e6a2" />
+
 
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
