@@ -62,19 +62,8 @@ The first formula is determined according to all points (OldCurve.py, OldCurve),
 
 ## Calculate Ratio
 
-(1) if ratio = Rs / Ro: Ratio = Ratio
+<img width="600" alt="image6" src="https://github.com/user-attachments/assets/ee3d36d6-d636-4060-a013-668821844073" />
 
-(2) if ratio = Rs / Rs: RsRoMQAir = 1 --> Ratio = Ratio
-
-(3) if ratio = Ro / Rs: a = 1 / a^(1 / b) & b = 1 / b --> Ratio = Ratio
-
-(3) if ratio is inverted: ratio --> 1 / ratio
-
-(ratio / a)^(1/b) --> (1 / (a * ratio))^(1/b) --> (1 / a)^(1/b) * (1 / ratio)^(1/b) --> [(1 / a)^(1/b)] * [1 / ratio^(1/b)] 
-
-(ratio / a′)^(1/b′) --> ratio^(1/b′) / a′^(1/b′)
-
-if both sides are equal: (1 / a)^(1/b) * 1 / ratio^(1/b) = ratio^(1/b′) / a′^(1/b′) -> 1 / a′ = (1 / a)^(1/b) & b′ = 1 / b
 
 ## Ratio for Sensors
 STATUS 1: MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135, MQ-136, MQ-137 [Almost All & Standart]
