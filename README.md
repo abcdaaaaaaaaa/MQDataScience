@@ -45,13 +45,14 @@
 
 The first formula is determined according to all points (OldCurve.py, OldCurve), while the second formula is determined according to the first and last point. Therefore, in order to collect them all in the same formula and to increase the accuracy rate, we used the method in the second formula and took the logarithm (if R^2 = 1 (%100) always: logm = valueb, logb = log10(valuea)) for slopes greater than 99.95% and collected them all in the first formula, thus we increased the accuracy rate without having to use 2 different formulas (Regression.py, NewCurve).
 
-## y = ax^b  --> ppm = a*ratio^b
-<b>Therefore, we need to make a transition according to the formula:
-In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
+## y = ax^b  --> ppm = a×ratio^b
+<b> Therefore, we need to make a transition according to the formula:
 
-ratio = a*ppm^b --> ppm = (ratio / a)^1/b
+<img width="400" alt="image3" src="https://github.com/user-attachments/assets/5fe512c5-d0d3-413d-98c7-8516969f58cd" />
 
-## V = I x R
+<b> In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
+
+## V = I × R
 V = I x R -> VRL = [VC / (RS + RL)] x RL -> VRL = (VC x RL) / (RS + RL)
 
 RS: -> VRL x (RS + RL) = VC x RL -> (VRL x RS) + (VRL x RL) = VC x RL -> (VRL x RS) = (VC x RL) - (VRL x RL)
