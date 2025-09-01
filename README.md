@@ -25,69 +25,11 @@
 
 ## Ppm Formullas
 
-<b> 1) ppm = a*ratio^b (a: valuea b: valueb)
-2) ppm = 10^[(log10(ratio)-b)/m] (m: logm b: logb)
-
-If R^2 equals 1 :
-
-a*ratio^b = 10^[(log10(ratio)-b)/m]                                                                                                                                             
-logm = valueb, logb = log10(valuea)
-
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
-1] [(1,10), (2,4), (3,3)]
+<img width="1264" alt="image1" src="https://github.com/user-attachments/assets/780ca3d6-2bdb-4c64-8ced-ccb9c8a60c7b" />
 
-loge(b) = ln(b) 
-
-(ln(1),ln(10)) for ≈ (0,2.3026) 
-
-(ln(2),ln(4)) ≈ (0.6931,1.3863) and 
-
-(ln(3),ln(3)) ≈ (1.0986,1.0986) 
-
-b = ∑ i=1 n (x i − x ˉ ) 2 ∑ i=1 n (xi − xˉ)(yi−yˉ) 
-
-ln(x):(0,0.6931,1.0986)ln(y):(2.3026,1.3863,1.0986)ln(y)ˉ=(2.3026+1.3863+1.0986)/3≈1.5958
-
-ln(x)ˉ=(0+0.6931+1.0986)/3≈0.5972
-
-b = (0−0.5972)(2.3026−1.5958)+(0.6931−0.5972)(1.3863−1.5958)+(1.0986−0.5972)(1.0986−1.5958)/(0−0.5972)^2+(0.6931−0.5972)^2+(1.0986−0.5972)^2 ≈ -1.2
-
-
-ln(a) = − ln ˉ (y) - b ln ˉ (x) ≈ 1.5958−(−1.2)⋅0.5972≈2.31244
-
-a=e^2.31244 ≈ 9.947
-
-b  ≈ -1.2
-
-a ≈ 9.947
-
-2] y = mx+ n                                                                                                                                                                       
-n = b                                                                                                                                                                                                                                                                                                                                 
-log10(y) = m*log10(x) + b
-
--b = m*log10(x) - log10(y)
-
-last b = log10(y) - m*log10(x)
-
-m = (y - y0) / (x - x0)
-
-m = (log10(y) - log10(y0)) / (log10(x) - log10(x0))
-
-if y= a*x^b:
-
-last m = log10(y/y0) / log10(x/x0)
-
-m = slope of the line
-
-b = intersection point
-
-m = log10(y/y0) / log10(x/x0)
-
-b = log10(y) - m*log10(x)
-
-</b>
-
+<img width="1264" alt="image2" src="https://github.com/user-attachments/assets/a786298d-2df1-430b-bea5-ee53dec6692e" />
 
         if r_squared >= 0.9995:
             print("R-squared value for {gas name} is above 0.9995, plotting against first and last values.")
