@@ -53,47 +53,10 @@ The first formula is determined according to all points (OldCurve.py, OldCurve),
 <b> In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
 
 ## V = I × R
-V = I x R -> VRL = [VC / (RS + RL)] x RL -> VRL = (VC x RL) / (RS + RL)
 
-RS: -> VRL x (RS + RL) = VC x RL -> (VRL x RS) + (VRL x RL) = VC x RL -> (VRL x RS) = (VC x RL) - (VRL x RL)
+<img width="1264" alt="image4" src="https://github.com/user-attachments/assets/c25bac78-f531-4c46-a028-47b723c10dd1" />
 
-RS = [(VC x RL) - (VRL x RL)] / VRL -> RS = [(VC x RL) / VRL] – RL
-
-Rs = (voltage * Rload) / (voltage/2^n-1)) - (Rload)
-
-SensorValue / 2^(AdcBitResulation1-1) -> SensorCalibrationValue / 2^(AdcBitResulation2-1) 
-
-Rs = 2^(AdcBitResulation1-1) * [Rload / SensorValue - Rload] -> calibrationRs = 2^(AdcBitResulation2-1) * [Rload / SensorCalibrationValue – Rload]
-
-Ro = calibrationRs / Air ||| ratio = Rs / Ro -> ratio = Rs / (calibrationRs / Air) -> ratio = Rs x Air / calibrationRs
-
-Ratio = (2^(AdcBitResulation1-1) * [Rload1 / SensorValue – Rload1]) * RsRoMQAir / (2^(AdcBitResulation2-1) * [Rload2 / SensorCalibrationValue – Rload2]) [Rs / Ro]
-
-If Sensor Calibration and Sensor Measurement are Under the Same Conditions:
-
-Rload1 = Rload2 && 2^(AdcBitResulation1-1) = 2^(AdcBitResulation2-1)
-
-SensorRange = [0 - 2^(AdcBitResulation-1)]
-
-if MinSensorValue == 0 && MaxSensorValue == 1: SensorRange [0 - 1]
-
-if SensorRange [0 - 1]: 0 <= (SensorValue) <= 1 && 0 <= SensorCalibrationValue <= 1 
-
-Ratio = (MaxSensorValue * [Rload / SensorValue – Rload]) * RsRoMQAir / (MaxSensorValue * [Rload / SensorCalibrationValue – Rload]) [Rs / Ro]
-
-Ratio = [Rload / SensorValue – Rload] * RsRoMQAir / [Rload / SensorCalibrationValue – Rload] [Rs / Ro]
-
-Ratio = f(R) * RsRoMQAir
-
-f(R) = [R / S - R] / [R / C - R] -> [(R - R*S) / S] / [(R - R*C) / C] -> [(R - R*S) / S] * [C / (R - R*C)]
-
-f(R) = [(R - R*S) / S] * [C / (R - R*C)] = [C * (R - R*S) / S (R - R*C)]
-
-g(x) = (R - R*x1) / (R - R*x2) -> g(x) = (1 - x1) / (1 - x2)
-
-f(R) = [(R - R*S) / S] * [C / (R - R*C)] = [C * (1 - S) / S (1 - C)]
-
-Ratio = [SensorCalibrationValue * (1 - SensorValue)] * RsRoMQAir / [SensorValue * (1 - SensorCalibrationValue)] [Rs / Ro]
+<img width="700" alt="image5" src="https://github.com/user-attachments/assets/0beab7d0-b9b8-472e-b17f-3cb0fc5eb048" />
 
 ## Calculate Ratio
 
