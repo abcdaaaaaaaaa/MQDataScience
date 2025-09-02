@@ -50,8 +50,8 @@ colornum = ListNumber = 0
 # Grafik düzeni oluşturma
 fig = make_subplots(
     rows=1, cols=2,
-    column_widths=[0.5, 0.5],  # Genişlikleri ayarlandı
-    specs=[[{"type": "scatter"}, {"type": "scatter"}]],  # 1. Kolon regresyon, 2. Kolon regresyon
+    column_widths=[0.5, 0.5],
+    specs=[[{"type": "scatter"}, {"type": "scatter"}]],
     subplot_titles=("New Curve", "Old Curve")
 )
 
@@ -172,3 +172,4 @@ fig.update_yaxes(title_text="Ratio (x)", row=1, col=2)
 
 fig.show()
 fig.write_html(f"{sensor_name}_gas_curves.html")
+
