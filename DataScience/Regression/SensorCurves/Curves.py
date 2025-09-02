@@ -47,7 +47,6 @@ gas_data4 = {}
 
 colornum = ListNumber = 0
 
-# Grafik düzeni oluşturma
 fig = make_subplots(
     rows=1, cols=2,
     column_widths=[0.5, 0.5],
@@ -144,10 +143,10 @@ while True:
             case _: hexcolor = "Unknown"
     
         fig.add_trace(go.Scatter(x=x, y=y, mode='markers', name=f'New Datas for {gas_name} (R²={r_squared:.4f})', marker=dict(color=hexcolor)), row=1, col=1)
-        fig.add_trace(go.Scatter(x=new_x, y=new_y1, mode='lines', name=f'New Curve: y = {a_rounded} * x^{b_rounded}', marker=dict(color=hexcolor)), row=1, col=1) # ilk regresyonun
+        fig.add_trace(go.Scatter(x=new_x, y=new_y1, mode='lines', name=f'New Curve: y = {a_rounded} * x^{b_rounded}', marker=dict(color=hexcolor)), row=1, col=1)
 
         fig.add_trace(go.Scatter(x=x, y=y, mode='markers', name=f'Old Datas for {gas_name}', marker=dict(color=hexcolor)), row=1, col=2)
-        fig.add_trace(go.Scatter(x=new_x, y=new_y2, mode='lines', name=f'Old Curve: y = {a_rounded_no} * x^{b_rounded_no}', marker=dict(color=hexcolor)), row=1, col=2) # ikinci regresyonun     
+        fig.add_trace(go.Scatter(x=new_x, y=new_y2, mode='lines', name=f'Old Curve: y = {a_rounded_no} * x^{b_rounded_no}', marker=dict(color=hexcolor)), row=1, col=2)
         
     except Exception as e:
         print("An error occurred:", e)
