@@ -20,7 +20,6 @@ Air = 1 if (SensorMode == 'Rs/Rs') else Air
 FormulaCoefficient = MQInfo.FormulaCoefficient
 AirVals = MQInfo.AirVals
 AirValsEqualGasVals = MQInfo.AirValsEqualGasVals
-CRMode = MQInfo.CRMode
 FormulaMode = MQInfo.FormulaMode
 
 def interpolate(value, old_min, old_max, new_min, new_max):
@@ -122,3 +121,4 @@ fig.update_layout(
 )
 
 fig.write_html(f"{SensorName}_gases_ppm.html")
+
