@@ -18,7 +18,6 @@ SensorRLCalRL = MQInfo.SensorRLCalRL
 SensorMode = MQInfo.SensorMode
 Air = 1 if (SensorMode == 'Rs/Rs') else Air
 FormulaCoefficient = MQInfo.FormulaCoefficient
-AirVals = MQInfo.AirVals
 AirValsEqualGasVals = MQInfo.AirValsEqualGasVals
 FormulaMode = MQInfo.FormulaMode
 
@@ -121,4 +120,5 @@ fig.update_layout(
 )
 
 fig.write_html(f"{SensorName}_gases_ppm.html")
+
 
