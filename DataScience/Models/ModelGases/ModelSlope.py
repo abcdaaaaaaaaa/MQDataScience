@@ -51,10 +51,6 @@ def inverseyaxb(valuea, value, valueb):
 def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
 
-def convertppm(value):
-    convertvalue = value * FormulaCoefficient if FormulaMode != 'ppm' else value
-    return convertvalue
-
 def fit_time_with_r2(x, y):
     popt, _ = curve_fit(lambda x, a, b: yaxb(a, x, b), x, y)
     a, b = popt
@@ -157,3 +153,4 @@ fig.update_layout(
 )
 
 fig.write_html(f"{SensorName}_ModelSlope_Estimation.html")
+
