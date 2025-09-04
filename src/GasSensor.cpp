@@ -44,6 +44,7 @@ float GasSensor::calculateCalValue2(float a, float b, float calibrateAir, float 
     float calAir = inverseYaxb(a, calibrateAir, b);
     return fmap(calAir, minPpm, maxPpm, 0, 1);
 }
+
 float GasSensor::calculateRsRoPPM(float sensorVal, float correction, float a, float b, float calValue, float air, float rlcal, float maxPpm) {
     float ratio = air * rlcal * (calValue * (sensorVal - 1)) / (sensorVal * (calValue - 1));
     return limit(inverseYaxb(a, ratio / correction, b), 0, maxPpm * correction);
