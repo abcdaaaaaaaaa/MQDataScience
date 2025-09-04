@@ -92,6 +92,18 @@ interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
 ## SuggestedRL For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
 
+## Check out all our DataScience libraries under the SpaceData series!
+
+"The first and only Arduino library series where Gas Sensors and Geiger Counter combine with Data Science"
+
+| Library | Scope |
+|---------|---------|
+| <a href="https://github.com/abcdaaaaaaaaa/MQDataScience">MQDataScience  | MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ131_LOW, MQ131_HIGH, MQ135, MQ136, MQ137, MQ138, MQ214, MQ216, MQ303A, MQ303B, MQ306A, MQ307A, MQ309A Gas Sensors  |
+| <a href="https://github.com/abcdaaaaaaaaa/TGSDataScience">TGSDataScience  | TGS2600, TGS2610, TGS2611 TGS2620, TGS2612, TGS2442, TGS2201, TGS4161, TGS8100, TGS813, TGS822, TGS2602, TGS6812 Gas Sensors |
+| <a href="https://github.com/abcdaaaaaaaaa/MG811DataScience">MG811DataScience  | MG811 Gas Sensor  |
+| <a href="https://github.com/abcdaaaaaaaaa/SP3S-AQ2DataScience">SP3S-AQ2DataScience  | SP3S-AQ2-01 Gas Sensor  |
+| <a href="https://github.com/abcdaaaaaaaaa/RadioactiveDataScience">RadioactiveDataScience  | Geiger Counter  |
+
 ## For detailed explanation, You can also check out the github <a href="https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki">Wiki Page!
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">Here!
