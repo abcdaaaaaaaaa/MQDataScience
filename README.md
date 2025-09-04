@@ -24,7 +24,7 @@
 
 ## Ppm Formullas
 
-<img width="380" alt="log" src="https://github.com/user-attachments/assets/2e3e648a-8c7f-4998-8d6e-ca267c82e6a2" />
+<img width="360" alt="log" src="https://github.com/user-attachments/assets/2e3e648a-8c7f-4998-8d6e-ca267c82e6a2" />
 
 
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
@@ -74,17 +74,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 models]
 
 ## Inclusion of Correction Factor
 
-ppm = (ratio / CorrectionCoefficient / a)^(1/b)  ppm = ([1 / CorrectionCoefficient / Air × SensorRLCalRL × (CalValue × (SensorValue – 1)) / (SensorValue × (CalValue – 1))]/a)^(1/b)
-
-ppm=([1/interpolate(RH,33,85,a_RH33,a_RH85)((temp+15)/5)^interpolate(RH,33,85,b_RH33,b_RH85)×Air×SensorRLCalRL×(CalValue×(SensorValue–1))/(SensorValue×(CalValue–1))]/a)^(1/b)
-
-interpolate(RH, 33, 85, a_RH33, a_RH85) --> (RH-33)×(a_RH85-a_RH33)+a_RH33
-
-interpolate(RH, 33, 85, b_RH33, b_RH85) --> (RH-33)×(b_RH85-b_RH33)+b_RH33
-
-</b>
-
-<img width="750" alt="ppmformulla" src="https://github.com/user-attachments/assets/e37d3148-be7a-4d9f-9886-e4e48c7663fb" />
+<img width="1264" alt="ppmlast" src="https://github.com/user-attachments/assets/d597f6f1-44b3-4ea8-ae55-20d8d35e7c47" />
 
 ## STEL Limit For Gases
 ![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
