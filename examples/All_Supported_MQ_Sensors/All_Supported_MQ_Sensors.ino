@@ -117,5 +117,5 @@ void loop() {
     }
 
     Serial.println("----------");
-    delay(5000);
+    delay(5000); // You can customize the waiting time according to the sensor you use.
 }
