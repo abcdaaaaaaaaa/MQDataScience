@@ -24,11 +24,11 @@
 
 ## Ppm Formullas
 
-<img width="360" alt="log" src="https://github.com/user-attachments/assets/2e3e648a-8c7f-4998-8d6e-ca267c82e6a2" />
+<img width="360" alt="log" src="https://github.com/user-attachments/assets/c0d1db76-0c69-4725-80fc-aed740fcbac8" />
 
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
-<img width="1264" alt="image1" src="https://github.com/user-attachments/assets/38fadca0-3b84-409b-a606-863182768f95" />
+<img width="1264" alt="image1" src="https://github.com/user-attachments/assets/63fcad55-8c34-4520-a2b6-af4c509d6888" />
 
 <img width="1264" alt="image2" src="https://github.com/user-attachments/assets/2aeeeef4-0d06-45f1-9f49-b4e513cc5dea" />
 
