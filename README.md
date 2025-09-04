@@ -94,6 +94,6 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 | <a href="https://github.com/abcdaaaaaaaaa/SP3S-AQ2DataScience">SP3S-AQ2DataScience  | SP3S-AQ2-01 Gas Sensor  |
 | <a href="https://github.com/abcdaaaaaaaaa/RadioactiveDataScience">RadioactiveDataScience  | Geiger Counter  |
 
-## For detailed explanation, You can also check out the github <a href="https://github.com/abcdaaaaaaaaa/MQSpaceData.h/wiki">Wiki Page!
+## For detailed explanation, You can also check out the github <a href="https://github.com/abcdaaaaaaaaa/MQDataScience/wiki">Wiki Page!
 
 ## You can access the library's article <a href="https://www.spacepedia.info/MQDataScience">Here!
