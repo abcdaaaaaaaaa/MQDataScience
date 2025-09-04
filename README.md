@@ -26,12 +26,11 @@
 
 <img width="360" alt="log" src="https://github.com/user-attachments/assets/2e3e648a-8c7f-4998-8d6e-ca267c82e6a2" />
 
-
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
 <img width="1264" alt="image1" src="https://github.com/user-attachments/assets/38fadca0-3b84-409b-a606-863182768f95" />
 
-<img width="1264" alt="image2" src="https://github.com/user-attachments/assets/a786298d-2df1-430b-bea5-ee53dec6692e" />
+<img width="1264" alt="image2" src="https://github.com/user-attachments/assets/2aeeeef4-0d06-45f1-9f49-b4e513cc5dea" />
 
         if r_squared >= 0.9995:
             print("R-squared value for {gas name} is above 0.9995, plotting against first and last values.")
@@ -50,20 +49,21 @@ The first formula is determined according to all points (OldCurve.py, OldCurve),
 ## y = ax^b  --> ppm = a×ratio^b
 <b> Therefore, we need to make a transition according to the formula:
 
-<img width="400" alt="image3" src="https://github.com/user-attachments/assets/5fe512c5-d0d3-413d-98c7-8516969f58cd" />
+<img width="400" alt="image3" src="https://github.com/user-attachments/assets/9706b917-7ce9-4bc9-a3bb-171a11e46052" />
 
 <b> In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
 
 ## V = I × R
 
-<img width="1264" alt="image4" src="https://github.com/user-attachments/assets/c25bac78-f531-4c46-a028-47b723c10dd1" />
+<img width="1264" alt="image4" src="https://github.com/user-attachments/assets/cdcdc664-251c-4d1f-a79b-8481ded8a043" />
 
-<img width="700" alt="image5" src="https://github.com/user-attachments/assets/0beab7d0-b9b8-472e-b17f-3cb0fc5eb048" />
+-------------------------
+
+<img width="685" height="70" alt="image5" src="https://github.com/user-attachments/assets/36fedfeb-24dc-4a71-801d-1188c149e6bd" />
 
 ## Calculate Ratio
 
-<img width="600" alt="image6" src="https://github.com/user-attachments/assets/ee3d36d6-d636-4060-a013-668821844073" />
-
+<img width="698" height="332" alt="image6" src="https://github.com/user-attachments/assets/13d05db9-011d-4844-bf97-16c3baca77b6" />
 
 ## Ratio for Sensors
 STATUS 1: MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135, MQ-136, MQ-137 [Almost All & Standart]
