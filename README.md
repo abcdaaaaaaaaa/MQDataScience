@@ -29,7 +29,7 @@
 
 ![loghello)](https://github.com/user-attachments/assets/5b251bec-9677-421d-9101-ccb1e3ad4d2e)
 
-<img width="1264" alt="image1" src="https://github.com/user-attachments/assets/780ca3d6-2bdb-4c64-8ced-ccb9c8a60c7b" />
+<img width="1264" alt="image1" src="https://github.com/user-attachments/assets/38fadca0-3b84-409b-a606-863182768f95" />
 
 <img width="1264" alt="image2" src="https://github.com/user-attachments/assets/a786298d-2df1-430b-bea5-ee53dec6692e" />
 
