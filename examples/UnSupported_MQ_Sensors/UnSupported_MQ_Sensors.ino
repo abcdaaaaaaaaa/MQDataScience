@@ -135,7 +135,7 @@ void loop() {
     sensor_gases("Propane", 19.5575, -0.461, 200, 10000); // Example for MQ-2
 
     Serial.println("----------");
-    delay(5000);
+    delay(5000); // You can customize the waiting time according to the sensor you use.
 }
 
 void sensor_gases(String gasname, float valuea, float valueb, float minPpm, float maxPpm) {
