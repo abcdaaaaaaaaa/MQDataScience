@@ -68,9 +68,9 @@ The first formula is determined according to all points (OldCurve.py, OldCurve),
 ## Ratio for Sensors
 STATUS 1: MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135, MQ-136, MQ-137 [Almost All & Standart]
 
-STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A & B models]
+STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A Models & B Models]
 
-STATUS 3: MQ-131_LOW, MQ131 [MQ131 models]
+STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Inclusion of Correction Factor
 
