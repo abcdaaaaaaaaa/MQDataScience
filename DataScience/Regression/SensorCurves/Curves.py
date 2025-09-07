@@ -2,7 +2,6 @@ import numpy as np
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from scipy.optimize import curve_fit
-import random
 
 def print_gas_table(gas_data, typ):
     print()
@@ -171,4 +170,5 @@ fig.update_yaxes(title_text="Ratio (x)", row=1, col=2)
 
 fig.show()
 fig.write_html(f"{sensor_name}_gas_curves.html")
+
 
