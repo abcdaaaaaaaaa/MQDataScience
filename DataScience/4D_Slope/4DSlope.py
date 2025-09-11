@@ -60,6 +60,14 @@ print(SensorName + " " + formatted)
 print("")
 print("")
 
+with open("DataReport.txt", "a") as f:
+    f.write("\n")
+    f.write("\n")
+    f.write(SensorName + " " + formatted)
+    f.write("\n")
+    f.write("\n")
+    f.write("\n")
+
 with open("EstimationReport.txt", "a") as f:
     f.write("\n")
     f.write("\n")
@@ -387,6 +395,18 @@ for i, gas in enumerate(gas_params):
     fig.add_trace(go.Scatter(x=x2, y=y2, mode='lines', marker=dict(color=color), name=gasname))
 
     print(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}")
+    with open("DataReport.txt", "a") as f:
+        f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
+
+    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time, temperature, rh, SensorValue, correction_coefficient, ppm, air):
+        print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
+        with open("DataReport.txt", "a") as f:
+            f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
+    print("")
+    with open("DataReport.txt", "a") as f:
+        f.write("\n")
+
+    print(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}")
     with open("EstimationReport.txt", "a") as f:
         f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
 
@@ -429,4 +449,3 @@ fig.add_annotation(text="4D Slope Estimation", x=0.18, y=0.98, showarrow=False, 
 fig.add_annotation(text=f"{SensorName} Air Time-based PPM Calculation", x=0.89, y=0.98, showarrow=False, font=dict(size=19), xref="paper", yref="paper")
 
 fig.write_html(f"{SensorName}_4D_Slope_Estimation.html")
-
