@@ -176,6 +176,8 @@ for i, gas in enumerate(gas_params):
     CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
     minair, maxair = convertppm(minair), convertppm(maxair)
 
+    
+    ppm = limit(Sensorppm(valuea, valueb, SensorValue, correction_coefficient), 0, maxair * correction_coefficient)
     ppm_surface = limit(Sensorppm(valuea, valueb, SensorValue_surface, correction_coefficient_surface), 0, maxair * correction_coefficient_surface)
 
     print(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}")
@@ -186,4 +188,3 @@ for i, gas in enumerate(gas_params):
     for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
         print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
     print("")
-
