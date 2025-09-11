@@ -206,11 +206,11 @@ maxtime = np.max(time_surface)
 ppm_range = []
 ppms_range = []
 
-xmin, xmax = np.min(temperature_surface), np.max(temperature_surface)
-ymin, ymax = np.min(rh_surface), np.max(rh_surface)
-zmin, zmax = np.min(air_surface), np.max(air_surface)
+xmin, xmax = np.min(temperature + temperature_surface), np.max(temperature + temperature_surface)
+ymin, ymax = np.min(rh + rh_surface), np.max(rh + rh_surface)
+zmin, zmax = np.min(air + air_surface), np.max(air + air_surface)
 
-mincr, maxcr = np.min(correction_coefficient_surface), np.max(correction_coefficient_surface)
+mincr, maxcr = np.min(correction_coefficient + correction_coefficient_surface), np.max(correction_coefficient + correction_coefficient_surface)
 
 x_middle_min = (xmax-xmin)/4
 x_middle_max = x_middle_min*3
@@ -429,3 +429,4 @@ fig.add_annotation(text="4D Slope Estimation", x=0.18, y=0.98, showarrow=False, 
 fig.add_annotation(text=f"{SensorName} Air Time-based PPM Calculation", x=0.89, y=0.98, showarrow=False, font=dict(size=19), xref="paper", yref="paper")
 
 fig.write_html(f"{SensorName}_4D_Slope_Estimation.html")
+
