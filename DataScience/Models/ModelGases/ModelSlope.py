@@ -153,4 +153,3 @@ fig.update_layout(
 )
 
 fig.write_html(f"{SensorName}_ModelSlope_Estimation.html")
-
