@@ -448,4 +448,3 @@ fig.add_annotation(text="4D Slope Estimation", x=0.18, y=0.98, showarrow=False, 
 fig.add_annotation(text=f"{SensorName} Air Time-based PPM Calculation", x=0.89, y=0.98, showarrow=False, font=dict(size=19), xref="paper", yref="paper")
 
 fig.write_html(f"{SensorName}_4D_Slope_Estimation.html")
-
