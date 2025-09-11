@@ -120,5 +120,3 @@ fig.update_layout(
 )
 
 fig.write_html(f"{SensorName}_gases_ppm.html")
-
-
