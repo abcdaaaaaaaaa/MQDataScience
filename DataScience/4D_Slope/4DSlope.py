@@ -62,14 +62,12 @@ print("")
 
 with open("DataReport.txt", "a") as f:
     f.write("\n")
-    f.write("\n")
     f.write(SensorName + " " + formatted)
     f.write("\n")
     f.write("\n")
     f.write("\n")
 
 with open("EstimationReport.txt", "a") as f:
-    f.write("\n")
     f.write("\n")
     f.write(SensorName + " " + formatted)
     f.write("\n")
@@ -214,11 +212,11 @@ maxtime = np.max(time_surface)
 ppm_range = []
 ppms_range = []
 
-xmin, xmax = np.min(temperature + temperature_surface), np.max(temperature + temperature_surface)
-ymin, ymax = np.min(rh + rh_surface), np.max(rh + rh_surface)
-zmin, zmax = np.min(air + air_surface), np.max(air + air_surface)
+xmin, xmax = np.min([np.min(temperature), np.min(temperature_surface)]), np.max([np.max(temperature), np.max(temperature_surface)])
+ymin, ymax = np.min([np.min(rh), np.min(rh_surface)]), np.max([np.max(rh), np.max(rh_surface)])
+zmin, zmax = np.min([np.min(air), np.min(air_surface)]), np.max([np.max(air), np.max(air_surface)])
 
-mincr, maxcr = np.min(correction_coefficient + correction_coefficient_surface), np.max(correction_coefficient + correction_coefficient_surface)
+mincr, maxcr = np.min([np.min(correction_coefficient), np.min(correction_coefficient_surface)]), np.max([np.max(correction_coefficient), np.max(correction_coefficient_surface)])
 
 x_middle_min = (xmax-xmin)/4
 x_middle_max = x_middle_min*3
