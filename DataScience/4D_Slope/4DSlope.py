@@ -382,7 +382,7 @@ for i, gas in enumerate(gas_params):
     """
     color = color_palette[i % len(color_palette)]
 
-    ppm = limit(Sensorppm(valuea, valueb, SensorValue, CorrectionCoefficient(ScaleTemp(temperature, '+'), rh)), 0, maxair * CorrectionCoefficient(ScaleTemp(temperature, '+'), rh))
+    ppm = limit(Sensorppm(valuea, valueb, SensorValue, correction_coefficient), 0, maxair * correction_coefficient_surface)
     x1, y1 = filter_repeats(time, ppm)
     ppm_range.append(ppm)
     fig.add_trace(go.Scatter(x=x1, y=y1, mode='markers', marker=dict(color=color), name=gasname))
