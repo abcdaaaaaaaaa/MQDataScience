@@ -31,5 +31,3 @@
   To process supported MQ sensors to the microcontroller: All_Supported_MQ_Sensors.ino
   To obtain more concrete information about gas sensors: curious.ino
   To have general information about all the files in the library: information.ino
-
-
