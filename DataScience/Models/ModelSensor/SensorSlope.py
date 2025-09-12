@@ -18,7 +18,7 @@ def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
 
 def limit(value):
-    return np.minimum(np.maximum(value, 0), 100)
+    return np.clip(value, 0, 100)
 
 def fit_time_with_r2(x, y):
     popt, _ = curve_fit(lambda x, a, b: yaxb(a, x, b), x, y)
