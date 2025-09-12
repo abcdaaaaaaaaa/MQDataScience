@@ -72,7 +72,7 @@ STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A Models & B Models]
 
 STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
-## Inclusion of Correction Factor
+## Inclusion of Correction Coefficient
 
 <img width="1264" alt="ppmlast" src="https://github.com/user-attachments/assets/d597f6f1-44b3-4ea8-ae55-20d8d35e7c47" />
 
