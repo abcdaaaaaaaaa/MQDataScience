@@ -7,7 +7,7 @@ import pandas as pd
 df = pd.read_excel("Sensor_Datas.xlsx")
 
 SensorName = df["Mode"].iloc[0]
-              
+          
 def roundf(*args):
     return tuple(round(x, 4) for x in args)
 
