@@ -75,7 +75,7 @@ void loop() {
     Serial.print(" ppm");
     Serial.println();
     Serial.print("Correction Coefficient: "); // This value indicates the accuracy of the sensor due to environmental conditions.
-    Serial.print(correction, 4); // writes decimal part and the first four digits of the decimal part
+    Serial.print(correction, 4); // writes decimal part and the first four digits of the decimal part.
     Serial.println();
 
     for (byte i = 0; i < sensorModel->gasCount; i++) {
@@ -119,3 +119,4 @@ void loop() {
     Serial.println("----------");
     delay(5000); // You can customize the waiting time according to the sensor you use.
 }
+
