@@ -225,6 +225,4 @@ for gas in gas_params:
         template='plotly_dark'
     )
     
-
     fig.write_html(f"{SensorName}_{gasname}_ppm.html")
-
