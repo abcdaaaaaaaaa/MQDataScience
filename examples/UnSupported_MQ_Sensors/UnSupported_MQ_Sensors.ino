@@ -123,7 +123,7 @@ void loop() {
     Serial.print(" ppm");
     Serial.println();
     Serial.print("Correction Coefficient: "); // This value indicates the accuracy of the sensor due to environmental conditions.
-    Serial.print(correction, 4); // writes decimal part and the first four digits of the decimal part
+    Serial.print(correction, 4); // Writes decimal part and the first four digits of the decimal part.
     Serial.println();
 
     // --------GAS-1-------- Please fill in these sections according to your sensor.
@@ -156,3 +156,4 @@ void sensor_gases(String gasname, float valuea, float valueb, float minPpm, floa
     Serial.print(ppm);
     Serial.println(" ppm");
 }
+
