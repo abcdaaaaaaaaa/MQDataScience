@@ -62,15 +62,15 @@ print("")
 
 with open("DataReport.txt", "a") as f:
     f.write("\n")
-    f.write(SensorName + " " + formatted)
     f.write("\n")
+    f.write(SensorName + " " + formatted)
     f.write("\n")
     f.write("\n")
 
 with open("EstimationReport.txt", "a") as f:
     f.write("\n")
-    f.write(SensorName + " " + formatted)
     f.write("\n")
+    f.write(SensorName + " " + formatted)
     f.write("\n")
     f.write("\n")
 
@@ -145,7 +145,7 @@ def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
 
 def limit(value, minlim, maxlim):
-    return np.minimum(np.maximum(value, minlim), maxlim)
+    return np.clip(value, minlim, maxlim)
 
 def convertppm(value):
     convertvalue = value * FormulaCoefficient if FormulaMode != 'ppm' else value
@@ -382,7 +382,7 @@ for i, gas in enumerate(gas_params):
     """
     color = color_palette[i % len(color_palette)]
 
-    ppm = limit(Sensorppm(valuea, valueb, SensorValue, correction_coefficient), 0, maxair * correction_coefficient_surface)
+    ppm = limit(Sensorppm(valuea, valueb, SensorValue, correction_coefficient), 0, maxair * correction_coefficient)
     x1, y1 = filter_repeats(time, ppm)
     ppm_range.append(ppm)
     fig.add_trace(go.Scatter(x=x1, y=y1, mode='markers', marker=dict(color=color), name=gasname))
@@ -394,6 +394,7 @@ for i, gas in enumerate(gas_params):
 
     print(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}")
     with open("DataReport.txt", "a") as f:
+        f.write("\n")
         f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
 
     for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time, temperature, rh, SensorValue, correction_coefficient, ppm, air):
@@ -401,10 +402,9 @@ for i, gas in enumerate(gas_params):
         with open("DataReport.txt", "a") as f:
             f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
     print("")
-    with open("DataReport.txt", "a") as f:
-        f.write("\n")
 
     with open("EstimationReport.txt", "a") as f:
+        f.write("\n")
         f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
 
     for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
@@ -412,8 +412,7 @@ for i, gas in enumerate(gas_params):
         with open("EstimationReport.txt", "a") as f:
             f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
     print("")
-    with open("EstimationReport.txt", "a") as f:
-        f.write("\n")
+
     
 ppm_graph = [np.min(ppms_range), np.min(ppm_range), np.max(ppms_range), np.max(ppm_range)]
 graphmin, graphmax = np.min(ppm_graph), np.max(ppm_graph)
