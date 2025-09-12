@@ -73,7 +73,7 @@ def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
 
 def limit(value, maxlim):
-    return np.minimum(np.maximum(value, 0), maxlim)
+    return np.clip(value, 0, maxlim)
 
 def convertppm(value):
     convertvalue = value * FormulaCoefficient if FormulaMode != 'ppm' else value
