@@ -31,7 +31,7 @@ def inverseyaxb(valuea, value, valueb):
     return np.power(value / valuea, 1 / valueb)
 
 def limit(value, minlim, maxlim):
-    return np.minimum(np.maximum(value, minlim), maxlim)
+    return np.clip(value, minlim, maxlim)
 
 def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
