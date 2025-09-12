@@ -108,7 +108,7 @@ def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
 
 def limit(value, minlim, maxlim):
-    return np.minimum(np.maximum(value, minlim), maxlim)
+    return np.clip(value, minlim, maxlim)
 
 def convertppm(value):
     convertvalue = value * FormulaCoefficient if FormulaMode != 'ppm' else value
@@ -227,3 +227,4 @@ for gas in gas_params:
     
 
     fig.write_html(f"{SensorName}_{gasname}_ppm.html")
+
