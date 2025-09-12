@@ -58,14 +58,6 @@ print(SensorName + " " + formatted)
 print("")
 print("")
 
-with open("EstimationReport.txt", "a") as f:
-    f.write("\n")
-    f.write("\n")
-    f.write(SensorName + " " + formatted)
-    f.write("\n")
-    f.write("\n")
-    f.write("\n")
-
 def roundf(*args):
     return tuple(round(x, 4) for x in args)
 
@@ -188,4 +180,5 @@ for i, gas in enumerate(gas_params):
     for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
         print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
     print("")
+
 
