@@ -15,6 +15,7 @@
   For 3D air quality graphical sensor simulation with correction coefficient support in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/3D_Surface/3DSurface.py
   For air quality graphical sensor simulation of model gases in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelGraph.py
   For slope estimation of sensors not supported in Data Science Application: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelSensor/SensorSlope.py
+  To generate regression curves of all supported MQ series gases: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Regression/SensorCurves/Curves.py
 
 ---------- For UnSupported MQ Sensors ----------
   To calculate correction coefficients for sensors not supported by customized modes in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScience/Regression/CorrectionCoefficient
