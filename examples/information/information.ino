@@ -12,7 +12,7 @@
   For correction coefficient assisted 4d ppm slope estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope/4DSlope.py
   For only read current ppm values with correction coefficient (does not include slope estimation) in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope/readppm.py
   For model gases ppm estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelSlope.py
-  For 3D air quality graphical sensor simulation with correction factor support in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/3D_Surface/3DSurface.py
+  For 3D air quality graphical sensor simulation with correction coefficient support in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/3D_Surface/3DSurface.py
   For air quality graphical sensor simulation of model gases in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelGraph.py
   For slope estimation of sensors not supported in Data Science Application: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelSensor/SensorSlope.py
 
