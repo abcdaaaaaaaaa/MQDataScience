@@ -1,7 +1,7 @@
 // (1) The library also supports data science applications such as gradient 4D Slope Estimation from Python!:
-// (1) https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Slope
+// (1) https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScience/4D_Slope
 // (2) If you are using this library for IOT Alternatively, you can also perform ppm calculations in javascript with this library!
-// (2) https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScript
+// (2) https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScript
 
 // You can access the wokwi simulation of the project here:
 // https://wokwi.com/projects/436822004887407617
