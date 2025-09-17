@@ -15,4 +15,4 @@ To understand the sensitivity of MQ131, look at its concentration range (if ppb 
 
 If the sensor you are working with is not listed, please check the list of "Model Gases". (ModelSlope.py)
 
-NOTE: If you are going to use this system "only" for ppm reading in a python project: you can use readppm.py (Does not include create 4d slope html file).
+NOTE: If you are going to use this system "only" for ppm reading and estimating in a python project: you can use readppm.py (Does not include create 4d slope html file).
