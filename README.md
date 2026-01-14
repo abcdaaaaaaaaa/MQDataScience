@@ -1,3 +1,6 @@
+## What's await v6.0.0?
+### 1) All sensors can be customized to the desired voltage.
+
 # MQSpaceData v5.5.3
 
 ## MQDataScience What can be create?
