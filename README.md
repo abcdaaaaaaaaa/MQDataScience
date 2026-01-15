@@ -1,4 +1,4 @@
-## What's await v6.0.0?
+## What's await v5.5.4?
 ### 1) Specific voltage recommendations will be provided for each sensor mode.
 ### 2) Recommended waiting periods will be provided for each sensor mode.
 ### 3) The sensors will be tested.
