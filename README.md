@@ -87,6 +87,9 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 ## SuggestedRL For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
 
+## Required Voltage Range For MQ Sensors
+![Vc](https://github.com/user-attachments/assets/3768c32f-9942-4140-bccd-1796df73869a)
+
 ## Check out all our DataScience libraries under the SpaceData series!
 
 "The first and only Arduino library series where Gas Sensors and Geiger Counter combine with Data Science"
