@@ -84,14 +84,17 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 ## STEL Limit For Gases
 ![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
 
+## Required Preheating Times For MQ Sensors
+![Hour](https://github.com/user-attachments/assets/0a49d718-6ac0-4edd-a93c-a14086e4be79)
+
+## Required Circuit Diagram For MQ sensors
+![Circuit Diagram](https://github.com/user-attachments/assets/74905eb4-9a70-4409-8bc3-488cb973b938)
+
 ## Required Voltage Range For MQ Sensors
 ![Vc](https://github.com/user-attachments/assets/3768c32f-9942-4140-bccd-1796df73869a)
 
 ## Required RL (Resistance) For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
-
-## Required Preheating Times For MQ Sensors
-![Hour](https://github.com/user-attachments/assets/0a49d718-6ac0-4edd-a93c-a14086e4be79)
 
 ## Check out all our DataScience libraries under the SpaceData series!
 
