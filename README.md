@@ -83,12 +83,12 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 ![Hour](https://github.com/user-attachments/assets/0a49d718-6ac0-4edd-a93c-a14086e4be79)
 
 ## Required Circuit Diagrams For MQ sensors
-![Circuit Diagram](https://github.com/user-attachments/assets/74905eb4-9a70-4409-8bc3-488cb973b938)
+![Circuit Diagrams](https://github.com/user-attachments/assets/74905eb4-9a70-4409-8bc3-488cb973b938)
 
 ## Required Voltage Ranges For MQ Sensors
 ![Vc](https://github.com/user-attachments/assets/3768c32f-9942-4140-bccd-1796df73869a)
 
-## Required RL Values (Resistances) For MQ Sensors
+## Required RL Values (Load Resistors) For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
 
 ## Check out all our DataScience libraries under the SpaceData series!
