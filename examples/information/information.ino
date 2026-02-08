@@ -28,7 +28,10 @@
 ---------- Library Examples Files ----------
   For the microcontroller to process the information obtained from the data graphs of unsupported MQ sensors by data science applications: UnSupported_MQ_Sensors.ino
   For accurate ppm results, you need to provide the following resistance values to the sensor: Required_MQ_LoadResistor.ino
+  For accurate ppm results, you need to provide the following voltage ranges to the sensor: Required_MQ_VoltageRanges.ino
+  For accurate ppm results, you need to provide the following preheating time to the sensor: Required_MQ_PreHeating.ino
   To access the codes for the latest version of the library published on the Arduino Project Hub for easy use of the library: ProjectHub.ino
   To process supported MQ sensors to the microcontroller: All_Supported_MQ_Sensors.ino
   To obtain more concrete information about gas sensors: curious.ino
   To have general information about all the files in the library: information.ino
+
