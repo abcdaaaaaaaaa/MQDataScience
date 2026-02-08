@@ -1,9 +1,4 @@
-## What's await v5.5.4?
-### 1) Specific voltage recommendations will be provided for each sensor mode.
-### 2) Recommended waiting periods will be provided for each sensor mode.
-### 3) The sensors will be tested.
-
-# MQSpaceData v5.5.3
+# MQSpaceData v5.5.4
 
 ## MQDataScience What can be create?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
@@ -81,19 +76,19 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 <img width="1264" alt="ppmlast" src="https://github.com/user-attachments/assets/d597f6f1-44b3-4ea8-ae55-20d8d35e7c47" />
 
-## STEL Limit For Gases
-![STEL_LIMIT_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
+## STEL Limits For Gases
+![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
 
 ## Required Preheating Times For MQ Sensors
 ![Hour](https://github.com/user-attachments/assets/0a49d718-6ac0-4edd-a93c-a14086e4be79)
 
-## Required Circuit Diagram For MQ sensors
+## Required Circuit Diagrams For MQ sensors
 ![Circuit Diagram](https://github.com/user-attachments/assets/74905eb4-9a70-4409-8bc3-488cb973b938)
 
-## Required Voltage Range For MQ Sensors
+## Required Voltage Ranges For MQ Sensors
 ![Vc](https://github.com/user-attachments/assets/3768c32f-9942-4140-bccd-1796df73869a)
 
-## Required RL (Resistance) For MQ Sensors
+## Required RL Values (Resistances) For MQ Sensors
 ![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
 
 ## Check out all our DataScience libraries under the SpaceData series!
