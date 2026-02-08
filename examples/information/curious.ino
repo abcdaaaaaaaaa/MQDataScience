@@ -17,3 +17,9 @@ If MQ series gas sensors can measure more than one gas, why are there so many ty
   For example, the same amount of alcohol in the environment will yield significantly different responses from an MQ-3 and an MQ-135.
   Moreover, increasing only the alcohol level in the environment will also cause the reported ppm of other gases to rise in MQ sensor.
   In short, there are many MQ sensors on the market due to the limitations of each sensor’s specific sensitivity profile and gas selectivity.
+
+Why do we use the sensors after applying the preheating process?
+  Gas sensors consist of a tin dioxide (SnO₂) semiconductor surface as the sensing element and a heating element that maintains this surface at the operating temperature.
+  Moisture and adsorbed gas residues may be present on the sensing surface after the manufacturing and storage process. 
+  Therefore, the sensors must be preheated by operating them for a certain period under nominal supply conditions before initial use. 
+  This process ensures the surface conditions stabilize, contributes to the stabilization of the measurement response, and helps the sensor resistance values ​​settle within the operating range.
