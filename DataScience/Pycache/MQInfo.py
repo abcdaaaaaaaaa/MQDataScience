@@ -339,7 +339,7 @@ def MQ306A():
     SensorName = 'MQ306A'
     Air = 1.66
     CalibrateAir = 0.1
-    SensorRLCalRL = 0.2;
+    SensorRLCalRL = 0.2
     MinAirPpm, MaxAirPpm = 15, 30
     gas_params = [
         {'name': 'Ethanol', 'ppmvals': (100, 3000), 'ppm': (3.3559, -0.3563), 'calvalue': 0.873876},
