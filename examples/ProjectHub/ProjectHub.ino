@@ -44,11 +44,11 @@ void setup() {
 }
 
 void loop() {
-    int val = map(analogRead(pot), 0, (1 << ADC_BIT_RESU) - 1, 1, 19);
+    int val = map(analogRead(pot), 0, (1 << ADC_BIT_RESU) - 1, 1, 21);
 
-    if (val >= 1 && val <= 13) selectedModel = mqList1[val - 1];
-    else if (val >= 14 && val <= 17) selectedModel = mqList2[val - 14];
-    else if (val >= 18 && val <= 19) selectedModel = mqList3[val - 18];
+    if (val >= 1 && val <= 14) selectedModel = mqList1[val - 1];
+    else if (val >= 15 && val <= 19) selectedModel = mqList2[val - 15];
+    else if (val >= 20 && val <= 21) selectedModel = mqList3[val - 20];
 
     sensorModel = getSensorModel(selectedModel);
     if (!sensorModel) {
