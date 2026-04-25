@@ -1,6 +1,6 @@
-# MQSpaceData v5.5.5
+# MQDataScience v5.5.5
 
-## MQDataScience What can be create?
+## What can be created?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
 
 ## 1) Advanced Data Science System for Regression Calculations
