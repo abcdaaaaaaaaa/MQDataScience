@@ -12,7 +12,7 @@
 ## 3) Formulated Correction Coefficients depending on Temperature and Humidity
 ![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/8783b3a5-7956-47f1-a61b-ae300041e047)
 
-## 4) 3D Surface Diagram for MQ-135 Gases
+## 4) 3D Surface Diagram for MQ Sensors Gases
 ![MQ135_CO2_3D)](https://github.com/user-attachments/assets/5295ad32-65e2-4e4a-bbdb-d2a98b173e86)
 
 ## 5) Slope Estimation in Time-Dependent 4D Space
