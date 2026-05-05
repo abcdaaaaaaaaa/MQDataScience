@@ -1,5 +1,12 @@
 # MQDataScience v5.5.7
 
+# What’s awaiting in v6.0.0?
+
+## 1) Inaccurate curves plotted using power regression with correction coefficients will be corrected to 99% accuracy using an offset exponential model:
+
+<img width="966" height="1843" alt="v5 0 0 (Figure-1)  v6 0 0 (Figure-2) (1)" src="https://github.com/user-attachments/assets/558f073e-850d-4e92-8234-4f48aad2edaf" />
+
+
 ## What can be created?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
 
