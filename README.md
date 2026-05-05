@@ -1,6 +1,6 @@
 # MQDataScience v5.5.7
 
-# What’s awaiting in v6.0.0?
+## What’s awaiting in v6.0.0?
 
 ### 1) Inaccurate Curves Plotted Using Power Regression with Correction Coefficients Will Be Corrected to 99% Accuracy Using An Offset Exponential Model
 
