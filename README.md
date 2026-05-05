@@ -2,10 +2,13 @@
 
 # What’s awaiting in v6.0.0?
 
-## 1) Inaccurate curves plotted using power regression with correction coefficients will be corrected to 99% accuracy using an offset exponential model:
+## 1) Inaccurate Curves Plotted Using Power Regression with Correction Coefficients Will Be Corrected to 99% Accuracy Using An Offset Exponential Model
 
 <img width="966" height="1843" alt="v5 0 0 (Figure-1)  v6 0 0 (Figure-2) (1)" src="https://github.com/user-attachments/assets/558f073e-850d-4e92-8234-4f48aad2edaf" />
 
+## 2) In the "Slope Estimation in Time-Dependent 4D Space" Section, the Temperature and Relative Humidity Estimation System Will Be Improved
+
+## 3)
 
 ## What can be created?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
