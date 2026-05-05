@@ -1,6 +1,4 @@
-# MQDataScience v5.5.7
-
-## What’s awaiting in v6.0.0?
+# What’s awaiting in v6.0.0?
 
 ### 1) Inaccurate Curves Plotted Using Power Regression with Correction Coefficients Will Be Corrected to 99% Accuracy Using An Offset Exponential Model
 
@@ -11,6 +9,8 @@
 ### 3) Update #1 Will Be Included In All Files
 
 ### 4) All Estimation And Calculation Mechanisms Will Be Detailed in the README.md File
+
+# MQDataScience v5.5.7
 
 ## What can be created?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
