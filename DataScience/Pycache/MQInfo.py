@@ -1,8 +1,8 @@
 CleanAir = 1
-SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85, SensorRLCalRL, SensorMode, FormulaCoefficient, AirVals, AirValsEqualGasVals, CRMode, FormulaMode = [None] * 19
+SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, c_RH30, a_RH60, b_RH60, c_RH60, a_RH85, b_RH85, c_RH85, SensorRLCalRL, SensorMode, FormulaCoefficient, AirVals, AirValsEqualGasVals, CRMode, FormulaMode = [None] * 22
 
 def MQ2():
-    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-2'
     Air = 9.8
     CalibrateAir = 0.78
@@ -17,14 +17,16 @@ def MQ2():
         {'name': 'smoke', 'ppm': (26.4698, -0.3876)},
         {'name': 'CO', 'ppm': (28.024, -0.3182)}
     ]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup3()
 
 def MQ3():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-3'
     Air = 60.53
     MinAirPpm, MaxAirPpm = 0.103, 10 # 5.15 500 ppm
@@ -36,14 +38,16 @@ def MQ3():
         {'name': 'CO', 'ppm': (31.9559, -0.2325)},
         {'name': 'CH4', 'ppm': (44.8389, -0.0476)}
     ]
-    a_RH33 = 1.6671
-    b_RH33 = -0.2467
-    a_RH85 = 1.4112
-    b_RH85 = -0.2257
+    a_RH33 = 0.7897
+    b_RH33 = -0.0423
+    c_RH33 = 0.5355
+    a_RH85 = 0.7319
+    b_RH85 = -0.0446
+    c_RH85 = 0.4069
     group1_subgroup6()
 
 def MQ4():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-4'
     Air = 4.4
     CalibrateAir = 1.28
@@ -56,14 +60,16 @@ def MQ4():
         {'name': 'alcohol', 'ppm': (5.7994, -0.0696)},
         {'name': 'CO', 'ppm': (5.49, -0.0495)}
     ]
-    a_RH33 = 1.2767
-    b_RH33 = -0.2204
-    a_RH85 = 1.1013
-    b_RH85 = -0.2482
+    a_RH33 = 0.8597
+    b_RH33 = -0.0381
+    c_RH33 = 0.2861
+    a_RH85 = 0.5838
+    b_RH85 = -0.0218
+    c_RH85 = 0.4064
     group1_subgroup2()
     
 def MQ5():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-5'
     Air = 6.5
     CleanAir = 0.983
@@ -77,14 +83,16 @@ def MQ5():
         {'name': 'alcohol', 'ppm': (10.8274, -0.2104)},
         {'name': 'CO', 'ppm': (8.2236, -0.1492)}
     ]
-    a_RH33 = 1.3645
-    b_RH33 = -0.2977
-    a_RH85 = 1.1315
-    b_RH85 = -0.2874
+    a_RH33 = 0.8098
+    b_RH33 = -0.0413
+    c_RH33 = 0.3686
+    a_RH85 = 0.6066
+    b_RH85 = -0.0283
+    c_RH85 = 0.3891
     group1_subgroup2()
 
 def MQ6():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-6'
     Air = 10
     MinAirPpm, MaxAirPpm = 200, 10000
@@ -95,14 +103,16 @@ def MQ6():
         {'name': 'Alcohol', 'ppm': (19.3261, -0.1655)},
         {'name': 'CO', 'ppm': (13.4917, -0.0777)}
     ]
-    a_RH33 = 1.3128
-    b_RH33 = -0.2428
-    a_RH85 = 1.1252
-    b_RH85 = -0.2496
+    a_RH33 = 0.8714
+    b_RH33 = -0.044
+    c_RH33 = 0.2883
+    a_RH85 = 0.7287
+    b_RH85 = -0.0412
+    c_RH85 = 0.2648
     group1_subgroup1()
 
 def MQ7():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-7'
     Air = 26
     CalibrateAir = 0.6436
@@ -114,14 +124,16 @@ def MQ7():
         {'name': 'CH4', 'ppm': (19.8094, -0.09)},
         {'name': 'Alcohol', 'ppm': (20.2524, -0.0655)}
     ]
-    a_RH33 = 1.4296
-    b_RH33 = -0.3238
-    a_RH85 = 1.1733
-    b_RH85 = -0.2842
+    a_RH33 = 0.8315
+    b_RH33 = -0.0462
+    c_RH33 = 0.3813
+    a_RH85 = 0.6708
+    b_RH85 = -0.033
+    c_RH85 = 0.358
     group1_subgroup2()
 
 def MQ8():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-8'
     Air = 70
     MinAirPpm, MaxAirPpm = 200, 10000
@@ -132,14 +144,16 @@ def MQ8():
         {'name': 'CH4', 'ppm': (117.9639, -0.1448)},
         {'name': 'CO', 'ppm': (126.605, -0.1173)}
     ]
-    a_RH33 = 1.1474
-    b_RH33 = -0.1958
-    a_RH85 = 1.0783
-    b_RH85 = -0.1824
+    a_RH33 = 0.8559
+    b_RH33 = -0.0611
+    c_RH33 = 0.1673
+    a_RH85 = 0.8201
+    b_RH85 = -0.0606
+    c_RH85 = 0.1492
     group1_subgroup1()
 
 def MQ9():
-    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, c_RH30, a_RH60, b_RH60, c_RH60, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-9'
     Air = 9.7
     SensorRLCalRL = 0.5
@@ -150,21 +164,26 @@ def MQ9():
         {'name': 'CH4', 'ppmvals': (MinAirPpm, MaxAirPpm), 'ppm': (21.8247, -0.3663)}
     ]
     """
-    a_RH33 = 1.4292
-    b_RH33 = -0.3206
-    a_RH85 = 1.1735
-    b_RH85 = -0.2801
+    a_RH33 = 0.839
+    b_RH33 = -0.0469
+    c_RH33 = 0.3742
+    a_RH85 = 0.6884
+    b_RH85 = -0.0349
+    c_RH85 = 0.3403
     """
-    a_RH30 = 1.876
-    b_RH30 = -0.2284
-    a_RH60 = 1.5885
-    b_RH60 = -0.2271
-    a_RH85 = 1.3842
-    b_RH85 = -0.2282
+    a_RH30 = -2.5404
+    b_RH30 = -0.0037
+    c_RH30 = 4.1019
+    a_RH60 = -1.6874
+    b_RH60 = -0.0043
+    c_RH60 = 3.0105
+    a_RH85 = -1.2399
+    b_RH85 = -0.0047
+    c_RH85 = 2.3914
     group1_subgroup5()
 
 def MQ131():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, c_RH30, a_RH60, b_RH60, c_RH60, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ131'
     Air = 12
     MinAirPpm, MaxAirPpm = 5, 100
@@ -173,12 +192,15 @@ def MQ131():
         {'name': 'CL2', 'ppm': (18.9693, -0.7132)},
         {'name': 'NOx', 'ppm': (16.7059, -0.4684)}
     ]
-    a_RH30 = 1.876
-    b_RH30 = -0.2284
-    a_RH60 = 1.5885
-    b_RH60 = -0.2271
-    a_RH85 = 1.3842
-    b_RH85 = -0.2282
+    a_RH30 = -2.5404
+    b_RH30 = -0.0037
+    c_RH30 = 4.1019
+    a_RH60 = -1.6874
+    b_RH60 = -0.0043
+    c_RH60 = 3.0105
+    a_RH85 = -1.2399
+    b_RH85 = -0.0047
+    c_RH85 = 2.3914
     group3_subgroup1()
 
 def MQ131_LOW():
@@ -196,7 +218,7 @@ def MQ131_LOW():
     group3_subgroup2()
     
 def MQ135():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-135'
     Air = 3.6
     MinAirPpm, MaxAirPpm = 10, 200
@@ -207,15 +229,17 @@ def MQ135():
         {'name': 'CO2', 'ppm': (5.2278, -0.3585)},
         {'name': 'NH4', 'ppm': (6.2968, -0.3892)},
         {'name': 'CO', 'ppm': (5.0533, -0.2541)}
-    ]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    ]    
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup1()
 
 def MQ136():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-136'    
     Air = 3.54
     CleanAir = 1.44
@@ -227,14 +251,16 @@ def MQ136():
         {'name': 'NH4', 'ppm': (19.5575, -0.461)},
         {'name': 'CO', 'ppm': (28.024, -0.3182)}
     ]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup2()
 
 def MQ137():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-137'    
     Air = 3.54
     CleanAir = 1.44
@@ -246,14 +272,16 @@ def MQ137():
         {'name': 'Ethanol', 'ppm': (19.5575, -0.461)},
         {'name': 'NH3', 'ppm': (28.024, -0.3182)}
     ]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup2()
 
 def MQ138():
-    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-138'
     Air = 9.8
     CalibrateAir = 2.914
@@ -268,14 +296,16 @@ def MQ138():
         {'name': 'smoke', 'ppm': (26.4698, -0.3876)},
         {'name': 'CO', 'ppm': (28.024, -0.3182)}
     ]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup3()
 
 def MQ214():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-214'
     Air = 595.18
     CleanAir = 105.554
@@ -283,14 +313,16 @@ def MQ214():
     CleanAir = 1
     MinAirPpm, MaxAirPpm = 1000, 20000
     gas_params = [{'name': 'CH4', 'ppmvals': (3000, MaxAirPpm), 'ppm': (2669.39, -0.3784)}]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup4()
 
 def MQ216():
-    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, a_RH85, b_RH85
+    global SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
     SensorName = 'MQ-216'
     Air = 9.8
     MinAirPpm, MaxAirPpm = 200, 10000
@@ -301,10 +333,12 @@ def MQ216():
         {'name': 'alcohol', 'ppm': (19.2641, -0.3604)},
         {'name': 'CH4', 'ppm': (20.7074, -0.36)}
     ]
-    a_RH33 = 1.6867
-    b_RH33 = -0.4263
-    a_RH85 = 1.5291
-    b_RH85 = -0.422
+    a_RH33 = 0.8579
+    b_RH33 = -0.0543
+    c_RH33 = 0.4912
+    a_RH85 = 0.7818
+    b_RH85 = -0.0554
+    c_RH85 = 0.4378
     group1_subgroup1()
 
 def MQ303A():
