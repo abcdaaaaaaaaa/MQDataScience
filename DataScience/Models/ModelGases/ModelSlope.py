@@ -4,6 +4,7 @@ from plotly.subplots import make_subplots
 from scipy.optimize import curve_fit
 import plotly.colors as pc
 import pandas as pd
+import MQInfo
 import EstimateData
 
 df = pd.read_excel("Model_Datas.xlsx")
