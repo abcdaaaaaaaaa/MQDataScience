@@ -4,7 +4,7 @@ from plotly.subplots import make_subplots
 from scipy.optimize import curve_fit
 import plotly.colors as pc
 import pandas as pd
-import MQInfo
+import EstimateData
 
 df = pd.read_excel("Model_Datas.xlsx")
 
@@ -42,23 +42,11 @@ def exponential_interpolate(value, min_value, max_value, target_min, target_max)
     log_val = log_min + ratio * (log_max - log_min)
     return np.power(10, log_val)
 
-def yaxb(valuea, value, valueb):
-    return valuea * np.power(value, valueb)
-
 def inverseyaxb(valuea, value, valueb):
     return np.power(value / valuea, 1 / valueb)
 
 def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
-
-def fit_time_with_r2(x, y):
-    popt, _ = curve_fit(lambda x, a, b: yaxb(a, x, b), x, y)
-    a, b = popt
-    y_pred = yaxb(a, np.array(x), b)
-    ss_res = np.sum((np.array(y) - y_pred) ** 2)
-    ss_tot = np.sum((np.array(y) - np.mean(y)) ** 2)
-    r2 = 1 - (ss_res / ss_tot)
-    return a, b, r2
 
 def filter_repeats(x, y):
     filtered_x = [x[0]]
@@ -91,11 +79,13 @@ time, percentile = np.array(df["Time"], dtype=float), np.array(df["Per"], dtype=
 percentile = limit(percentile, 100)
 SensorValue = percentile / 100
 
-a_percentile_time, b_percentile_time, r2_percentile_time = fit_time_with_r2(time, percentile)
-a_percentile_time, b_percentile_time, r2_percentile_time = roundf(a_percentile_time, b_percentile_time, r2_percentile_time)
-
 time_surface = vals(min(time), max(time)*2, 200)
-percentile_surface = limit(yaxb(a_percentile_time, time_surface, b_percentile_time), 100)
+
+r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface)
+percentile_surface = limit(percentile_surface_raw, 100)
+
+print(f"Percentile Model: {model_per}")
+
 SensorValue_surface = percentile_surface / 100
 
 if AirVals:
