@@ -52,7 +52,7 @@ temp_grid, RH_grid = np.meshgrid(temp_vals, RH_vals)
 def interpolate(value, min_value, max_value, target_min, target_max):
 	return target_min + (value - min_value) * (target_max - target_min) / (max_value - min_value)
 
-def calculate_ratio(RH, temp):
+def CorrectionCoefficient(RH, temp):
 	values = []
 	for i in range(RH.shape[0]):
 		for j in range(RH.shape[1]):
@@ -79,7 +79,7 @@ def calculate_ratio(RH, temp):
 
 	return np.array(values).reshape(RH.shape)
 
-ratio_grid = calculate_ratio(RH_grid, temp_grid)
+ratio_grid = CorrectionCoefficient(RH_grid, temp_grid)
 
 color_RH30 = '#10AEFD'
 color_RH60 = '#FF5CCD'
