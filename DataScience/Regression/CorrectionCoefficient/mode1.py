@@ -44,16 +44,16 @@ RH_vals = np.linspace(33, 85, 100)
 temp_vals = np.linspace(-10, 50, 100)
 temp_grid, RH_grid = np.meshgrid(temp_vals, RH_vals)
 
-def map_value(x, xmin, xmax, newmin, newmax):
-	return newmin + (newmax - newmin) * ((x - xmin) / (xmax - xmin))
+def interpolate(value, min_value, max_value, target_min, target_max):
+    return target_min + (value - min_value) * (target_max - target_min) / (max_value - min_value)
 
-def calculate_ratio(RH, temp):
-	valuea = map_value(RH, 33, 85, a_RH33, a_RH85)
-	valueb = map_value(RH, 33, 85, b_RH33, b_RH85)
-	valuec = map_value(RH, 33, 85, c_RH33, c_RH85)
+def CorrectionCoefficient(RH, temp):
+	valuea = interpolate(RH, 33, 85, a_RH33, a_RH85)
+	valueb = interpolate(RH, 33, 85, b_RH33, b_RH85)
+	valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
 	return valuea + valuec * np.exp(valueb * temp)
 
-ratio_grid = calculate_ratio(RH_grid, temp_grid)
+ratio_grid = CorrectionCoefficient(RH_grid, temp_grid)
 
 color_RH33 = '#10AEFD'
 color_RH85 = '#FFA500'
