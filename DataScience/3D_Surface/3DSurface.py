@@ -21,10 +21,16 @@ except Exception: pass
 try: b_RH30 = MQInfo.b_RH30
 except Exception: pass
 
+try: c_RH30 = MQInfo.c_RH30
+except Exception: pass
+
 try: a_RH33 = MQInfo.a_RH33
 except Exception: pass
 
 try: b_RH33 = MQInfo.b_RH33
+except Exception: pass
+
+try: c_RH33 = MQInfo.c_RH33
 except Exception: pass
 
 try: a_RH60 = MQInfo.a_RH60
@@ -33,10 +39,16 @@ except Exception: pass
 try: b_RH60 = MQInfo.b_RH60
 except Exception: pass
 
+try: c_RH60 = MQInfo.c_RH60
+except Exception: pass
+
 try: a_RH85 = MQInfo.a_RH85
 except Exception: pass
 
 try: b_RH85 = MQInfo.b_RH85
+except Exception: pass
+
+try: c_RH85 = MQInfo.c_RH85
 except Exception: pass
 
 SensorRLCalRL = MQInfo.SensorRLCalRL
@@ -57,52 +69,24 @@ def inverseyaxb(valuea, value, valueb):
     return np.power(value / valuea, 1 / valueb)
 
 def CorrectionCoefficient(temp, RH):
-    if CRMode != 3:
-        TH_valuea, TH_valueb = interpolate(RH, 33, 85, a_RH33, a_RH85), interpolate(RH, 33, 85, b_RH33, b_RH85)
-        temp_scaled = (temp + 25) / 15 if CRMode == 1 else (temp + 15) / 5
-        lastcr = yaxb(TH_valuea, temp_scaled, TH_valueb)
+    if CRMode == 3:
+        TH_valuea = np.where(RH <= 60, 
+                             interpolate(RH, 30, 60, a_RH30, a_RH60), 
+                             interpolate(RH, 60, 85, a_RH60, a_RH85))
+        
+        TH_valueb = np.where(RH <= 60, 
+                             interpolate(RH, 30, 60, b_RH30, b_RH60), 
+                             interpolate(RH, 60, 85, b_RH60, b_RH85))
+        
+        TH_valuec = np.where(RH <= 60, 
+                             interpolate(RH, 30, 60, c_RH30, c_RH60), 
+                             interpolate(RH, 60, 85, c_RH60, c_RH85))
     else:
-        temp_scaled = (temp + 15) / 5
-        if isinstance(RH, int):
-            if (RH <= 60):
-                range_a = 30, 60
-                a_RH = a_RH30, a_RH60
-                range_b = 30, 60
-                b_RH = b_RH30, b_RH60
-            else:
-                range_a = 60, 85
-                a_RH = a_RH60, a_RH85
-                range_b = 60, 85
-                b_RH = b_RH60, b_RH85
-            TH_valuea, TH_valueb = interpolate(RH, *range_a, *a_RH), interpolate(RH, *range_b, *b_RH)
-            lastcr = yaxb(TH_valuea, temp_scaled, TH_valueb)
-        else:
-            values = []
-            for i in range(RH.shape[0]):
-                for j in range(RH.shape[1]):
-                    rh = RH[i, j]
-                    t = temp_scaled[i, j]
-                    
-                    if rh <= 60:
-                        range_a = 30, 60
-                        a_RH = a_RH30, a_RH60
-                        range_b = 30, 60
-                        b_RH = b_RH30, b_RH60
-                    else:
-                        range_a = 60, 85
-                        a_RH = a_RH60, a_RH85
-                        range_b = 60, 85
-                        b_RH = b_RH60, b_RH85
-
-                    valuea = interpolate(rh, *range_a, *a_RH)
-                    valueb = interpolate(rh, *range_b, *b_RH)
-
-                    result = valuea * np.power(t, valueb)
-                    values.append(result)
-
-            values_array = np.array(values)
-            lastcr = values_array.reshape(RH.shape)
-    return lastcr
+        TH_valuea = interpolate(RH, 33, 85, a_RH33, a_RH85)
+        TH_valueb = interpolate(RH, 33, 85, b_RH33, b_RH85)
+        TH_valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
+        
+    return TH_valuea + TH_valuec * np.exp(TH_valueb * temp)
 
 def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
