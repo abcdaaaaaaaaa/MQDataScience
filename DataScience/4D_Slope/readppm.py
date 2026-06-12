@@ -3,6 +3,7 @@ from scipy.optimize import curve_fit
 import pandas as pd
 from datetime import datetime
 import MQInfo
+import EstimateData
 
 df = pd.read_excel("4D_Datas.xlsx")
 
@@ -23,10 +24,16 @@ except Exception: pass
 try: b_RH30 = MQInfo.b_RH30
 except Exception: pass
 
+try: c_RH30 = MQInfo.c_RH30
+except Exception: pass
+
 try: a_RH33 = MQInfo.a_RH33
 except Exception: pass
 
 try: b_RH33 = MQInfo.b_RH33
+except Exception: pass
+
+try: c_RH33 = MQInfo.c_RH33
 except Exception: pass
 
 try: a_RH60 = MQInfo.a_RH60
@@ -35,10 +42,16 @@ except Exception: pass
 try: b_RH60 = MQInfo.b_RH60
 except Exception: pass
 
+try: c_RH60 = MQInfo.c_RH60
+except Exception: pass
+
 try: a_RH85 = MQInfo.a_RH85
 except Exception: pass
 
 try: b_RH85 = MQInfo.b_RH85
+except Exception: pass
+
+try: c_RH85 = MQInfo.c_RH85
 except Exception: pass
 
 SensorRLCalRL = MQInfo.SensorRLCalRL
@@ -64,9 +77,6 @@ def roundf(*args):
 def round2(value):
     return round(value, 2)
 
-def yaxb(valuea, value, valueb):
-    return valuea * np.power(value, valueb)
-
 def inverseyaxb(valuea, value, valueb):
     return np.power(value / valuea, 1 / valueb)
 
@@ -80,38 +90,21 @@ def exponential_interpolate(value, min_value, max_value, target_min, target_max)
     log_val = log_min + ratio * (log_max - log_min)
     return np.power(10, log_val)
 
-def ScaleTemp(temp, mode):
-    if mode == '+': temp_scaled = (temp + 25) / 15 if CRMode == 1 else (temp + 15) / 5
-    elif mode == '-': temp_scaled = 15 * temp - 25 if CRMode == 1 else 5 * temp - 15
-    return temp_scaled
-
 def CorrectionCoefficient(temp, RH):
-    if CRMode != 3:
-        TH_valuea, TH_valueb = interpolate(RH, 33, 85, a_RH33, a_RH85), interpolate(RH, 33, 85, b_RH33, b_RH85)
-        return yaxb(TH_valuea, temp, TH_valueb)
-    else:
-        if isinstance(RH, np.float64):
-            if RH <= 60: range_a, a_RH, range_b, b_RH = (30, 60), (a_RH30, a_RH60), (30, 60), (b_RH30, b_RH60)
-            else: range_a, a_RH, range_b, b_RH = (60, 85), (a_RH60, a_RH85), (60, 85), (b_RH60, b_RH85)
-            TH_valuea, TH_valueb = interpolate(RH, *range_a, *a_RH), interpolate(RH, *range_b, *b_RH)
-            return yaxb(TH_valuea, temp, TH_valueb)
+    if CRMode == 3:
+        if RH <= 60:
+            TH_valuea = interpolate(RH, 30, 60, a_RH30, a_RH60)
+            TH_valueb = interpolate(RH, 30, 60, b_RH30, b_RH60)
+            TH_valuec = interpolate(RH, 30, 60, c_RH30, c_RH60)
         else:
-            values = []
-            for t, rh in enumerate(RH):
-                if rh <= 60: range_a, a_RH, range_b, b_RH = (30, 60), (a_RH30, a_RH60), (30, 60), (b_RH30, b_RH60)
-                else: range_a, a_RH, range_b, b_RH = (60, 85), (a_RH60, a_RH85), (60, 85), (b_RH60, b_RH85)
-                TH_valuea, TH_valueb = interpolate(rh, *range_a, *a_RH), interpolate(rh, *range_b, *b_RH)
-                values.append(yaxb(TH_valuea, temp[t], TH_valueb))
-            return np.array(values)
-
-def fit_time_with_r2(x, y):
-    popt, _ = curve_fit(lambda x, a, b: yaxb(a, x, b), x, y)
-    a, b = popt
-    y_pred = yaxb(a, np.array(x), b)
-    ss_res = np.sum((np.array(y) - y_pred) ** 2)
-    ss_tot = np.sum((np.array(y) - np.mean(y)) ** 2)
-    r2 = 1 - (ss_res / ss_tot)
-    return a, b, r2
+            TH_valuea = interpolate(RH, 60, 85, a_RH60, a_RH85)
+            TH_valueb = interpolate(RH, 60, 85, b_RH60, b_RH85)
+            TH_valuec = interpolate(RH, 60, 85, c_RH60, c_RH85)
+    else:
+        TH_valuea = interpolate(RH, 33, 85, a_RH33, a_RH85)
+        TH_valueb = interpolate(RH, 33, 85, b_RH33, b_RH85)
+        TH_valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
+    return TH_valuea + TH_valuec * np.exp(TH_valueb * temp)
 
 def vals(minval, maxval, count):
     return np.linspace(minval, maxval, count)
@@ -131,31 +124,31 @@ time, percentile, temperature, rh = np.array(df["Time"], dtype=float), np.array(
 percentile, temperature, rh = limit(percentile, 0, 100), limit(temperature, -10, 50), limit(rh, 0, 100)
 
 SensorValue = percentile / 100
-temperature = ScaleTemp(temperature, '+')
 correction_coefficient = CorrectionCoefficient(temperature, rh)
 air = limit(exponential_interpolate(SensorValue, 0, 1, convertppm(MinAirPpm), convertppm(MaxAirPpm)), 0, convertppm(MaxAirPpm)) * correction_coefficient
 
-a_temp_time, b_temp_time, r2_temp_time = fit_time_with_r2(time, temperature)
-a_rh_time, b_rh_time, r2_rh_time = fit_time_with_r2(time, rh)
-a_percentile_time, b_percentile_time, r2_percentile_time = fit_time_with_r2(time, percentile)
-
-a_temp_time, b_temp_time, r2_temp_time = roundf(a_temp_time, b_temp_time, r2_temp_time)
-a_rh_time, b_rh_time, r2_rh_time = roundf(a_rh_time, b_rh_time, r2_rh_time)
-a_percentile_time, b_percentile_time, r2_percentile_time = roundf(a_percentile_time, b_percentile_time, r2_percentile_time)
-
 time_surface = vals(min(time), max(time)*2, 200)
-temperature_surface = limit(yaxb(a_temp_time, time_surface, b_temp_time), ScaleTemp(-10, '+'), ScaleTemp(50, '+'))
-rh_surface = limit(yaxb(a_rh_time, time_surface, b_rh_time), 0, 100)
+
+r2_temp_time, temperature_surface_raw, model_temp = EstimateData.get_best_fit(time, temperature, time_surface)
+temperature_surface = limit(temperature_surface_raw, -10, 50)
+
+r2_rh_time, rh_surface_raw, model_rh = EstimateData.get_best_fit(time, rh, time_surface, temp=temperature, temp_surface=temperature_surface)
+rh_surface = limit(rh_surface_raw, 0, 100)
+
+r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface, temp=temperature, temp_surface=temperature_surface)
+percentile_surface = limit(percentile_surface_raw, 0, 100)
+
 correction_coefficient_surface = CorrectionCoefficient(temperature_surface, rh_surface)
-percentile_surface = limit(yaxb(a_percentile_time, time_surface, b_percentile_time), 0, 100)
 SensorValue_surface = percentile_surface / 100
 air_surface = limit(exponential_interpolate(SensorValue_surface, 0, 1, convertppm(MinAirPpm), convertppm(MaxAirPpm)), 0, convertppm(MaxAirPpm)) * correction_coefficient_surface
 
-temperature = ScaleTemp(temperature, '-')
-temperature_surface = ScaleTemp(temperature_surface, '-')
-
 mintime = np.min(time_surface)
 maxtime = np.max(time_surface)
+
+print(f"Percentile Model: {model_per}")
+print(f"Temperature Model: {model_temp}")
+print(f"RH Model: {model_rh}")
+print()
 
 for i, gas in enumerate(gas_params):
     minair, maxair = (MinAirPpm, MaxAirPpm) if AirValsEqualGasVals else gas['ppmvals']
