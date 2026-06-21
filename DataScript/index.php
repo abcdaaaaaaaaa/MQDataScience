@@ -1,17 +1,17 @@
 <?php
     include_once 'db.php';
         
-    $data1 = $_COOKIE["data1"] ?? null;
-    $data2 = $_COOKIE["data2"] ?? null;
-    $data3 = $_COOKIE["data3"] ?? null;
-    $data4 = $_COOKIE["data4"] ?? null;
-    $data5 = $_COOKIE["data5"] ?? null;
-    $value1 = $_COOKIE["value1"] ?? null;
-    $value2 = $_COOKIE["value2"] ?? null;
-    $value3 = $_COOKIE["value3"] ?? null;
-    $value4 = $_COOKIE["value4"] ?? null;
-    $value5 = $_COOKIE["value5"] ?? null;
-    $value6 = $_COOKIE["value6"] ?? null;
+    $data1 = $_COOKIE["data1"];
+    $data2 = $_COOKIE["data2"];
+    $data3 = $_COOKIE["data3"];
+    $data4 = $_COOKIE["data4"];
+    $data5 = $_COOKIE["data5"];
+    $value1 = $_COOKIE["value1"];
+    $value2 = $_COOKIE["value2"];
+    $value3 = $_COOKIE["value3"];
+    $value4 = $_COOKIE["value4"];
+    $value5 = $_COOKIE["value5"];
+    $value6 = $_COOKIE["value6"];
     $value7 = $_COOKIE["value7"] ?? null;
     $value8 = $_COOKIE["value8"] ?? null;
     $value9 = $_COOKIE["value9"] ?? null;
