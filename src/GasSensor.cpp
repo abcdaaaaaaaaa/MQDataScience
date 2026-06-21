@@ -21,10 +21,6 @@ float GasSensor::fmap(float x, float in_min, float in_max, float out_min, float 
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min; // Arduino ide's map function does not support float structure.
 }
 
-float GasSensor::yaxb(float a, float x, float b) {
-    return a * pow(x, b);
-}
-
 float GasSensor::inverseYaxb(float a, float y, float b) {
     return pow(y / a, 1.0 / b);
 }
