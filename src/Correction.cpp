@@ -39,44 +39,37 @@ float calculateCorrection(float temp, float rh, const String& model) {
         b = fmap(rh1, 33.0f, 85.0f, -0.0543f, -0.0554f);
         c = fmap(rh1, 33.0f, 85.0f, 0.4912f, 0.4378f);
         return a + c * exp(b * temp1);
-    }
-    if (model == "MQ3") {
+    } else if (model == "MQ3") {
         a = fmap(rh1, 33.0f, 85.0f, 0.7897f, 0.7319f);
         b = fmap(rh1, 33.0f, 85.0f, -0.0423f, -0.0446f);
         c = fmap(rh1, 33.0f, 85.0f, 0.5355f, 0.4069f);
         return a + c * exp(b * temp1);
-    }
-    if (model == "MQ4") {
+    } else if (model == "MQ4") {
         a = fmap(rh1, 33.0f, 85.0f, 0.8597f, 0.5838f);
         b = fmap(rh1, 33.0f, 85.0f, -0.0381f, -0.0218f);
         c = fmap(rh1, 33.0f, 85.0f, 0.2861f, 0.4064f);
         return a + c * exp(b * temp1);
-    }
-    if (model == "MQ5") {
+    } else if (model == "MQ5") {
         a = fmap(rh1, 33.0f, 85.0f, 0.8098f, 0.6066f);
         b = fmap(rh1, 33.0f, 85.0f, -0.0413f, -0.0283f);
         c = fmap(rh1, 33.0f, 85.0f, 0.3686f, 0.3891f);
         return a + c * exp(b * temp1);
-    }
-    if (model == "MQ6") {
+    } else if (model == "MQ6") {
         a = fmap(rh1, 33.0f, 85.0f, 0.8714f, 0.7287f);
         b = fmap(rh1, 33.0f, 85.0f, -0.044f, -0.0412f);
         c = fmap(rh1, 33.0f, 85.0f, 0.2883f, 0.2648f);
         return a + c * exp(b * temp1);
-    }
-    if (model == "MQ7") {
+    } else if (model == "MQ7") {
         a = fmap(rh1, 33.0f, 85.0f, 0.8315f, 0.6708f);
         b = fmap(rh1, 33.0f, 85.0f, -0.0462f, -0.033f);
         c = fmap(rh1, 33.0f, 85.0f, 0.3813f, 0.358f);
         return a + c * exp(b * temp1);
-    }
-    if (model == "MQ8") {
+    } else if (model == "MQ8") {
         a = fmap(rh1, 33.0f, 85.0f, 0.8559f, 0.8201f);
         b = fmap(rh1, 33.0f, 85.0f, -0.0611f, -0.0606f);
         c = fmap(rh1, 33.0f, 85.0f, 0.1673f, 0.1492f);
         return a + c * exp(b * temp1);
-    }
-    /* if (model == "MQ9") {
+    } /* else if (model == "MQ9") {
         a = fmap(rh1, 33.0f, 85.0f, 0.839f, 0.6884f);
         b = fmap(rh1, 33.0f, 85.0f, -0.0469f, -0.0349f);
         c = fmap(rh1, 33.0f, 85.0f, 0.3742f, 0.3403f);
