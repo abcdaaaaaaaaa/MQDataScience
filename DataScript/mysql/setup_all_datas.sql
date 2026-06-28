@@ -1,0 +1,318 @@
+CREATE TABLE MQ135 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(3),
+    Acetone VARCHAR(3),
+    Toluene VARCHAR(3),
+    Alcohol VARCHAR(3),
+    CO2 VARCHAR(3),
+    NH4 VARCHAR(3),
+    CO VARCHAR(3),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ2 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    LPG VARCHAR(5),
+    propane VARCHAR(5),
+    H2 VARCHAR(5),
+    alcohol VARCHAR(5),
+    CH4 VARCHAR(5),
+    smoke VARCHAR(5),
+    CO VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ3 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(3),
+    Alcohol VARCHAR(3),
+    Benzene VARCHAR(3),
+    Hexane VARCHAR(3),
+    LPG VARCHAR(3),
+    CO VARCHAR(3),
+    CH4 VARCHAR(3),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ4 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    CH4 VARCHAR(5),
+    LPG VARCHAR(5),
+    H2 VARCHAR(5),
+    Smoke VARCHAR(5),
+    Alcohol VARCHAR(5),
+    CO VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ5 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    LPG VARCHAR(5),
+    CH4 VARCHAR(5),
+    H2 VARCHAR(5),
+    Alcohol VARCHAR(5),
+    CO VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ6 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    LPG VARCHAR(5),
+    CH4 VARCHAR(5),
+    H2 VARCHAR(5),
+    Alcohol VARCHAR(5),
+    CO VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ7 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(4),
+    H2 VARCHAR(4),
+    CO VARCHAR(4),
+    LPG VARCHAR(4),
+    CH4 VARCHAR(4),
+    Alcohol VARCHAR(4),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ8 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    H2 VARCHAR(5),
+    Alcohol VARCHAR(5),
+    LPG VARCHAR(5),
+    CH4 VARCHAR(5),
+    CO VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ9 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(4),
+    CO VARCHAR(4),
+    LPG VARCHAR(4),
+    CH4 VARCHAR(4),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ131 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(3),
+    O3 VARCHAR(3),
+    CL2 VARCHAR(3),
+    NOx VARCHAR(3),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ131L (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(4),
+    O3 VARCHAR(4),
+    CL2 VARCHAR(4),
+    NOx VARCHAR(4),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ136 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(3),
+    H2S VARCHAR(3),
+    NH4 VARCHAR(3),
+    CO VARCHAR(3),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ137 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(3),
+    CO VARCHAR(3),
+    Ethanol VARCHAR(3),
+    NH3 VARCHAR(3),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ138 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    n_Hexane VARCHAR(5),
+    propane VARCHAR(5),
+    Benzene VARCHAR(5),
+    alcohol VARCHAR(5),
+    CH4 VARCHAR(5),
+    smoke VARCHAR(5),
+    CO VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ214 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    CH4 VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ216 (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    LPG VARCHAR(5),
+    propane VARCHAR(5),
+    i_butane VARCHAR(5),
+    alcohol VARCHAR(5),
+    CH4 VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ303A (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    Hydrogen VARCHAR(5),
+    Ethanol VARCHAR(5),
+    Isobutane VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ303B (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    Hydrogen VARCHAR(5),
+    Ethanol VARCHAR(5),
+    Isobutane VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ306A (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(5),
+    Ethanol VARCHAR(4),
+    Hydrogen VARCHAR(5),
+    Methane VARCHAR(5),
+    IsoButane VARCHAR(5),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ307A (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    CO VARCHAR(4),
+    H2 VARCHAR(4),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
+
+CREATE TABLE MQ309A (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DHT VARCHAR(15),
+    SpaceData100 VARCHAR(7),
+    Air VARCHAR(4),
+    H2 VARCHAR(4),
+    CH4 VARCHAR(4),
+    Alcohol VARCHAR(4),
+    CO VARCHAR(4),
+    SpaceData200 VARCHAR(7),
+    lat VARCHAR(12),
+    lng VARCHAR(12),
+    reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
+);
