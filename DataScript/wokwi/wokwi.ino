@@ -2,7 +2,6 @@
 
 #include <WiFi.h>
 #include <DHT.h>
-#include <TinyGPS++.h>
 #include <HTTPClient.h>
 #include <NetworkClientSecure.h>
 #include <TM1637.h>
@@ -16,15 +15,12 @@
 #define DIO          (5)
 
 TM1637 tm(CLK,DIO);
-HardwareSerial neogps(2); 
-TinyGPSPlus gps;
 DHT dht(dhtPin, DHT22);
 
 int sec;
-String latitude, longitude;
 
-const char* ssid = "Wokwi-GUEST";  
-const char* password = ""; 
+const char* ssid = "Wokwi-GUEST";
+const char* password = "";
 const char* serverName = "https://example.com/datareceiver.php";
 
 static const char * myWriteAPIKey1 = "REPLACE_WITH YOUR_API_KEY";
@@ -47,15 +43,13 @@ void setup() {
   WiFi.mode(WIFI_STA);
   Serial.println("Connecting to WiFi ");
   WiFi.begin(ssid, password);
-  while(WiFi.status() != WL_CONNECTED) { 
+  while(WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
   Serial.println("");
   Serial.print("Connected to WiFi network with IP Address: ");
   Serial.println(WiFi.localIP());
-  
-  neogps.begin(9600, SERIAL_8N1, RX2, TX2);
 }
 
 void loop() {
@@ -167,26 +161,13 @@ void loop() {
   }
 
   if ((millis() - lastTime1) > timerDelay1) {
-    latitude  = String((random(-90, 90) + (random(0, pow(10, 6) + 1) / pow(10, 7)) + 90) * pow(10,6));
-    longitude = String((random(-180, 180) + (random(0, pow(10, 6) + 1) / pow(10, 7)) + 180) * pow(10,6));
-    if (neogps.available()) {
-      char c = neogps.read();
-      if (gps.encode(c)) {
-        if (gps.location.isValid()) {
-         latitude  = String((gps.location.lat() + 90) * pow(10, 7));
-         longitude = String((gps.location.lng() + 180) * pow(10, 7)); 
-        }
-      }
-    }
 
-    String httpRequestData = "api_key=" + String(myWriteAPIKey1) + 
-                             "&field1=" + String(sec) + 
-                             "&field2=" + String(analogRead(analogPin)) + 
-                             "&field3=" + String((dht.readTemperature() + 140) * 10) + 
-                             "&field4=" + String((dht.readHumidity() + 100) * 10) + 
-                             "&field5=" + String(analogRead(gasPin)) + 
-                             "&field6=" + latitude + 
-                             "&field7=" + longitude;
+    String httpRequestData = "api_key=" + String(myWriteAPIKey1) +
+                             "&field1=" + String(sec) +
+                             "&field2=" + String(analogRead(analogPin)) +
+                             "&field3=" + String((dht.readTemperature() + 140) * 10) +
+                             "&field4=" + String((dht.readHumidity() + 100) * 10) +
+                             "&field5=" + String(analogRead(gasPin));
 
     NetworkClientSecure *client = new NetworkClientSecure;
     if(client) {
@@ -205,14 +186,13 @@ void loop() {
 }
 
 void normal(){
-tm.display(3,sec);
-tm.display(2,sec);
-tm.display(1,sec);
-tm.display(0,sec);
+  tm.display(3,sec);
+  tm.display(2,sec);
+  tm.display(1,sec);
+  tm.display(0,sec);
 }
 
 // DHT22 : [GND --> GND] [PIN --> D33] [VCC --> 5V]
-// GPS : [GND --> GND] [TX --> D3] [RX --> D1] [VCC --> 5V]
 // MQ-X: [PIN --> D35] [GND --> GND] [VCC --> 3.3V]
 // Other Sensor: [PIN --> D34] [GND --> GND] [VCC --> 3.3V]
 // Potentiometer: [PIN --> D32] [GND --> GND] [VCC --> 3.3V]
