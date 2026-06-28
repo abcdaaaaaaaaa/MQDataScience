@@ -81,8 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $total3 = isset($_POST['field3']) ? floatval($_POST['field3']) : 0;
     $total4 = isset($_POST['field4']) ? floatval($_POST['field4']) : 0;
     $total5 = isset($_POST['field5']) ? floatval($_POST['field5']) : 0;
-    $field6 = isset($_POST['field6']) ? floatval($_POST['field6']) : 0;
-    $field7 = isset($_POST['field7']) ? floatval($_POST['field7']) : 0;
 
     $SensorValue = round(min(max(($total2 / 4095.0), 0), 1), 4);
     $temperature = round(min(max((($total3 / 10.0) - 140), -10), 50), 4);
@@ -92,32 +90,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $value2 = $SensorValue * 100;
     $value13 = $SensorValue2 * 100;
     $DHT = $temperature . '°C %' . $rh;
-    $value14 = round(($field6 * pow(10, -7)) - 90, 7);
-    $value15 = round(($field7 * pow(10, -7)) - 180, 7);
 
     $sql = "";
     switch ($total1) {
-        case 1: $sql = "INSERT INTO MQ135 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 2: $sql = "INSERT INTO MQ2 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 3: $sql = "INSERT INTO MQ3 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 4: $sql = "INSERT INTO MQ4 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 5: $sql = "INSERT INTO MQ5 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 6: $sql = "INSERT INTO MQ6 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 7: $sql = "INSERT INTO MQ7 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 8: $sql = "INSERT INTO MQ8 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 9: $sql = "INSERT INTO MQ9 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 10: $sql = "INSERT INTO MQ131 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 11: $sql = "INSERT INTO MQ131_LOW (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 12: $sql = "INSERT INTO MQ136 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 13: $sql = "INSERT INTO MQ137 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 14: $sql = "INSERT INTO MQ138 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 15: $sql = "INSERT INTO MQ214 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 16: $sql = "INSERT INTO MQ216 (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 17: $sql = "INSERT INTO MQ303A (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 18: $sql = "INSERT INTO MQ303B (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 19: $sql = "INSERT INTO MQ306A (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 20: $sql = "INSERT INTO MQ307A (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
-        case 21: $sql = "INSERT INTO MQ309A (DHT, SpaceData100, SpaceData200, lat, lng) VALUES ('$DHT', '$value2', '$value13', '$value14', '$value15')"; break;
+        case 1: $sql = "INSERT INTO MQ135 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 2: $sql = "INSERT INTO MQ2 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 3: $sql = "INSERT INTO MQ3 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 4: $sql = "INSERT INTO MQ4 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 5: $sql = "INSERT INTO MQ5 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 6: $sql = "INSERT INTO MQ6 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 7: $sql = "INSERT INTO MQ7 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 8: $sql = "INSERT INTO MQ8 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 9: $sql = "INSERT INTO MQ9 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 10: $sql = "INSERT INTO MQ131 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 11: $sql = "INSERT INTO MQ131_LOW (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 12: $sql = "INSERT INTO MQ136 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 13: $sql = "INSERT INTO MQ137 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 14: $sql = "INSERT INTO MQ138 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 15: $sql = "INSERT INTO MQ214 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 16: $sql = "INSERT INTO MQ216 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 17: $sql = "INSERT INTO MQ303A (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 18: $sql = "INSERT INTO MQ303B (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 19: $sql = "INSERT INTO MQ306A (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 20: $sql = "INSERT INTO MQ307A (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 21: $sql = "INSERT INTO MQ309A (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
     }
 
     if ($sql != "") $conn->query($sql);
@@ -177,8 +173,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row['field3'] = ($temp + 140) * 10;
         $row['field4'] = ($rh + 100) * 10;
         $row['field5'] = isset($row['SpaceData200']) ? ($row['SpaceData200'] / 100) * 4095 : 0;
-        $row['field6'] = isset($row['lat']) ? ($row['lat'] + 90) * 10000000 : 0;
-        $row['field7'] = isset($row['lng']) ? ($row['lng'] + 180) * 10000000 : 0;
         $row['created_at'] = $row['reading_time'] ?? gmdate('Y-m-d\TH:i:s\Z');
         
         $feeds[] = $row;
