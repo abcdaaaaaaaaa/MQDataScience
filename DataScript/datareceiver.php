@@ -1,7 +1,7 @@
 <?php
-include_once 'db.php';
+include_once 'db.php'; // Please do not forget to edit this file.
 
-$apiKey = 'J2UEIZSZTC5568NM';
+$apiKey = 'REPLACE_WITH YOUR_API_KEY';
 
 function getTableName($mode) {
     switch ($mode) {
