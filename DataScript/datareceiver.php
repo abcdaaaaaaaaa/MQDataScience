@@ -8,7 +8,7 @@ function getTableName($mode) {
         case 1: return "MQ135"; case 2: return "MQ2"; case 3: return "MQ3";
         case 4: return "MQ4"; case 5: return "MQ5"; case 6: return "MQ6";
         case 7: return "MQ7"; case 8: return "MQ8"; case 9: return "MQ9";
-        case 10: return "MQ131"; case 11: return "MQ131L"; case 12: return "MQ136";
+        case 10: return "MQ131"; case 11: return "MQ131_LOW"; case 12: return "MQ136";
         case 13: return "MQ137"; case 14: return "MQ138"; case 15: return "MQ214";
         case 16: return "MQ216"; case 17: return "MQ303A"; case 18: return "MQ303B";
         case 19: return "MQ306A"; case 20: return "MQ307A"; case 21: return "MQ309A";
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 8: $sql = "INSERT INTO MQ8 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
         case 9: $sql = "INSERT INTO MQ9 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
         case 10: $sql = "INSERT INTO MQ131 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
-        case 11: $sql = "INSERT INTO MQ131L (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
+        case 11: $sql = "INSERT INTO MQ131_LOW (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
         case 12: $sql = "INSERT INTO MQ136 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
         case 13: $sql = "INSERT INTO MQ137 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
         case 14: $sql = "INSERT INTO MQ138 (DHT, SpaceData100, SpaceData200) VALUES ('$DHT', '$value2', '$value13')"; break;
@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tables = [
         1 => 'MQ135', 2 => 'MQ2', 3 => 'MQ3', 4 => 'MQ4', 5 => 'MQ5',
         6 => 'MQ6', 7 => 'MQ7', 8 => 'MQ8', 9 => 'MQ9', 10 => 'MQ131',
-        11 => 'MQ131L', 12 => 'MQ136', 13 => 'MQ137', 14 => 'MQ138',
+        11 => 'MQ131_LOW', 12 => 'MQ136', 13 => 'MQ137', 14 => 'MQ138',
         15 => 'MQ214', 16 => 'MQ216', 17 => 'MQ303A', 18 => 'MQ303B',
         19 => 'MQ306A', 20 => 'MQ307A', 21 => 'MQ309A'
     ];
