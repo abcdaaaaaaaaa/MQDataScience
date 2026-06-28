@@ -10,8 +10,6 @@ CREATE TABLE MQ135 (
     NH4 VARCHAR(3),
     CO VARCHAR(3),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -28,8 +26,6 @@ CREATE TABLE MQ2 (
     smoke VARCHAR(5),
     CO VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -45,8 +41,6 @@ CREATE TABLE MQ3 (
     CO VARCHAR(3),
     CH4 VARCHAR(3),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -62,8 +56,6 @@ CREATE TABLE MQ4 (
     Alcohol VARCHAR(5),
     CO VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -78,8 +70,6 @@ CREATE TABLE MQ5 (
     Alcohol VARCHAR(5),
     CO VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -94,8 +84,6 @@ CREATE TABLE MQ6 (
     Alcohol VARCHAR(5),
     CO VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -110,8 +98,6 @@ CREATE TABLE MQ7 (
     CH4 VARCHAR(4),
     Alcohol VARCHAR(4),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -126,8 +112,6 @@ CREATE TABLE MQ8 (
     CH4 VARCHAR(5),
     CO VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -140,8 +124,6 @@ CREATE TABLE MQ9 (
     LPG VARCHAR(4),
     CH4 VARCHAR(4),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -154,8 +136,6 @@ CREATE TABLE MQ131 (
     CL2 VARCHAR(3),
     NOx VARCHAR(3),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -168,8 +148,6 @@ CREATE TABLE MQ131L (
     CL2 VARCHAR(4),
     NOx VARCHAR(4),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -182,8 +160,6 @@ CREATE TABLE MQ136 (
     NH4 VARCHAR(3),
     CO VARCHAR(3),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -196,8 +172,6 @@ CREATE TABLE MQ137 (
     Ethanol VARCHAR(3),
     NH3 VARCHAR(3),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -214,8 +188,6 @@ CREATE TABLE MQ138 (
     smoke VARCHAR(5),
     CO VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -226,8 +198,6 @@ CREATE TABLE MQ214 (
     Air VARCHAR(5),
     CH4 VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -242,8 +212,6 @@ CREATE TABLE MQ216 (
     alcohol VARCHAR(5),
     CH4 VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -256,8 +224,6 @@ CREATE TABLE MQ303A (
     Ethanol VARCHAR(5),
     Isobutane VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -270,8 +236,6 @@ CREATE TABLE MQ303B (
     Ethanol VARCHAR(5),
     Isobutane VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -285,8 +249,6 @@ CREATE TABLE MQ306A (
     Methane VARCHAR(5),
     IsoButane VARCHAR(5),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -297,8 +259,6 @@ CREATE TABLE MQ307A (
     CO VARCHAR(4),
     H2 VARCHAR(4),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
 
@@ -312,7 +272,5 @@ CREATE TABLE MQ309A (
     Alcohol VARCHAR(4),
     CO VARCHAR(4),
     SpaceData200 VARCHAR(7),
-    lat VARCHAR(12),
-    lng VARCHAR(12),
     reading_time TIMESTAMP DEFAULT UTC_TIMESTAMP
 );
