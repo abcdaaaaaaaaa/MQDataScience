@@ -72,6 +72,10 @@ STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A Models & B Models]
 
 STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
+## Inclusion of Correction Coefficient
+
+<img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
+
 ## Mathematical Foundation of the Exponential Correction Model
 
 <img width="1448" height="1302" alt="mathematical_correction" src="https://github.com/user-attachments/assets/1d6b9f3d-3ba3-46dc-b183-f19e0d7cb813" />
@@ -82,13 +86,9 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 			valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
 			return valuea + valuec * np.exp(valueb * temp)
 
-## Inclusion of Correction Coefficient
-
-<img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
-
 ## Estimation Algorithm for Temp, RH, and Sensor Percentile
 
-<img width="1264" alt="Merged_image (2)" src="https://github.com/user-attachments/assets/b441861e-c20d-43f5-8f4e-bd4b9f6fb55d" />
+<img width="1264" alt="estimation_algorithm" src="https://github.com/user-attachments/assets/b441861e-c20d-43f5-8f4e-bd4b9f6fb55d" />
 
 ## STEL Limits For Gases
 ![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
