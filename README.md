@@ -1,3 +1,4 @@
+<img width="401" height="111" alt="ppmformulla" src="https://github.com/user-attachments/assets/12a55de4-59e8-4f69-913b-d62c007b7a04" />
 # MQDataScience v6.0.0
 
 ## What can be created?
@@ -74,11 +75,11 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Inclusion of Correction Coefficient
 
-<img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
+<img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/475dcde2-f3c3-4d40-a79c-92f719a74ec0" />
 
 ## Finding the Constants of the Correction Coefficient
 
-<img width="632" alt="find_constants" src="https://github.com/user-attachments/assets/c5dfc57b-8d1f-4175-b5fe-795a5eb8c984" />
+<img width="474" alt="find_constants" src="https://github.com/user-attachments/assets/c5dfc57b-8d1f-4175-b5fe-795a5eb8c984" />
 
 ## Mathematical Foundation of the Correction Coefficient Model
 
