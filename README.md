@@ -74,6 +74,12 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Mathematical Foundation of the Exponential Correction Model
 
+def CorrectionCoefficient(RH, temp):
+	valuea = interpolate(RH, 33, 85, a_RH33, a_RH85)
+	valueb = interpolate(RH, 33, 85, b_RH33, b_RH85)
+	valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
+	return valuea + valuec * np.exp(valueb * temp)
+
 <img width="1448" height="1302" alt="mathematical_correction" src="https://github.com/user-attachments/assets/1d6b9f3d-3ba3-46dc-b183-f19e0d7cb813" />
 
 ## Inclusion of Correction Coefficient
