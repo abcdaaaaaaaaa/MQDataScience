@@ -18,7 +18,7 @@
 ## 5) Slope Estimation in Time-Dependent 4D Space
 ![4D_Slope_Estimation](https://github.com/user-attachments/assets/82f412d6-53f8-409c-9ce6-84a03cc2b30f)
 
-## 4D Axis Features:
+## 4D Axis Features
 
 <img width="750" alt="4dformullas" src="https://github.com/user-attachments/assets/7c5a1464-fcb9-4a8f-9693-c2c473f1ec1a" />
 
@@ -80,11 +80,19 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 			valuea = interpolate(RH, 33, 85, a_RH33, a_RH85)
 			valueb = interpolate(RH, 33, 85, b_RH33, b_RH85)
 			valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
-			return valuea + valuec * np.exp(valueb * temp)	
+			return valuea + valuec * np.exp(valueb * temp)
 
 ## Inclusion of Correction Coefficient
 
 <img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
+
+## Estimation Algorithm for Temp, RH, and Sensor Percentile
+
+<img width="1264" alt="p1" src="https://github.com/user-attachments/assets/d7ed7012-1a41-4f31-96d8-4d4333d7bca2" />
+<img width="1264" alt="p2" src="https://github.com/user-attachments/assets/ea7a7a55-6455-4025-b844-c2613e98af8f" />
+<img width="1264" alt="p3" src="https://github.com/user-attachments/assets/f98a4e88-06ab-4891-bb9c-751f97d2dd80" />
+<img width="1264" alt="p4" src="https://github.com/user-attachments/assets/91270412-92d0-4bc8-bca9-b3af891df8ea" />
+<img width="1264" alt="p5" src="https://github.com/user-attachments/assets/e156a60f-76db-4b93-ba36-607e0651d5a7" />
 
 ## STEL Limits For Gases
 ![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
