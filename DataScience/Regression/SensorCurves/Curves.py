@@ -170,5 +170,3 @@ fig.update_yaxes(title_text="Ratio (x)", row=1, col=2)
 
 fig.show()
 fig.write_html(f"{sensor_name}_gas_curves.html")
-
-
