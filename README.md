@@ -72,6 +72,10 @@ STATUS 2: MQ303A, MQ303B, MQ307A, MQ309A [A Models & B Models]
 
 STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
+## Mathematical Foundation of the Exponential Correction Model
+
+<img width="1448" height="1302" alt="mathematical_correction" src="https://github.com/user-attachments/assets/1d6b9f3d-3ba3-46dc-b183-f19e0d7cb813" />
+
 ## Inclusion of Correction Coefficient
 
 <img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
