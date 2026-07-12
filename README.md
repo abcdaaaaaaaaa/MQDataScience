@@ -88,11 +88,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Estimation Algorithm for Temp, RH, and Sensor Percentile
 
-<img width="1264" alt="p1" src="https://github.com/user-attachments/assets/d7ed7012-1a41-4f31-96d8-4d4333d7bca2" />
-<img width="1264" alt="p2" src="https://github.com/user-attachments/assets/ea7a7a55-6455-4025-b844-c2613e98af8f" />
-<img width="1264" alt="p3" src="https://github.com/user-attachments/assets/f98a4e88-06ab-4891-bb9c-751f97d2dd80" />
-<img width="1264" alt="p4" src="https://github.com/user-attachments/assets/91270412-92d0-4bc8-bca9-b3af891df8ea" />
-<img width="1264" alt="p5" src="https://github.com/user-attachments/assets/e156a60f-76db-4b93-ba36-607e0651d5a7" />
+<img width="1264" alt="Merged_image (2)" src="https://github.com/user-attachments/assets/b441861e-c20d-43f5-8f4e-bd4b9f6fb55d" />
 
 ## STEL Limits For Gases
 ![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
