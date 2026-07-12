@@ -76,6 +76,25 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 <img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/475dcde2-f3c3-4d40-a79c-92f719a74ec0" />
 
+## Calculation of ppm Formulas for All Sensors
+
+<img width="1264" alt="ppmFormulas_AllSensors" src="https://github.com/user-attachments/assets/bb11c82b-5cf2-430e-9a72-d127d2a9f2fa" />
+
+## STEL Limits For Gases
+![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
+
+## Required Preheating Times For MQ Sensors
+![Hour](https://github.com/user-attachments/assets/0a49d718-6ac0-4edd-a93c-a14086e4be79)
+
+## Required Circuit Diagrams For MQ sensors
+![Circuit Diagrams](https://github.com/user-attachments/assets/74905eb4-9a70-4409-8bc3-488cb973b938)
+
+## Required Voltage Ranges For MQ Sensors
+![Vc](https://github.com/user-attachments/assets/3768c32f-9942-4140-bccd-1796df73869a)
+
+## Required RL Values (Load Resistors) For MQ Sensors
+![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
+
 ## Finding the Constants of the Correction Coefficient
 
 <img width="553" alt="find_constants" src="https://github.com/user-attachments/assets/c5dfc57b-8d1f-4175-b5fe-795a5eb8c984" />
@@ -93,21 +112,6 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 ## Estimation Algorithm for Temp, RH, and Sensor Percentile
 
 <img width="1264" alt="estimation_algorithm" src="https://github.com/user-attachments/assets/b441861e-c20d-43f5-8f4e-bd4b9f6fb55d" />
-
-## STEL Limits For Gases
-![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
-
-## Required Preheating Times For MQ Sensors
-![Hour](https://github.com/user-attachments/assets/0a49d718-6ac0-4edd-a93c-a14086e4be79)
-
-## Required Circuit Diagrams For MQ sensors
-![Circuit Diagrams](https://github.com/user-attachments/assets/74905eb4-9a70-4409-8bc3-488cb973b938)
-
-## Required Voltage Ranges For MQ Sensors
-![Vc](https://github.com/user-attachments/assets/3768c32f-9942-4140-bccd-1796df73869a)
-
-## Required RL Values (Load Resistors) For MQ Sensors
-![suggestedRL](https://github.com/user-attachments/assets/605c711b-61a5-4d5a-98fa-4014ebb26356)
 
 ## Check out all our DataScience libraries under the SpaceData series!
 
