@@ -1,4 +1,3 @@
-<img width="401" height="111" alt="ppmformulla" src="https://github.com/user-attachments/assets/12a55de4-59e8-4f69-913b-d62c007b7a04" />
 # MQDataScience v6.0.0
 
 ## What can be created?
