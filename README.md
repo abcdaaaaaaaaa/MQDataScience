@@ -74,7 +74,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Inclusion of Correction Coefficient
 
-<img width="1264"  alt="ppmlss" src="https://github.com/user-attachments/assets/8c978db2-2f68-4fbb-b812-38ffae66db0a" />
+<img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
 
 ## STEL Limits For Gases
 ![STEL_LIMITS_FOR_GASES](https://github.com/user-attachments/assets/e092705a-1e45-4375-9aee-470e366a51de)
