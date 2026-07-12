@@ -78,7 +78,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Finding the Constants of the Correction Coefficient
 
-<img width="474" alt="find_constants" src="https://github.com/user-attachments/assets/c5dfc57b-8d1f-4175-b5fe-795a5eb8c984" />
+<img width="553" alt="find_constants" src="https://github.com/user-attachments/assets/c5dfc57b-8d1f-4175-b5fe-795a5eb8c984" />
 
 ## Mathematical Foundation of the Correction Coefficient Model
 
