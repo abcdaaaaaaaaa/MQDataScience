@@ -76,7 +76,11 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 <img width="1264" alt="ppm_correction" src="https://github.com/user-attachments/assets/e4c0dfae-0661-4d56-a014-f53acc929480" />
 
-## Mathematical Foundation of the Exponential Correction Model
+## Finding the Constants of the Correction Coefficient
+
+<img width="327" height="16" alt="find_constants" src="https://github.com/user-attachments/assets/c5dfc57b-8d1f-4175-b5fe-795a5eb8c984" />
+
+## Mathematical Foundation of the Correction Coefficient Model
 
 <img width="1448" height="1302" alt="mathematical_correction" src="https://github.com/user-attachments/assets/1d6b9f3d-3ba3-46dc-b183-f19e0d7cb813" />
 
