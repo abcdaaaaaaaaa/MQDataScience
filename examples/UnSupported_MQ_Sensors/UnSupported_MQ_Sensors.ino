@@ -44,11 +44,13 @@ float air =
 // Run the codes in the link according to your sensor's correction coefficient calculation mode.
 float a_RH30 =
 float b_RH30 =
+float c_RH30 =
 float a_RH33 =
 float b_RH33 =
+float c_RH33 =
 float a_RH85 =
 float b_RH85 =
-int scale_mode = 1; // (mode1)
+float c_RH85 =
 
  * To understand what you will define, just click on the link and run the code, the code will tell you in detail what you need to transfer:
  https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScience/Regression/CorrectionCoefficient 
@@ -67,11 +69,12 @@ int scale_mode = 1; // (mode1)
  * calibrateAir: 1000ppm LPG --> 0.78 ratio
  * float calibrateAir = 0.78;
  * float air = 9.8;
- * int scale_mode = 1;
- * float a_RH33 = 1.6867; // It is not directly included in the datasheet but was calculated from mode1.py.
- * float b_RH33 = -0.4263; // It is not directly included in the datasheet but was calculated from mode1.py.
- * float a_RH85 = 1.5291; // It is not directly included in the datasheet but was calculated from mode1.py.
- * float b_RH85 = -0.422; // It is not directly included in the datasheet but was calculated from mode1.py.
+ * float a_RH33 = 0.8579; // It is not directly included in the datasheet but was calculated from mode1.py.
+ * float b_RH33 = -0.0543; // It is not directly included in the datasheet but was calculated from mode1.py.
+ * float c_RH33 = 0.4912; // It is not directly included in the datasheet but was calculated from mode1.py.
+ * float a_RH85 = 0.7818; // It is not directly included in the datasheet but was calculated from mode1.py.
+ * float b_RH85 = -0.0554; // It is not directly included in the datasheet but was calculated from mode1.py.
+ * float c_RH85 = 0.4378; // It is not directly included in the datasheet but was calculated from mode1.py.
  * float min_air_ppm = 200;
  * float max_air_ppm = 10000;
  */
@@ -80,12 +83,13 @@ String MySensorModel = "MQ2";
 float calibrateAir = 0.78;
 float rlcal = 0.25;
 float air = 9.8;
-int scale_mode = 1;
 
-float a_RH33 = 1.6867;
-float b_RH33 = -0.4263;
-float a_RH85 = 1.5291;
-float b_RH85 = -0.422;
+float a_RH33 = 0.8579;
+float b_RH33 = -0.0543;
+float c_RH33 = 0.4912;
+float a_RH85 = 0.7818;
+float b_RH85 = -0.0554;
+float c_RH85 = 0.4378;
 
 float min_air_ppm = 200;
 float max_air_ppm = 10000;
@@ -111,8 +115,8 @@ void loop() {
     it will measure values higher than the true value. Temperature and humidity are inversely proportional to the correction coefficient. */
      
     sensorVal = sensor.read();
-    correction = unsupported_calculateCorrection1(temp, rh, a_RH33, b_RH33, a_RH85, b_RH85, scale_mode); // for mode1 and mode2
-    // correction = unsupported_calculateCorrection2(temp, rh, a_RH30, b_RH30, a_RH60, b_RH60, a_RH85, b_RH85); // for mode3
+    correction = unsupported_calculateCorrection1(temp, rh, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85); // for mode1 and mode2
+    // correction = unsupported_calculateCorrection2(temp, rh, a_RH30, b_RH30, c_RH30, a_RH60, b_RH60, c_RH60, a_RH85, b_RH85, c_RH85); // for mode3
 
     Air = sensorVal > 0 ? unsupported_airConcentration(min_air_ppm, max_air_ppm, sensorVal) * correction : 0;
     // Air gives the overall concentration of the sensor.
