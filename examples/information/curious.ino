@@ -30,3 +30,5 @@ Why use the Curve Estimation Platform in 4D?
   Therefore, the graphic is being redesigned in 4D.
 
 Why are there 9 prediction models in the 4D Curve Estimation Platform?
+  Because environmental conditions, measurement time intervals, or other factors can cause the air quality of an environment to change along different curves or at different rates. 
+  In this case too, This necessitates more predictive models to accurately forecast changes in air quality in that environment.
