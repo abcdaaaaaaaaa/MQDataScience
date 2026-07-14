@@ -23,3 +23,7 @@ Why do we use the sensors after applying the preheating process?
   Moisture and adsorbed gas residues may be present on the sensing surface after the manufacturing and storage process. 
   Therefore, the sensors must be preheated by operating them for a certain period under nominal supply conditions before initial use. 
   This process ensures the surface conditions stabilize, contributes to the stabilization of the measurement response, and helps the sensor resistance values ​​settle within the operating range.
+
+Why use the Curve Estimation Platform in 4D?
+
+Why are there 9 prediction models in the 4D Curve Estimation Platform?
