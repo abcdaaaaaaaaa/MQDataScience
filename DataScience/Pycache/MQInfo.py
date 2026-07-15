@@ -1,5 +1,5 @@
 CleanAir = 1
-SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, c_RH30, a_RH33, b_RH33, c_RH33, a_RH60, b_RH60, c_RH60, a_RH85, b_RH85, c_RH85, SensorRLCalRL, SensorMode, FormulaCoefficient, AirVals, AirValsEqualGasVals, CRMode, FormulaMode = [None] * 22
+SensorName, Air, CalibrateAir, MinAirPpm, MaxAirPpm, gas_params, a_RH30, b_RH30, c_RH30, a_RH33, b_RH33, c_RH33, a_RH60, b_RH60, c_RH60, a_RH85, b_RH85, c_RH85, SensorRLCalRL, SensorMode, FormulaCoefficient, AirVals, AirValsEqualGasVals, CRMode, FormulaMode = [None] * 25
 
 def MQ2():
     global SensorName, Air, CalibrateAir, SensorRLCalRL, MinAirPpm, MaxAirPpm, gas_params, a_RH33, b_RH33, c_RH33, a_RH85, b_RH85, c_RH85
