@@ -109,7 +109,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 			valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
 			return valuea + valuec * np.exp(valueb * temp)
 
-## Estimation Algorithm for Temperature, Relative Humidity and Air Quality Analysis
+## Estimation Algorithm for Temp, RH and Air Quality Analysis
 
 <img width="1774" height="887" alt="77_models" src="https://github.com/user-attachments/assets/ab84cdd5-6b47-4da6-9467-6c5af56d0473" />
 
