@@ -129,13 +129,13 @@ air = limit(exponential_interpolate(SensorValue, 0, 1, convertppm(MinAirPpm), co
 
 time_surface = vals(min(time), max(time)*2, 200)
 
-r2_temp_time, temperature_surface_raw, model_temp = EstimateData.get_best_fit(time, temperature, time_surface)
+r2_temp_time, temperature_surface_raw, model_temp = EstimateData.get_best_fit(time, temperature, time_surface, temp=temperature, rh=rh)
 temperature_surface = limit(temperature_surface_raw, -10, 50)
 
-r2_rh_time, rh_surface_raw, model_rh = EstimateData.get_best_fit(time, rh, time_surface, temp=temperature, temp_surface=temperature_surface)
+r2_rh_time, rh_surface_raw, model_rh = EstimateData.get_best_fit(time, rh, time_surface, temp=temperature, rh=rh)
 rh_surface = limit(rh_surface_raw, 0, 100)
 
-r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface, temp=temperature, temp_surface=temperature_surface)
+r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface, temp=temperature, rh=rh)
 percentile_surface = limit(percentile_surface_raw, 0, 100)
 
 correction_coefficient_surface = CorrectionCoefficient(temperature_surface, rh_surface)
@@ -170,6 +170,6 @@ for i, gas in enumerate(gas_params):
         print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
     print("")
     
-    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
+    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface_raw, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
         print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
     print("")
