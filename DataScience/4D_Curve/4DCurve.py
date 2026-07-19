@@ -398,9 +398,9 @@ graphmin, graphmax = np.min(ppm_graph), np.max(ppm_graph)
 fig.update_layout(
     scene=dict(
         camera=dict(eye=dict(x=1.75, y=1.09375, z=0.088)),
-        xaxis_title=f"X: Temp (°C) R² = {r2_temp_time}",
-        yaxis_title=f"Y: RH (%) R² = {r2_rh_time}",
-        zaxis_title=f"Z: Air (ppm) R² = {r2_percentile_time}",
+        xaxis_title=f"X: Temp (°C) {model_temp} R² = {r2_temp_time}",
+        yaxis_title=f"Y: RH (%) {model_rh} R² = {r2_rh_time}",
+        zaxis_title=f"Z: Air (ppm) {model_per} R² = {r2_percentile_time}",
         xaxis=dict(range=[xmin, xmax], nticks=10, showbackground=False),
         yaxis=dict(range=[ymin, ymax], nticks=10, showbackground=False),
         zaxis=dict(range=[zmin, zmax], nticks=10, showbackground=False),
