@@ -111,7 +111,11 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Estimation Algorithm for Temp, RH, and Sensor Percentile
 
-<img width="1264" alt="estimation_algorithm" src="https://github.com/user-attachments/assets/b441861e-c20d-43f5-8f4e-bd4b9f6fb55d" />
+<img width="1774" height="887" alt="77_models" src="https://github.com/user-attachments/assets/ab84cdd5-6b47-4da6-9467-6c5af56d0473" />
+
+From classical regression methods, multivariable regression models, curve fitting and spline-based approaches, time series analysis, state-space and Kalman filtering methods, to machine learning algorithms, ensemble learning methods, and artificial neural network models, a total of 77 different algorithms are applied to the same dataset. Each model is evaluated using Cross-Validation, its R² (Coefficient of Determination) is calculated, and the model achieving the highest R² score is automatically selected.
+
+<img width="632" alt="model_numbers" src="https://github.com/user-attachments/assets/abfd7305-575a-4d20-985c-76d183de8a50" />
 
 ## Check out all our DataScience libraries under the SpaceData series!
 
