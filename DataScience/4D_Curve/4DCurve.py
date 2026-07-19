@@ -204,7 +204,7 @@ maxtime = np.max(time_surface)
 ppm_range = []
 ppms_range = []
 
-xmin, xmax = np.min([np.min(temperature), np.min(temperature_surface)]), np.max([np.max(temperature), np.max(temperature_surface)])
+xmin, xmax = np.min([np.min(temperature), np.min(temperature_surface_raw)]), np.max([np.max(temperature), np.max(temperature_surface_raw)])
 ymin, ymax = np.min([np.min(rh), np.min(rh_surface)]), np.max([np.max(rh), np.max(rh_surface)])
 zmin, zmax = np.min([np.min(air), np.min(air_surface)]), np.max([np.max(air), np.max(air_surface)])
 
@@ -295,7 +295,7 @@ fig.add_trace(go.Scatter3d(
 ))
 
 fig.add_trace(go.Scatter3d(
-    x=temperature_surface,
+    x=temperature_surface_raw,
     y=rh_surface,
     z=air_surface,
     mode='lines',
@@ -309,7 +309,7 @@ fig.add_trace(go.Scatter3d(
         'Temperature°C (x): %{customdata[1]:.4f}<br>' +
         'RH (y): %{customdata[2]:.4f}'
     ),
-    customdata=np.stack((time_surface, temperature_surface, rh_surface, correction_coefficient_surface, air_surface), axis=-1)
+    customdata=np.stack((time_surface, temperature_surface_raw, rh_surface, correction_coefficient_surface, air_surface), axis=-1)
 ))
 
 fig.add_trace(go.Scatter3d(
@@ -330,7 +330,7 @@ fig.add_trace(go.Scatter3d(
 ))
 
 fig.add_trace(go.Scatter3d(
-    x=interpolate(temperature_surface, xmin, xmax, x_middle_min, x_middle_max),
+    x=interpolate(temperature_surface_raw, xmin, xmax, x_middle_min, x_middle_max),
     y=interpolate(rh_surface, ymin, ymax, y_middle_min, y_middle_max),
     z=interpolate(correction_coefficient_surface, mincr, maxcr, z_middle_min, z_middle_max),
     mode='lines',
@@ -343,7 +343,7 @@ fig.add_trace(go.Scatter3d(
         'Temperature°C (x): %{customdata[1]:.4f}<br>' +
         'RH (y): %{customdata[2]:.4f}'
     ),
-    customdata=np.stack((time_surface, temperature_surface, rh_surface, correction_coefficient_surface), axis=-1)
+    customdata=np.stack((time_surface, temperature_surface_raw, rh_surface, correction_coefficient_surface), axis=-1)
 ))
 
 color_palette = pc.qualitative.Plotly
@@ -386,7 +386,7 @@ for i, gas in enumerate(gas_params):
         f.write("\n")
         f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
 
-    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
+    for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface_raw, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
         print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
         with open("EstimationReport.txt", "a") as f:
             f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
