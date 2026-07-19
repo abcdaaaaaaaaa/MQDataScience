@@ -115,11 +115,11 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ###
 
-From classical regression methods, multivariable regression models, curve fitting and spline-based approaches, time series analysis, state-space and Kalman filtering methods, to machine learning algorithms, ensemble learning methods, and artificial neural network models, a total of 77 different algorithms are applied to the same dataset. Each model is evaluated using Cross-Validation, its R² (Coefficient of Determination) is calculated, and the model achieving the highest R² score is automatically selected.
+<img width="2626" height="400" alt="R2_model_algorithm" src="https://github.com/user-attachments/assets/cbe971a5-a0c4-48a3-ad6a-f9ccf62219da" />
 
 ###
 
-<img width="2626" height="400" alt="R2_model_algorithm" src="https://github.com/user-attachments/assets/cbe971a5-a0c4-48a3-ad6a-f9ccf62219da" />
+From classical regression methods, multivariable regression models, curve fitting and spline-based approaches, time series analysis, state-space and Kalman filtering methods, to machine learning algorithms, ensemble learning methods, and artificial neural network models, a total of 77 different algorithms are applied to the same dataset. Each model is evaluated using Cross-Validation, its R² (Coefficient of Determination) is calculated, and the model achieving the highest R² score is automatically selected.
 
 ## Check out all our DataScience libraries under the SpaceData series!
 
