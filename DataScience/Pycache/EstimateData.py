@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.optimize import curve_fit
-from scipy.interpolate import CubicSpline, UnivariateSpline
+from scipy.interpolate import CubicSpline, UnivariateSpline, interp1d
 from scipy import odr
 import warnings
 from statsmodels.tools.sm_exceptions import ConvergenceWarning
@@ -65,11 +65,14 @@ class RegressionData:
         self.temp = np.array(temp, dtype=np.float64) if temp is not None else np.zeros_like(self.t)
         self.rh = np.array(rh, dtype=np.float64) if rh is not None else np.zeros_like(self.t)
         
-        if len(self.t) > 1:
-            self.temp_s = np.interp(self.t_surface, self.t, self.temp)
-            self.rh_s = np.interp(self.t_surface, self.t, self.rh)
+        if len(self.t) > 1 and not np.all(self.temp == 0):
+            self.temp_s = interp1d(self.t, self.temp, fill_value="extrapolate")(self.t_surface)
         else:
             self.temp_s = np.zeros_like(self.t_surface)
+            
+        if len(self.t) > 1 and not np.all(self.rh == 0):
+            self.rh_s = interp1d(self.t, self.rh, fill_value="extrapolate")(self.t_surface)
+        else:
             self.rh_s = np.zeros_like(self.t_surface)
             
         self.features = {
