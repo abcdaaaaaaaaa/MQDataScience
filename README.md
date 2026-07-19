@@ -119,7 +119,7 @@ From classical regression methods, multivariable regression models, curve fittin
 
 ###
 
-<img width="632" alt="model_numbers" src="https://github.com/user-attachments/assets/b852ed2d-012d-439b-9367-d5efe774dc02" />
+<img width="2626" height="400" alt="R2_model_algorithm" src="https://github.com/user-attachments/assets/cbe971a5-a0c4-48a3-ad6a-f9ccf62219da" />
 
 ## Check out all our DataScience libraries under the SpaceData series!
 
