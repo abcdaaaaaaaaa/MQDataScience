@@ -1,4 +1,4 @@
-# MQDataScience v6.0.0
+# MQDataScience v6.0.0 (2 August 2026)
 
 ## What can be created?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
