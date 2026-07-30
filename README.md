@@ -16,7 +16,7 @@
 ![MQ135_CO2_3D)](https://github.com/user-attachments/assets/5295ad32-65e2-4e4a-bbdb-d2a98b173e86)
 
 ## 5) Curve Estimation in Time-Dependent 4D Space
-![4D_Curve_Estimation](https://github.com/user-attachments/assets/82f412d6-53f8-409c-9ce6-84a03cc2b30f)
+![4D_Curve_Estimation](https://github.com/user-attachments/assets/6d08ee1e-6127-4c48-9127-39153e824708)
 
 ## 4D Axis Features
 
