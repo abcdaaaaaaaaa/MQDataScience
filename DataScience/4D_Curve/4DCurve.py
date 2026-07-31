@@ -1,6 +1,5 @@
 import numpy as np
 import plotly.graph_objects as go
-from scipy.optimize import curve_fit
 import plotly.colors as pc
 import pandas as pd
 from datetime import datetime
