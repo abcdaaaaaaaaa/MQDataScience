@@ -6,7 +6,7 @@ SUPPORTED LİST: MQ135, MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ131,
 MQ131_LOW, MQ135, MQ136, MQ137, MQ138, MQ214, MQ216, MQ303A, MQ303B, MQ306A, MQ307A, MQ309A
 
 This code aims to predict future data based on past data. 
-This code uses 7 different models for Sensor Percentage when making predictions and selects the one with the highest accuracy rate for each.
+This code uses 63 different models for Sensor Percentage when making predictions and selects the one with the highest accuracy rate for each.
 
 Please update the xlsx excel file to the sensor mode you are using and the past results you have obtained.
 The data you need to measure for this code: Sensor Percentage.
