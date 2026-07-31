@@ -7,7 +7,7 @@ Sensor modes measuring different "Model Gases": MQ131_LOW, MQ303A, MQ303B, MQ306
 
 -- ModelCurve.py --
 This code aims to predict future data based on past data. 
-This code uses 7 different models for each section when making predictions and selects the one with the highest accuracy rate for each.
+This code uses 63 different models for each section when making predictions and selects the one with the highest accuracy rate for each.
 
 Please update the xlsx excel file to the sensor mode you are using and the past results you have obtained.
 The data you need to measure for this code: Gas Sensor Percentage.
