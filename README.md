@@ -10,10 +10,10 @@
 ![MQ303A_Ppm_Analysis](https://github.com/user-attachments/assets/91be952f-5374-41a7-a64f-4d0e24a1af0e)
 
 ## 3) Formulated Correction Coefficients depending on Temperature and Humidity
-![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/8783b3a5-7956-47f1-a61b-ae300041e047)
+![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/fd9bdeb6-377a-4109-b931-766112c58a4e)
 
 ## 4) 3D Ppm Surface Diagram for MQ Sensors Gases
-![MQ135_CO2_3D)](https://github.com/user-attachments/assets/5295ad32-65e2-4e4a-bbdb-d2a98b173e86)
+![MQ135_CO2_3D)](https://github.com/user-attachments/assets/6d991b44-1eed-46ce-b561-abd7c7c3a554)
 
 ## 5) Curve Estimation in Time-Dependent 4D Space
 ![4D_Curve_Estimation](https://github.com/user-attachments/assets/6d08ee1e-6127-4c48-9127-39153e824708)
