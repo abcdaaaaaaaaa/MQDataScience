@@ -15,8 +15,8 @@
 ## 4) 3D Ppm Surface Diagram for MQ Sensors Gases
 ![MQ135_CO2_3D)](https://github.com/user-attachments/assets/6d991b44-1eed-46ce-b561-abd7c7c3a554)
 
-## 5) Curve Estimation in Time-Dependent 4D Space
-![4D_Curve_Estimation](https://github.com/user-attachments/assets/6d08ee1e-6127-4c48-9127-39153e824708)
+## 5) Curve Prediction in Time-Dependent 4D Space
+![4D_Curve_Prediction](https://github.com/user-attachments/assets/7ec2c00d-951a-4c96-9b0d-2ef3a795ef9e)
 
 ## 4D Axis Features
 
@@ -109,7 +109,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 			valuec = interpolate(RH, 33, 85, c_RH33, c_RH85)
 			return valuea + valuec * np.exp(valueb * temp)
 
-## Estimation Algorithm for Temp, RH and Air Quality Analysis
+## Prediction Algorithm for Temp, RH and Air Quality Analysis
 
 <img width="1774" height="887" alt="77_models" src="https://github.com/user-attachments/assets/ab84cdd5-6b47-4da6-9467-6c5af56d0473" />
 
