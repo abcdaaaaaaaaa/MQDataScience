@@ -4,7 +4,7 @@ from plotly.subplots import make_subplots
 import plotly.colors as pc
 import pandas as pd
 import MQInfo
-import EstimateData
+import PredictData
 
 df = pd.read_excel("Model_Datas.xlsx")
 
