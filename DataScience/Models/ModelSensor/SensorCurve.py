@@ -2,7 +2,7 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
-import EstimateData
+import PredictData
 
 df = pd.read_excel("Sensor_Datas.xlsx")
 
@@ -23,7 +23,7 @@ SensorValue = percentile / 100
 
 time_surface = vals(min(time), max(time)*2, 200)
 
-r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface)
+r2_percentile_time, percentile_surface_raw, model_per = PredictData.get_best_fit(time, percentile, time_surface)
 percentile_surface = limit(percentile_surface_raw)
 
 print(f"Percentile Model: {model_per}")
@@ -36,10 +36,10 @@ fig.add_trace(go.Scatter(x=time_surface, y=percentile_surface, mode='lines', mar
 
 
 fig.update_layout(
-    title=f"{SensorName} Model Curve Estimation",
+    title=f"{SensorName} Model Curve Prediction",
     xaxis=dict(title='X: Time (w)'),
     yaxis=dict(title='Y: SensorValue (z)'),
     template='plotly_dark'
 )
 
-fig.write_html(f"{SensorName}_ModelCurve_Estimation.html")
+fig.write_html(f"{SensorName}_ModelCurve_Prediction.html")
