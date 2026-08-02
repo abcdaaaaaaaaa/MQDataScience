@@ -126,7 +126,7 @@ void loop() {
     Serial.print(Air);
     Serial.print(" ppm");
     Serial.println();
-    Serial.print("Correction Coefficient: "); // This value indicates the accuracy of the sensor due to environmental conditions.
+    Serial.print("Correction Coefficient: ×"); // This value indicates the accuracy of the sensor due to environmental conditions.
     Serial.print(correction, 4); // Writes decimal part and the first four digits of the decimal part.
     Serial.println();
 
