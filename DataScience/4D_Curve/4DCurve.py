@@ -4,7 +4,7 @@ import plotly.colors as pc
 import pandas as pd
 from datetime import datetime
 import MQInfo
-import EstimateData
+import PredictData
 
 df = pd.read_excel("4D_Datas.xlsx")
 
@@ -381,13 +381,13 @@ for i, gas in enumerate(gas_params):
             f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
     print("")
 
-    with open("EstimationReport.txt", "a") as f:
+    with open("PredictionReport.txt", "a") as f:
         f.write("\n")
         f.write(f"Gas: {gasname} | R²_Per={r2_percentile_time} | R²_Temp={r2_temp_time} | R²_Rh={r2_rh_time}\n")
 
     for t_val, temp_val, rh_val, sv_val, corr_val, ppm_val, air_val in zip(time_surface, temperature_surface_raw, rh_surface, SensorValue_surface, correction_coefficient_surface, ppm_surface, air_surface):
         print(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}")
-        with open("EstimationReport.txt", "a") as f:
+        with open("PredictionReport.txt", "a") as f:
             f.write(f"t={t_val:.4f}s Sensor={sv_val:.4f} Air={air_val:.4f} temp={temp_val:.4f} rh={rh_val:.4f} corr={corr_val:.4f} ppm={ppm_val:.4f}\n")
     print("")
 
@@ -414,7 +414,7 @@ fig.update_layout(
     yaxis=dict(title='Y: SensorPpm (z)', domain=[0.07, 0.82])
 )
 
-fig.add_annotation(text="4D Curve Estimation", x=0.18, y=0.98, showarrow=False, font=dict(size=19), xref="paper", yref="paper")
+fig.add_annotation(text="4D Curve Prediction", x=0.18, y=0.98, showarrow=False, font=dict(size=19), xref="paper", yref="paper")
 fig.add_annotation(text=f"{SensorName} Air Time-based PPM Calculation", x=0.89, y=0.98, showarrow=False, font=dict(size=19), xref="paper", yref="paper")
 
-fig.write_html(f"{SensorName}_4D_Curve_Estimation.html")
+fig.write_html(f"{SensorName}_4D_Curve_Prediction.html")
