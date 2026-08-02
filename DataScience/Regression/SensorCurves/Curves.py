@@ -71,7 +71,7 @@ while True:
         x = np.array(x_values)
         y = np.array(y_values)
 
-        def yaxb(valuea, value, valueb):
+        def yaxb(value, valuea, valueb):
             return valuea * np.power(value, valueb)
         
         popt, pcov = curve_fit(yaxb, x, y)
