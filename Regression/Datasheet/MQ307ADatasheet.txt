@@ -38,7 +38,6 @@ CO
 500,0.25
 1000,0.15
 
-%0.96
 [(30,6.63), (60,1.83), (100,0.96), (300,0.34), (500,0.25), (1000,0.15)]
 
 H2
@@ -48,5 +47,4 @@ H2
 
 Exceptional: Since H2 has no value at the clean air point (100ppm), H2 dangerousPer() value was found by calculating the average value of the hyperbola [(80.054 + 32.16) / 2]. 
 
-%56.107
 [(1000,80.054), (2000,44.89), (3000,32.16)]
