@@ -79,7 +79,7 @@ with open("DataReport.txt", "a") as f:
     f.write("\n")
     f.write("\n")
 
-with open("EstimationReport.txt", "a") as f:
+with open("PredictionReport.txt", "a") as f:
     f.write("\n")
     f.write("\n")
     f.write(SensorName + " " + formatted)
@@ -170,13 +170,13 @@ air = limit(exponential_interpolate(SensorValue, 0, 1, convertppm(MinAirPpm), co
 
 time_surface = vals(min(time), max(time)*2, 200)
 
-r2_temp_time, temperature_surface_raw, model_temp = EstimateData.get_best_fit(time, temperature, time_surface, temp=temperature, rh=rh)
+r2_temp_time, temperature_surface_raw, model_temp = PredictData.get_best_fit(time, temperature, time_surface, temp=temperature, rh=rh)
 temperature_surface = limit(temperature_surface_raw, -10, 50)
 
-r2_rh_time, rh_surface_raw, model_rh = EstimateData.get_best_fit(time, rh, time_surface, temp=temperature, rh=rh)
+r2_rh_time, rh_surface_raw, model_rh = PredictData.get_best_fit(time, rh, time_surface, temp=temperature, rh=rh)
 rh_surface = limit(rh_surface_raw, 0, 100)
 
-r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface, temp=temperature, rh=rh)
+r2_percentile_time, percentile_surface_raw, model_per = PredictData.get_best_fit(time, percentile, time_surface, temp=temperature, rh=rh)
 percentile_surface = limit(percentile_surface_raw, 0, 100)
 
 print(f"Percentile Model: {model_per}")
@@ -184,7 +184,7 @@ print(f"Temperature Model: {model_temp}")
 print(f"RH Model: {model_rh}")
 print()
 
-with open("EstimationReport.txt", "a") as f:
+with open("PredictionReport.txt", "a") as f:
     f.write("\n")
     f.write(f"Percentile Model: {model_per}")
     f.write("\n")
