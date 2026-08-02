@@ -3,7 +3,7 @@ from scipy.optimize import curve_fit
 import pandas as pd
 from datetime import datetime
 import MQInfo
-import EstimateData
+import PredictData
 
 df = pd.read_excel("4D_Datas.xlsx")
 
@@ -129,13 +129,13 @@ air = limit(exponential_interpolate(SensorValue, 0, 1, convertppm(MinAirPpm), co
 
 time_surface = vals(min(time), max(time)*2, 200)
 
-r2_temp_time, temperature_surface_raw, model_temp = EstimateData.get_best_fit(time, temperature, time_surface, temp=temperature, rh=rh)
+r2_temp_time, temperature_surface_raw, model_temp = PredictData.get_best_fit(time, temperature, time_surface, temp=temperature, rh=rh)
 temperature_surface = limit(temperature_surface_raw, -10, 50)
 
-r2_rh_time, rh_surface_raw, model_rh = EstimateData.get_best_fit(time, rh, time_surface, temp=temperature, rh=rh)
+r2_rh_time, rh_surface_raw, model_rh = PredictData.get_best_fit(time, rh, time_surface, temp=temperature, rh=rh)
 rh_surface = limit(rh_surface_raw, 0, 100)
 
-r2_percentile_time, percentile_surface_raw, model_per = EstimateData.get_best_fit(time, percentile, time_surface, temp=temperature, rh=rh)
+r2_percentile_time, percentile_surface_raw, model_per = PredictData.get_best_fit(time, percentile, time_surface, temp=temperature, rh=rh)
 percentile_surface = limit(percentile_surface_raw, 0, 100)
 
 correction_coefficient_surface = CorrectionCoefficient(temperature_surface, rh_surface)
