@@ -112,29 +112,29 @@ class BaseModel:
         raise NotImplementedError
 
 class SklearnModel(BaseModel):
-    def __init__(self, name, priority, estimator, param_grid, feat_key):
+    def __init__(self, name, priority, predictor, param_grid, feat_key):
         super().__init__(name, priority, 'kfold')
-        self.estimator = estimator
+        self.predictor = predictor
         self.param_grid = param_grid
         self.feat_key = feat_key
-        self.best_estimator = None
+        self.best_predictor = None
 
     def fit(self, data):
         X = data.features[self.feat_key]
         y = data.y
         if self.param_grid:
-            grid = GridSearchCV(self.estimator, self.param_grid, cv=2, scoring='r2')
+            grid = GridSearchCV(self.predictor, self.param_grid, cv=2, scoring='r2')
             grid.fit(X, y)
-            self.best_estimator = grid.best_estimator_
+            self.best_predictor = grid.best_predictor_
         else:
-            self.best_estimator = self.estimator
-            self.best_estimator.fit(X, y)
+            self.best_predictor = self.predictor
+            self.best_predictor.fit(X, y)
 
     def predict_eval(self, data_eval):
-        return self.best_estimator.predict(data_eval.features[self.feat_key])
+        return self.best_predictor.predict(data_eval.features[self.feat_key])
 
     def predict_surface(self, full_data):
-        return self.best_estimator.predict(full_data.features[self.feat_key + '_s'])
+        return self.best_predictor.predict(full_data.features[self.feat_key + '_s'])
 
 class FGLSModel(BaseModel):
     def __init__(self, name, priority):
@@ -1072,12 +1072,12 @@ class ModelRunner:
             KalmanFilterRegressionModel("Kalman Filter Regression", 63, feat_key='all'),
             SklearnModel("Support Vector Regression (SVR)", 64, SVR(), {'C': [1, 10], 'epsilon': [0.1]}, 't'),
             SklearnModel("Decision Tree Regression", 65, DecisionTreeRegressor(random_state=42), None, 't'),
-            SklearnModel("Random Forest Regression", 66, RandomForestRegressor(random_state=42, n_jobs=1, n_estimators=50), None, 't'),
-            SklearnModel("Extra Trees Regression", 67, ExtraTreesRegressor(random_state=42, n_jobs=1, n_estimators=50), None, 't'),
-            SklearnModel("Gradient Boosting Regression", 68, GradientBoostingRegressor(random_state=42, n_estimators=50), None, 't'),
-            SklearnModel("AdaBoost Regression", 69, AdaBoostRegressor(random_state=42, n_estimators=50), None, 't'),
-            SklearnModel("Extreme Gradient Boosting (XGBoost)", 70, XGBRegressor(random_state=42, n_jobs=1, n_estimators=50), None, 't'),
-            SklearnModel("Light Gradient Boosting Machine (LightGBM)", 71, LGBMRegressor(random_state=42, n_jobs=1, n_estimators=50, verbose=-1), None, 't'),
+            SklearnModel("Random Forest Regression", 66, RandomForestRegressor(random_state=42, n_jobs=1, n_predictors=50), None, 't'),
+            SklearnModel("Extra Trees Regression", 67, ExtraTreesRegressor(random_state=42, n_jobs=1, n_predictors=50), None, 't'),
+            SklearnModel("Gradient Boosting Regression", 68, GradientBoostingRegressor(random_state=42, n_predictors=50), None, 't'),
+            SklearnModel("AdaBoost Regression", 69, AdaBoostRegressor(random_state=42, n_predictors=50), None, 't'),
+            SklearnModel("Extreme Gradient Boosting (XGBoost)", 70, XGBRegressor(random_state=42, n_jobs=1, n_predictors=50), None, 't'),
+            SklearnModel("Light Gradient Boosting Machine (LightGBM)", 71, LGBMRegressor(random_state=42, n_jobs=1, n_predictors=50, verbose=-1), None, 't'),
             SklearnModel("CatBoost Regression", 72, CatBoostRegressor(verbose=0, random_state=42, thread_count=1, iterations=50), None, 't'),
             SklearnModel("k-Nearest Neighbors Regression (kNN)", 73, KNeighborsRegressor(), {'n_neighbors': [3, 5]}, 't'),
             SklearnModel("Gaussian Process Regression (GPR)", 74, GaussianProcessRegressor(random_state=42), None, 't'),
