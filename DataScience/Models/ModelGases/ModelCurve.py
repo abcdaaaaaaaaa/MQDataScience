@@ -134,7 +134,7 @@ for i, gas in enumerate(gas_params):
 
 
 fig.update_layout(
-    title=f"{SensorName} Gas Models Curve Estimations",
+    title=f"{SensorName} Gas Models Curve Predictions",
     xaxis=dict(title='X: Time (w)'),
     yaxis=dict(title='Y: SensorAir (z)'),
     xaxis2=dict(title='X: Time (w)'),
