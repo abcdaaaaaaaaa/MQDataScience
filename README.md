@@ -1,4 +1,4 @@
-# MQDataScience v6.0.0 (2 August 2026)
+# MQDataScience v6.0.0
 
 ## What can be created?
 "The first and only Arduino library where MQ Sensors combine with Data Science"
@@ -46,7 +46,7 @@
 
 The first formula is determined according to all points (Curves.py, OldCurve), while the second formula is determined according to the first and last point. Therefore, in order to collect them all in the same formula and to increase the accuracy rate, we used the method in the second formula and took the logarithm (if R^2 = 1 (%100) always: logm = valueb, logb = log10(valuea)) for curves greater than 99.95% and collected them all in the first formula, thus we increased the accuracy rate without having to use 2 different formulas (Curves.py, NewCurve).
 
-## y = ax^b  --> ppm = a×ratio^b
+## y = ax^b → ppm = a×ratio^b
 <b> Therefore, we need to make a transition according to the formula:
 
 <img width="400" alt="image3" src="https://github.com/user-attachments/assets/9706b917-7ce9-4bc9-a3bb-171a11e46052" />
