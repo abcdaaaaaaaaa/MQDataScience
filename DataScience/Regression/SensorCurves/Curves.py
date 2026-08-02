@@ -71,12 +71,12 @@ while True:
         x = np.array(x_values)
         y = np.array(y_values)
 
-        def func(x, a, b):
-            return a * np.power(x, b)
-
-        popt, pcov = curve_fit(func, x, y)
-
-        residuals = y - func(x, *popt)
+        def yaxb(valuea, value, valueb):
+            return valuea * np.power(value, valueb)
+        
+        popt, pcov = curve_fit(yaxb, x, y)
+        
+        residuals = y - yaxb(x, *popt)
         ss_res = np.sum(residuals**2)
         ss_tot = np.sum((y - np.mean(y))**2)
         r_squared = 1 - (ss_res / ss_tot)
