@@ -37,3 +37,5 @@ Why does the 4D Curve Prediction Platform have 77 different models, while the Mo
   Because some models make predictions based on sensor percentiles while also considering ambient temperature and/or humidity. 
   However, when the temperature and humidity factors are removed, models such as Multi-Variable Regression (Time + Temperature + Relative Humidity), Multi-Variable Regression (Temperature + Relative Humidity), Multi-Variable Regression (Time + Temperature), 
   and Multi-Variable Regression (Time + Relative Humidity) are all grouped under a single umbrella as Multi-Variable Regression. This reduces variation, thus decreasing the number of models.
+
+If all ppm calculations can already be performed in both microcontroller and Python, why does JavaScript-based calculation exist?
