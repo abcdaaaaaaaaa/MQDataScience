@@ -36,8 +36,8 @@ Why are there 77 different models in the 4D Curve Prediction Platform?
 
 Why does the 4D Curve Prediction Platform have 77 different models, while the Model Curve Prediction Platform and Sensor Curve Prediction Platform only have 68 different models?
   Because some models make predictions based on sensor percentiles while also considering ambient temperature and/or humidity. 
-  However, when the temperature and humidity factors are removed, models such as Multi-Variable Regression (Time + Temperature + Relative Humidity), Multi-Variable Regression (Temperature + Relative Humidity), Multi-Variable Regression (Time + Temperature), 
-  and Multi-Variable Regression (Time + Relative Humidity) are all grouped under a single umbrella as Multi-Variable Regression. This reduces variation, thus decreasing the number of models.
+  However, when the temperature and humidity factors are removed, models such as Multi-Variable Regression (Time + Temperature + Relative Humidity), Multi-Variable Regression (Temperature + Relative Humidity),
+  Multi-Variable Regression (Time + Temperature), and Multi-Variable Regression (Time + Relative Humidity) are all grouped under a single umbrella as Multi-Variable Regression. This reduces variation, thus decreasing the number of models.
 
 If all ppm calculations can already be done on the microcontroller, what is the purpose of JavaScript-based ppm calculation?
   The accuracy of any given current calculation method can never be guaranteed. Therefore, techniques can be updated with better ones over time. 
