@@ -45,3 +45,7 @@ If all ppm calculations can already be done on the microcontroller, what is the 
   Especially for IoT projects, the ppm calculation part can be made much more practical by transferring it to a script.
 
 If all the sensors are MQ series and the general formula is ppm = a(ratio)ᵇ, why are the sensors approached in 3 different groups?
+  Because when the effects of temperature and humidity are included in the datasheet of some sensors, the ratio is considered as Ro/Rs, but in some sensors, when the effects of temperature and humidity are not considered to be so significant, 
+  it is considered as Rs/Rs. This results in two different approaches. However, the Sensitivity Characteristics graphs of MQ131 and MQ-131_LOW are in the form of Ro/Rs instead of Rs/Ro. 
+  This requires a different approach to examine the third approach, which is Ro/Rs, in the Rs/Ro approach (even though the MQ-131_LOW does not include the effects of temperature and humidity, the ratio is not Rs/Rs). 
+  Therefore, even if the main formulas are the same, the sensors are examined under 3 different main groups.
