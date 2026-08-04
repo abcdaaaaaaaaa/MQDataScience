@@ -9,12 +9,12 @@
 
 ---------- For Data Science ----------
   For data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScience
-  For correction coefficient assisted 4d ppm curve estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/4DCurve.py
-  For only read and estimate current ppm values with correction coefficient (does not include 4D axis features) in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/readppm.py
-  For model gases ppm estimation in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelCurve.py
+  For correction coefficient assisted 4d ppm curve prediction in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/4DCurve.py
+  For only read and predict current ppm values with correction coefficient (does not include 4D axis features) in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/readppm.py
+  For model gases ppm prediction in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelCurve.py
   For 3D air quality graphical sensor simulation with correction coefficient support in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/3D_Surface/3DSurface.py
   For air quality graphical sensor simulation of model gases in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelGraph.py
-  For curve estimation of sensors not supported in Data Science Application: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelSensor/SensorCurve.py
+  For curve prediction of sensors not supported in Data Science Application: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelSensor/SensorCurve.py
   To generate regression curves of all supported MQ series gases: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Regression/SensorCurves/Curves.py
 
 ---------- For UnSupported MQ Sensors ----------
