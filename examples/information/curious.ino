@@ -24,11 +24,11 @@ Why do we use the sensors after applying the preheating process?
   Therefore, the sensors must be preheated by operating them for a certain period under nominal supply conditions before initial use. 
   This process ensures the surface conditions stabilize, contributes to the stabilization of the measurement response, and helps the sensor resistance values ​​settle within the operating range.
 
-Why use the Curve Estimation Platform in 4D?
+Why use the Curve Prediction Platform in 4D?
   This is because the calculation of ppm includes both the sensor's own signal and a correction coefficient calculated based on ambient temperature and relative humidity, along with time.
   In this case too, this necessitates the creation of a new 3D graph beneath the calculated 3D ppm graph based on the sensor signal, to examine the correction coefficient change caused by temperature and humidity, which affects ppm, all within a single graph.
   Therefore, the graphic is being redesigned in 4D.
 
-Why are there 77 prediction models in the 4D Curve Estimation Platform?
+Why are there 77 prediction models in the 4D Curve Prediction Platform?
   Because environmental conditions, measurement time intervals, or other factors can cause the air quality of an environment to change along different curves or at different rates. 
   In this case too, This necessitates more predictive models to accurately forecast changes in air quality in that environment.
