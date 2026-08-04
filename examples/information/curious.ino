@@ -42,3 +42,5 @@ If all ppm calculations can already be done on the microcontroller, what is the 
   The accuracy of any given current calculation method can never be guaranteed. Therefore, techniques can be updated with better ones over time. 
   Uploading code repeatedly and disassembling the circuit for each new technique updated in the microcontroller can be a cumbersome process. 
   Especially for IoT projects, the ppm calculation part can be made much more practical by transferring it to a script.
+
+If all the sensors are MQ series and the general formula is ppm = a(ratio)ᵇ, why are the sensors approached in 3 different groups?
