@@ -1,13 +1,13 @@
 ---------------------------------------------------------------- For those who are curious! ----------------------------------------------------------------
-How can I understand if the sensor is MQ131 or MQ131_LOW?
-  1) Check the value ranges it measures, ppm or ppb? ppm --> MQ131, ppb --> MQ131_LOW
-  2) Does it include a curve graph of the Correction Factor depending on temperature and humidity? yes --> MQ131, no--> MQ131_LOW
+How can I understand if the sensor is MQ131 or MQ-131_LOW?
+  1) Check the value ranges it measures, ppm or ppb? ppm --> MQ131, ppb --> MQ-131_LOW
+  2) Does it include a curve graph of the Correction Factor depending on temperature and humidity? yes --> MQ131, no--> MQ-131_LOW
   3) Does it look like a square/rectangular kit? yes--> MQ131, no--> MQ131_LOW
   
 Why does MQ131 have low sensitivity (MQ131_LOW) while MQ131 (MQ131) has high sensitivity?
   MQ131_LOW is sensitive to measure between 0.1-2 ppm (5-100 ppb),
   MQ131 is sensitive to measuring in the range of 5-100ppm.
-  Therefore, MQ131 does not include MQ131_LOW. The two are complementary to each other.
+  Therefore, MQ131 does not include MQ-131_LOW. The two are complementary to each other.
 
 If MQ series gas sensors can measure more than one gas, why are there so many types of MQ sensors on the project?
   Although MQ series gas sensors operate simultaneously like other multi-purpose sensors (e.g., DHT sensors), they provide output through a single analog line.
@@ -26,7 +26,8 @@ Why do we use the sensors after applying the preheating process?
 
 Why use the Curve Prediction Platform in 4D?
   This is because the calculation of ppm includes both the sensor's own signal and a correction coefficient calculated based on ambient temperature and relative humidity, along with time.
-  In this case too, this necessitates the creation of a new 3D graph beneath the calculated 3D ppm graph based on the sensor signal, to examine the correction coefficient change caused by temperature and humidity, which affects ppm, all within a single graph.
+  In this case too, this necessitates the creation of a new 3D graph beneath the calculated 3D ppm graph based on the sensor signal, 
+  to examine the correction coefficient change caused by temperature and humidity, which affects ppm, all within a single graph.
   Therefore, the graphic is being redesigned in 4D.
 
 Why are there 77 different models in the 4D Curve Prediction Platform?
