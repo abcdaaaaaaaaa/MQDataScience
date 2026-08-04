@@ -29,6 +29,6 @@ Why use the Curve Prediction Platform in 4D?
   In this case too, this necessitates the creation of a new 3D graph beneath the calculated 3D ppm graph based on the sensor signal, to examine the correction coefficient change caused by temperature and humidity, which affects ppm, all within a single graph.
   Therefore, the graphic is being redesigned in 4D.
 
-Why are there 77 prediction models in the 4D Curve Prediction Platform?
+Why are there 77 different models in the 4D Curve Prediction Platform?
   Because environmental conditions, measurement time intervals, or other factors can cause the air quality of an environment to change along different curves or at different rates. 
   In this case too, This necessitates more predictive models to accurately forecast changes in air quality in that environment.
