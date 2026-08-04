@@ -1,4 +1,4 @@
-WARNING: To run the code, move the MQInfo.py and PredictData.py files from the Requirements folder to the following paths: C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\MQInfo.py and C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\PredictData.py. 
+WARNING: To run the code, move the MQInfo.py file from the Requirements folder to the following path: C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\MQInfo.py.
 Include any other libraries in the requirements.txt file from the Requirements folder using `pip install -r requirements.txt`. (Necessary)
 
 NOTE: This code is suitable for gas sensors measuring standard gases.
