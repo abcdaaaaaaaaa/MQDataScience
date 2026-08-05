@@ -2,7 +2,7 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
-import PredictData
+import ModelPredictData
 
 df = pd.read_excel("Sensor_Datas.xlsx")
 
@@ -23,7 +23,7 @@ SensorValue = percentile / 100
 
 time_surface = vals(min(time), max(time)*2, 200)
 
-r2_percentile_time, percentile_surface_raw, model_per = PredictData.get_best_fit(time, percentile, time_surface)
+r2_percentile_time, percentile_surface_raw, model_per = ModelPredictData.get_best_fit(time, percentile, time_surface)
 percentile_surface = limit(percentile_surface_raw)
 
 print(f"Percentile Model: {model_per}")
