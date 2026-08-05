@@ -1081,9 +1081,8 @@ class ModelRunner:
             SklearnModel("CatBoost Regression", 72, CatBoostRegressor(verbose=0, random_state=42, thread_count=1, iterations=50), None, 't'),
             SklearnModel("k-Nearest Neighbors Regression (kNN)", 73, KNeighborsRegressor(), {'n_neighbors': [3, 5]}, 't'),
             SklearnModel("Gaussian Process Regression (GPR)", 74, GaussianProcessRegressor(random_state=42), None, 't'),
-            SklearnModel("Artificial Neural Network (ANN)", 75, MLPRegressor(max_iter=500, random_state=42), None, 'all'),
-            SklearnModel("Multi-Layer Perceptron (MLP)", 76, MLPRegressor(max_iter=500, random_state=42), None, 'all'),
-            RBFNetworkModel("Radial Basis Function Neural Network (RBF Network)", 77)
+            SklearnModel("Multi-Layer Perceptron (MLP)", 75, MLPRegressor(max_iter=500, random_state=42), None, 'all'),
+            RBFNetworkModel("Radial Basis Function Neural Network (RBF Network)", 76)
         ]
         
         models.sort(key=lambda m: m.priority)
