@@ -10,7 +10,7 @@
 ---------- For Data Science ----------
   For data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/tree/main/DataScience
   For 4D ppm Curve Prediction with 76 Different Models Supported by Correction Coefficient in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/4DCurve.py
-  For only read and predict current ppm values with correction coefficient (does not include 4D axis features) in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/readppm.py
+  For only read and predict current ppm values with 76 different models supported by correction coefficient (does not include 4D axis features) in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/4D_Curve/readppm.py
   For model gases ppm prediction in Data Science Applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelCurve.py
   For 3D air quality graphical sensor simulation with correction coefficient support in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/3D_Surface/3DSurface.py
   For air quality graphical sensor simulation of model gases in data science applications: https://github.com/abcdaaaaaaaaa/MQDataScience/blob/main/DataScience/Models/ModelGases/ModelGraph.py
