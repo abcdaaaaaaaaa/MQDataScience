@@ -4,7 +4,7 @@ from plotly.subplots import make_subplots
 import plotly.colors as pc
 import pandas as pd
 import MQInfo
-import PredictData
+import ModelPredictData
 
 df = pd.read_excel("Model_Datas.xlsx")
 
@@ -81,7 +81,7 @@ SensorValue = percentile / 100
 
 time_surface = vals(min(time), max(time)*2, 200)
 
-r2_percentile_time, percentile_surface_raw, model_per = PredictData.get_best_fit(time, percentile, time_surface)
+r2_percentile_time, percentile_surface_raw, model_per = ModelPredictData.get_best_fit(time, percentile, time_surface)
 percentile_surface = limit(percentile_surface_raw, 100)
 
 print(f"Percentile Model: {model_per}")
