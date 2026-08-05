@@ -41,11 +41,11 @@ Why use the Curve Prediction Platform in 4D?
   to examine the correction coefficient change caused by temperature and humidity, which affects ppm, all within a single graph.
   Therefore, the graphic is being redesigned in 4D.
 
-Why are there 77 different models in the 4D Curve Prediction Platform?
+Why are there 76 different models in the 4D Curve Prediction Platform?
   Because environmental conditions, measurement time intervals, or other factors can cause the air quality of an environment to change along different curves or at different rates. 
   In this case too, This necessitates more predictive models to accurately forecast changes in air quality in that environment.
 
-Why does the 4D Curve Prediction Platform have 77 different models, while the Model Curve Prediction Platform and Sensor Curve Prediction Platform only have 68 different models?
+Why does the 4D Curve Prediction Platform have 76 different models, while the Model Curve Prediction Platform and Sensor Curve Prediction Platform only have 66 different models?
   Because some models make predictions based on sensor percentiles while also considering ambient temperature and/or humidity. 
-  However, when the temperature and humidity factors are removed, models such as Multi-Variable Regression (Time + Temperature + Relative Humidity), Multi-Variable Regression (Temperature + Relative Humidity),
-  Multi-Variable Regression (Time + Temperature), and Multi-Variable Regression (Time + Relative Humidity) are all grouped under a single umbrella as Multi-Variable Regression. This reduces variation, thus decreasing the number of models.
+  However, when the temperature and humidity factors are removed, models such as Multi-Variable Regression (Time + Temperature + Relative Humidity), Multi-Variable Regression (Temperature + Relative Humidity), Multi-Variable Regression (Time + Temperature), 
+  Multi-Variable Regression (Time + Relative Humidity), Temperature Linear Regression, Humidity Linear Regression are all grouped under a single umbrella as Linear Regression. This reduces variation, thus decreasing the number of models.
