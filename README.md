@@ -115,7 +115,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ###
 
-<img width="1024" height="156" alt="R2_model_algorithm" src="https://github.com/user-attachments/assets/777b780a-36a0-4ba5-982c-05f0fb4f7b94" />
+<img width="1024" alt="R2_model_algorithm" src="https://github.com/user-attachments/assets/4165a221-28b2-4158-a3af-50ee3d534ba8" />
 
 ###
 
