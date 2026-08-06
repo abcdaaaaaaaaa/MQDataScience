@@ -111,7 +111,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ## Prediction Algorithm for Temp, RH and Air Quality Analysis
 
-<img width="1774" height="887" alt="77_models" src="https://github.com/user-attachments/assets/ab84cdd5-6b47-4da6-9467-6c5af56d0473" />
+<img width="1024" alt="76_models" src="https://github.com/user-attachments/assets/c99d3fa9-2f0c-437e-81e9-1664902f800f" />
 
 ###
 
@@ -119,7 +119,7 @@ STATUS 3: MQ-131_LOW, MQ131 [MQ131 Models]
 
 ###
 
-From classical regression methods, multivariable regression models, curve fitting and spline-based approaches, time series analysis, state-space and Kalman filtering methods, to machine learning algorithms, ensemble learning methods, and artificial neural network models, a total of 77 different algorithms are applied to the same dataset. Each model is evaluated using Cross-Validation, its R² (Coefficient of Determination) is calculated, and the model achieving the highest R² score is automatically selected.
+From classical regression methods, multivariable regression models, curve fitting and spline-based approaches, time series analysis, state-space and Kalman filtering methods, to machine learning algorithms, ensemble learning methods, and artificial neural network models, a total of 76 different algorithms are applied to the same dataset. Each model is evaluated using Cross-Validation, its R² (Coefficient of Determination) is calculated, and the model achieving the highest R² score is automatically selected.
 
 ## Check out all our DataScience libraries under the SpaceData series!
 
