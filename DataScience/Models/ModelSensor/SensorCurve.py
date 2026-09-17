@@ -6,8 +6,9 @@ import ModelPredictData
 
 df = pd.read_excel("Sensor_Datas.xlsx")
 
-SensorName = df["Mode"].iloc[0]
-          
+try: SensorName = df["Mode"].iloc[0]
+except Exception: print("Sensor mode could not be found.")
+
 def roundf(*args):
     return tuple(round(x, 4) for x in args)
 
