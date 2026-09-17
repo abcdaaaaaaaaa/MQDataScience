@@ -9,7 +9,8 @@ import ModelPredictData
 df = pd.read_excel("Model_Datas.xlsx")
 
 f = df["Mode"].iloc[0].strip()
-if hasattr(MQInfo, f): getattr(MQInfo, f)()
+if f in ['MQ131_LOW', 'MQ303A', 'MQ303B', 'MQ306A', 'MQ307A', 'MQ309A'] and hasattr(MQInfo, f): getattr(MQInfo, f)()
+else: print("Please choose one of MQ131_LOW, MQ303A, MQ303B, MQ306A, MQ307A or MQ309A.")
 
 SensorName = MQInfo.SensorName
 Air = MQInfo.Air
@@ -41,6 +42,13 @@ def exponential_interpolate(value, min_value, max_value, target_min, target_max)
     ratio = (value - min_value) / (max_value - min_value)
     log_val = log_min + ratio * (log_max - log_min)
     return np.power(10, log_val)
+
+def inverse_exponential_interpolate(value, old_min, old_max, new_min, new_max):
+  log_value = np.log10(value)
+  log_min = np.log10(old_min)
+  log_max = np.log10(old_max)
+  ratio = (log_value - log_min) / (log_max - log_min)
+  return new_min + ratio * (new_max - new_min)
 
 def inverseyaxb(valuea, value, valueb):
     return np.power(value / valuea, 1 / valueb)
