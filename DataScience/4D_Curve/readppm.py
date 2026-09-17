@@ -8,7 +8,8 @@ import PredictData
 df = pd.read_excel("4D_Datas.xlsx")
 
 f = df["Mode"].iloc[0].strip()
-if hasattr(MQInfo, f): getattr(MQInfo, f)()
+if f in ['MQ2', 'MQ3', 'MQ4', 'MQ5', 'MQ6', 'MQ7', 'MQ8', 'MQ9', 'MQ131', 'MQ135', 'MQ136', 'MQ137', 'MQ138', 'MQ214', 'MQ216'] and hasattr(MQInfo, f): getattr(MQInfo, f)()
+else: print("Please choose one of MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ131, MQ135, MQ136, MQ137, MQ138, MQ214 or MQ216.")
 
 SensorName = MQInfo.SensorName
 Air = MQInfo.Air
@@ -90,6 +91,13 @@ def exponential_interpolate(value, min_value, max_value, target_min, target_max)
     log_val = log_min + ratio * (log_max - log_min)
     return np.power(10, log_val)
 
+def inverse_exponential_interpolate(value, old_min, old_max, new_min, new_max):
+  log_value = np.log10(value)
+  log_min = np.log10(old_min)
+  log_max = np.log10(old_max)
+  ratio = (log_value - log_min) / (log_max - log_min)
+  return new_min + ratio * (new_max - new_min)
+
 def CorrectionCoefficient(temp, RH):
     if CRMode == 3:
         if RH <= 60:
@@ -158,7 +166,7 @@ for i, gas in enumerate(gas_params):
         valuea = 1 / np.power(valuea, 1 / valueb)
         valueb = 1 / valueb
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
-    CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
+    CalValue = limit(inverse_exponential_interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
     minair, maxair = convertppm(minair), convertppm(maxair)
 
     
