@@ -30,6 +30,14 @@ function exponentialInterpolate(value, minValue, maxValue, targetMin, targetMax)
     return Math.pow(10, logVal);
 }
 
+function inverseExponentialInterpolate(value, minValue, maxValue, targetMin, targetMax) {
+    const logValue = Math.log10(value);
+    const logMin = Math.log10(minValue);
+    const logMax = Math.log10(maxValue);
+    const ratio = (logValue - logMin) / (logMax - logMin);
+    return targetMin + ratio * (targetMax - targetMin);
+}
+
 function getCorrectionCoefficient(temp, RH) {
     let TH_valuea, TH_valueb, TH_valuec;
 	if (CRMode == 3) {
@@ -185,12 +193,12 @@ window.calculateData = function() {
         let calAir = inverseyaxb(adjusted_valuea, CalibrateAir, adjusted_valueb);
         
         if (standard == 1) {
-            globalThis.CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99);
+            globalThis.CalValue = limit(inverseExponentialInterpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99);
             minair = convertppm(minair);
             maxair = convertppm(maxair);
             lastppmvalue = Math.round(limit(getSensorPpm(adjusted_valuea, adjusted_valueb, SensorValue, getCorrectionCoefficient(temperature, rh)), 1, maxair * getCorrectionCoefficient(temperature, rh)));
         } else {
-            globalThis.CalValue = gas.calvalue ?? interpolate(calAir, minair, maxair, 0, 1);
+            globalThis.CalValue = gas.calvalue ?? inverseExponentialInterpolate(calAir, minair, maxair, 0, 1);
             minair = convertppm(minair);
             maxair = convertppm(maxair);
             if (f == "MQ131_LOW") { 
