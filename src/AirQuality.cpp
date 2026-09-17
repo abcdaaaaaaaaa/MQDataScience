@@ -1,5 +1,5 @@
 #include "AirQuality.h"
-#include <math.h>
+// #include <math.h>
 
 float exponential_interpolate(float x, float x_min, float x_max, float ppm_min, float ppm_max) {
     float log_min = log10(ppm_min);
@@ -9,12 +9,14 @@ float exponential_interpolate(float x, float x_min, float x_max, float ppm_min, 
     return pow(10, log_val);
 }
 
+/*
 float logarithmic_interpolate(float x, float x_min, float x_max, float ppm_min, float ppm_max) {
     float ratio = (float)(x - x_min) / (x_max - x_min);
     float log_val = log10(1 + ratio * 9);
     float norm = log_val / log10(10);
     return ppm_min + norm * (ppm_max - ppm_min);
 }
+*/
 
 float airConcentration(String m, float sensorVal) {
   float ppm_min, ppm_max;
