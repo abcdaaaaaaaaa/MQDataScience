@@ -9,7 +9,8 @@ import PredictData
 df = pd.read_excel("4D_Datas.xlsx")
 
 f = df["Mode"].iloc[0].strip()
-if hasattr(MQInfo, f): getattr(MQInfo, f)()
+if f in ['MQ2', 'MQ3', 'MQ4', 'MQ5', 'MQ6', 'MQ7', 'MQ8', 'MQ9', 'MQ131', 'MQ135', 'MQ136', 'MQ137', 'MQ138', 'MQ214', 'MQ216'] and hasattr(MQInfo, f): getattr(MQInfo, f)()
+else: print("Please choose one of MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ131, MQ135, MQ136, MQ137, MQ138, MQ214 or MQ216.")
 
 SensorName = MQInfo.SensorName
 Air = MQInfo.Air
