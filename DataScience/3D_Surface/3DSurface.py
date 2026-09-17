@@ -3,8 +3,16 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import MQInfo
 
-f = input("SensorMode for 3D Visualization: ").strip()
-if hasattr(MQInfo, f): getattr(MQInfo, f)()
+while True:
+    f = input("SensorMode for 3D Visualization: ").strip()
+    if f not in ['MQ2', 'MQ3', 'MQ4', 'MQ5', 'MQ6', 'MQ7', 'MQ8', 'MQ9', 'MQ131', 'MQ135', 'MQ136', 'MQ137', 'MQ138', 'MQ214', 'MQ216'] or not hasattr(MQInfo, f):
+        print("Please choose one of MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ131, MQ135, MQ136, MQ137, MQ138, MQ214 or MQ216.")
+        continue
+    getattr(MQInfo, f)()
+    if MQInfo.gas_params is None:
+        print("Listede bulunamadı")
+        continue
+    break
 
 SensorName = MQInfo.SensorName
 Air = MQInfo.Air
@@ -60,6 +68,13 @@ FormulaMode = MQInfo.FormulaMode
 
 def interpolate(value, old_min, old_max, new_min, new_max):
     return (value - old_min) * (new_max - new_min) / (old_max - old_min) + new_min
+
+def inverse_exponential_interpolate(value, old_min, old_max, new_min, new_max):
+  log_value = np.log10(value)
+  log_min = np.log10(old_min)
+  log_max = np.log10(old_max)
+  ratio = (log_value - log_min) / (log_max - log_min)
+  return new_min + ratio * (new_max - new_min)
 
 def yaxb(valuea, value, valueb):
     return valuea * np.power(value, valueb)
@@ -144,7 +159,7 @@ for gas in gas_params:
     maxratio = yaxb(valuea, minair, valueb) * maxcr
 
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
-    CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
+    CalValue = limit(inverse_exponential_interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
     
     minair, maxair = convertppm(minair), convertppm(maxair)
 
