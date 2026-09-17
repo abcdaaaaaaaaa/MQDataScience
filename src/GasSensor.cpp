@@ -1,5 +1,5 @@
 #include "GasSensor.h"
-#include <math.h>
+// #include <math.h>
 
 GasSensor::GasSensor(int bitadc, byte pin)
 {
@@ -21,6 +21,14 @@ float GasSensor::fmap(float x, float in_min, float in_max, float out_min, float 
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min; // Arduino ide's map function does not support float structure.
 }
 
+float GasSensor::inverse_exponential_interpolate(float value, float old_min, float old_max, float new_min, float new_max) {
+    float log_value = log10(value);
+    float log_min = log10(old_min);
+    float log_max = log10(old_max);
+    float ratio = (log_value - log_min) / (log_max - log_min);
+    return new_min + ratio * (new_max - new_min);
+}
+
 float GasSensor::inverseYaxb(float a, float y, float b) {
     return pow(y / a, 1.0 / b);
 }
@@ -33,12 +41,12 @@ float GasSensor::limit(float value, float minVal, float maxVal) {
 
 float GasSensor::calculateCalValue1(float a, float b, float calibrateAir, float minPpm, float maxPpm) {
     float calAir = inverseYaxb(a, calibrateAir, b);
-    return limit(fmap(calAir, minPpm, maxPpm, 0, 1), 0.01, 0.99);
+    return limit(inverse_exponential_interpolate(calAir, minPpm, maxPpm, 0, 1), 0.01, 0.99);
 }
 
 float GasSensor::calculateCalValue2(float a, float b, float calibrateAir, float minPpm, float maxPpm) {
     float calAir = inverseYaxb(a, calibrateAir, b);
-    return fmap(calAir, minPpm, maxPpm, 0, 1);
+    return inverse_exponential_interpolate(calAir, minPpm, maxPpm, 0, 1);
 }
 
 float GasSensor::calculateRsRoPPM(float sensorVal, float correction, float a, float b, float calValue, float air, float rlcal, float maxPpm) {
