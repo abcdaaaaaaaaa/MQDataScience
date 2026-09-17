@@ -8,16 +8,8 @@ import PredictData
 
 df = pd.read_excel("4D_Datas.xlsx")
 
-while True:
-    f = input("SensorMode for 3D Visualization: ").strip()
-    if f not in ['MQ2', 'MQ3', 'MQ4', 'MQ5', 'MQ6', 'MQ7', 'MQ8', 'MQ9', 'MQ131', 'MQ135', 'MQ136', 'MQ137', 'MQ138', 'MQ214', 'MQ216'] or not hasattr(MQInfo, f):
-        print("Please choose one of MQ2, MQ3, MQ4, MQ5, MQ6, MQ7, MQ8, MQ9, MQ131, MQ135, MQ136, MQ137, MQ138, MQ214 or MQ216.")
-        continue
-    getattr(MQInfo, f)()
-    if MQInfo.gas_params is None:
-        print("Listede bulunamadı")
-        continue
-    break
+f = df["Mode"].iloc[0].strip()
+if hasattr(MQInfo, f): getattr(MQInfo, f)()
 
 SensorName = MQInfo.SensorName
 Air = MQInfo.Air
