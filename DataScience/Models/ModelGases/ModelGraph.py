@@ -4,8 +4,16 @@ from plotly.subplots import make_subplots
 import plotly.colors as pc
 import MQInfo
 
-f = input("SensorMode for ModelGases Visualization: ").strip()
-if hasattr(MQInfo, f): getattr(MQInfo, f)()
+while True:
+    f = input("SensorMode for ModelGases Visualization: ").strip()
+    if f not in ['MQ131_LOW', 'MQ303A', 'MQ303B', 'MQ306A', 'MQ307A', 'MQ309A'] or not hasattr(MQInfo, f):
+        print("Please choose one of MQ131_LOW, MQ303A, MQ303B, MQ306A, MQ307A or MQ309A.")
+        continue
+    getattr(MQInfo, f)()
+    if MQInfo.gas_params is None:
+        print("Listede bulunamadı")
+        continue
+    break
 
 SensorName = MQInfo.SensorName
 Air = MQInfo.Air
@@ -23,6 +31,13 @@ FormulaMode = MQInfo.FormulaMode
 
 def interpolate(value, old_min, old_max, new_min, new_max):
     return (value - old_min) * (new_max - new_min) / (old_max - old_min) + new_min
+
+def inverse_exponential_interpolate(value, old_min, old_max, new_min, new_max):
+  log_value = np.log10(value)
+  log_min = np.log10(old_min)
+  log_max = np.log10(old_max)
+  ratio = (log_value - log_min) / (log_max - log_min)
+  return new_min + ratio * (new_max - new_min)
 
 def yaxb(valuea, value, valueb):
     return valuea * np.power(value, valueb)
@@ -80,7 +95,7 @@ for i, gas in enumerate(gas_params):
     
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
     try: CalValue = gas['calvalue']
-    except Exception: CalValue = interpolate(calAir, minair, maxair, 0, 1)
+    except Exception: CalValue = inverse_exponential_interpolate(calAir, minair, maxair, 0, 1)
 
     minair, maxair = convertppm(minair), convertppm(maxair)
 
