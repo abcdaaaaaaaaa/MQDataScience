@@ -116,7 +116,7 @@ for i, gas in enumerate(gas_params):
     
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
     try: CalValue = gas['calvalue']
-    except Exception: CalValue = interpolate(calAir, minair, maxair, 0, 1)
+    except Exception: CalValue = inverse_exponential_interpolate(calAir, minair, maxair, 0, 1)
     
     minair, maxair = convertppm(minair), convertppm(maxair)
     
