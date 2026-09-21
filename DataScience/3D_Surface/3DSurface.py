@@ -69,6 +69,13 @@ FormulaMode = MQInfo.FormulaMode
 def interpolate(value, old_min, old_max, new_min, new_max):
     return (value - old_min) * (new_max - new_min) / (old_max - old_min) + new_min
 
+def inverse_exponential_interpolate(value, old_min, old_max, new_min, new_max):
+  log_value = np.log10(value)
+  log_min = np.log10(old_min)
+  log_max = np.log10(old_max)
+  ratio = (log_value - log_min) / (log_max - log_min)
+  return new_min + ratio * (new_max - new_min)
+
 def yaxb(valuea, value, valueb):
     return valuea * np.power(value, valueb)
 
@@ -152,7 +159,7 @@ for gas in gas_params:
     maxratio = yaxb(valuea, minair, valueb) * maxcr
 
     calAir = inverseyaxb(valuea, CalibrateAir, valueb)
-    CalValue = limit(interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
+    CalValue = limit(inverse_exponential_interpolate(calAir, minair, maxair, 0, 1), 0.01, 0.99)
     
     minair, maxair = convertppm(minair), convertppm(maxair)
 
