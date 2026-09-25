@@ -53,6 +53,9 @@ The first formula is determined according to all points (Curves.py, OldCurve), w
 
 <b> In data graphs, the x-axis is given as ppm and the y-axis is given as ratio.
 
+## Sensor Calibration Method
+For the MQ-2 sensor, calibration at 1000 ppm LPG is recommended as an example. This value is the point where Rs/Ro is approximately 0.78. There is a logarithmic relationship, rather than a linear one, between the sensor and the ppm. The mathematical relationship of this connection is exactly as follows:
+
 ## V = I × R
 
 <img width="1264" alt="image4" src="https://github.com/user-attachments/assets/cdcdc664-251c-4d1f-a79b-8481ded8a043" />
