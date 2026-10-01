@@ -16,7 +16,7 @@
 ![MQ135_CO2_3D)](https://github.com/user-attachments/assets/21cb85b6-ea50-4bfc-80a4-d045e03e9b5a)
 
 ## 5) Curve Prediction in Time-Dependent 4D Space
-![4D_Curve_Prediction](https://github.com/user-attachments/assets/28483273-2c20-4700-ba6a-892a17a8c499)
+![4D_Curve_Prediction](https://github.com/user-attachments/assets/3f30a078-a461-4d48-b969-89409f730924)
 
 ## 4D Axis Features
 
