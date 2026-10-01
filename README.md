@@ -7,16 +7,16 @@
 ![MQ-135_gas_curves](https://github.com/user-attachments/assets/e8d6e1bf-6f61-40c8-9cc8-fd0cd7189c22)
 
 ## 2) Ppm Analysis of Different Model Gases
-![MQ303A_Ppm_Analysis](https://github.com/user-attachments/assets/91be952f-5374-41a7-a64f-4d0e24a1af0e)
+![MQ303A_Ppm_Analysis](https://github.com/user-attachments/assets/f822f087-2f24-4094-a278-18848a8e53ff)
 
 ## 3) Formulated Correction Coefficients depending on Temperature and Humidity
 ![MQ-135_correction_coefficient](https://github.com/user-attachments/assets/fd9bdeb6-377a-4109-b931-766112c58a4e)
 
 ## 4) 3D Ppm Surface Diagram for MQ Sensors Gases
-![MQ135_CO2_3D)](https://github.com/user-attachments/assets/6d991b44-1eed-46ce-b561-abd7c7c3a554)
+![MQ135_CO2_3D)](https://github.com/user-attachments/assets/21cb85b6-ea50-4bfc-80a4-d045e03e9b5a)
 
 ## 5) Curve Prediction in Time-Dependent 4D Space
-![4D_Curve_Prediction](https://github.com/user-attachments/assets/7ec2c00d-951a-4c96-9b0d-2ef3a795ef9e)
+![4D_Curve_Prediction](https://github.com/user-attachments/assets/28483273-2c20-4700-ba6a-892a17a8c499)
 
 ## 4D Axis Features
 
